@@ -5,3 +5,8 @@ node_modules/
 .DS_Store
 .venv/
 blender/frames/
+
+# Private business planning and review notes
+/business/
+/research/
+/private-research/

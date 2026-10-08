@@ -1,47 +1,70 @@
-# Holiday Build Club
+# Prompt Dept.
 
-Ten independent Christmas knitwear concepts for Claude Code fans, Codex fans, and the wider coding community. Static responsive collection page, editable Blender construction studies, and original image-generation outputs.
+Independent clothing concepts for the one-more-prompt crowd.
 
-[Live collection](https://nradachy-web.github.io/holiday-build-club/)
+[Design prototype](https://nradachy-web.github.io/holiday-build-club/) | [Original holiday archive](https://nradachy-web.github.io/holiday-build-club/holiday.html)
 
-The site is a concept preview. It does not accept orders, charge customers, reserve stock, or claim that digital renders are manufactured products. Branded designs are not affiliated with Anthropic or OpenAI and need rights clearance before commercial release.
+## Collection
 
-## Run locally
+28 new product concepts: four sweats, four tees, three hats, seven accessories, three adult onesies, three original holiday knits and four fan concepts. The original ten holiday sweaters remain in the archive.
 
-```sh
-npm run dev
-```
+This repository contains 27 new AI product mockups, one AI editorial hero, a native Blender keychain render, six original outlined SVG artwork studies, the original holiday assets and the responsive static prototype.
 
-Open the local address printed by the server. The static files are in `site/`; there is no build step, server API, tracking pixel, or external font request.
+Prompt Dept. is the selected working name, not a claim of trademark clearance. These are design concepts, not physically sampled or available products. No checkout, charge, reservation or automatic subscription exists. Fan concepts are independent and not affiliated with Anthropic or OpenAI; third-party marks are not commercially cleared. Adult lounge suits only.
 
-## Verify
+## Run and verify
 
 ```sh
 npm ci
 npx playwright install chromium
+npm run dev
+```
+
+The preview serves `site/` on port 4173. Stop it before the self-contained browser check:
+
+```sh
 npm test
 ```
 
-The test uses the running local server by default. Set `SITE_URL` for a published page. Optionally set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` to an existing Chromium executable. Screenshots are saved in ignored `qa/`.
+For an existing deployment:
 
-Checks cover the ten concepts, category filters, local favorite persistence, design dialogs, Escape, exact design links, email draft contents, size preferences, narrow mobile layouts, and resource errors. The email draft is inspected without sending it.
+```sh
+SITE_URL=https://nradachy-web.github.io/holiday-build-club/ npm run test:live
+```
+
+Optionally set `PLAYWRIGHT_CHROMIUM_EXECUTABLE`. The current Mac has a detected fallback; otherwise Playwright uses its installed browser. Screenshots are written to ignored `qa/`.
+
+Checks cover all 28 designs and category counts, search and empty state, favorite persistence, modal focus after saving, Escape, exact and legacy links, email draft contents, all product image decoding, 320/390/768 px layouts, and resource/browser errors. No email is sent.
 
 ## Design sources
 
-- `designs/`: ten full-resolution AI concept mockups, the art direction, exact generation prompts, and launch recommendations.
-- `blender/holiday-build-club.blend`: ten editable geometry and material studies plus a separate physical-yarn scene. Textures are packed into the file.
-- `blender/make_textures.py`: original four-color pattern studies.
-- `blender/build_collection.py`: reproducible Blender 5.1 source and Cycles render setup.
-- `site/assets/yarn-macro.webp`: a real Blender render of modeled yarn curves.
+- `capsules/`: original new PNGs and exact imagegen prompt/source manifests.
+- `designs/`: the original ten holiday PNGs and their prompts.
+- `brand/production/`: six outlined transparent SVG studies, proof gallery, generator and licensed font.
+- `blender/prompt-dept-accessories.blend`: editable EMPTY METER keychain, 19 product objects, packed font, camera and lighting.
+- `blender/prompt-dept-accessories.py`: reproducible background-only Blender 5.1.1 source.
+- `blender/prompt-dept-accessories.png`: actual CPU Cycles render, visually inspected.
+- `blender/holiday-build-club.blend`: original ten simplified sweater construction studies and modeled yarn scene.
+- `site/`: static design prototype and archive.
 
-The AI product mockups and simplified Blender construction studies are separate explorations. The Blender studies are not exact 3D reconstructions of the AI mockups or production knitting patterns. Factory stitch charts, gauge, seam construction, final yarn colors, tech packs, grading, and physical samples remain to be developed. Some generated mockups include more colors than the four-color production target.
+The generated garments illustrate art direction. They do not establish actual fabric, construction, fit, print finish or supplier capability. The separate Blender and vector studies are editable explorations, not exact reconstructions or factory-ready tech packs. Supplier templates, stitch charts, separations, embroidery digitization, grading, labels and physical samples remain production work.
 
-Image prompts are preserved in `designs/image-manifest.json`. Product images were generated with the built-in image_gen tool and copied into this repository. Web versions are optimized WebP files; originals are preserved.
+## Rebuild artwork
 
-## Interaction and data
+```sh
+python3 brand/production/build_artwork.py
+blender --background --factory-startup --threads 4 --python blender/prompt-dept-accessories.py
+node scripts/build-catalog.mjs
+```
 
-Favorites use localStorage in the visitor's own browser. No preference is sent to a server. The interest link opens a prefilled email to Nick at Modern Apex, with the chosen designs and optional size. The visitor must send it. Direct email is visible for visitors without a configured mail app.
+Image generation used the built-in imagegen tool, one call per asset. Selected files were copied into this project; original generated files were retained. A targeted edit removed the rejected working name from one tee.
 
-## Deployment
+Optional image optimization uses `scripts/optimize-images.cjs` and Sharp. Set `SHARP_MODULE` to an installed Sharp module or install it locally. The committed assets require no build.
 
-GitHub Actions deploys only `site/` to GitHub Pages on changes to that directory. The source repository also includes the design assets and Blender source. Font licenses are included beside the locally served fonts.
+## Data and publishing
+
+Favorites use localStorage. Feedback remains in the page until the visitor chooses to send an email. The mailto button only opens a draft to Nick at Modern Apex. No analytics or advertising pixels are installed. Fonts and their licenses are served locally.
+
+GitHub Actions publishes only `site/`. This is a design-research prototype; the commercial launch and checkout belong on appropriate commercial hosting.
+
+Twenty specialist lanes contributed to the project. Internal supplier research, financial assumptions, business reviews and the complete launch notebook are kept in ignored local `business/` and `research/` directories, outside public publication. The local standalone plan is `business/launch.html`; it includes its own calculator data. Those private files are not present in a public clone.

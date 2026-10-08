@@ -1,0 +1,17 @@
+{
+  "brand": "PROMPT DEPT",
+  "design": "EMPTY METER enamel-style keychain",
+  "blender_version": "5.1.1",
+  "blend": "/Users/modernapex/holiday-build-club/blender/prompt-dept-accessories.blend",
+  "render": "/Users/modernapex/holiday-build-club/blender/prompt-dept-accessories.png",
+  "objects": 25,
+  "editable_product_objects": 19,
+  "font": "/Users/modernapex/holiday-build-club/brand/production/fonts/Barlow-Production.ttf",
+  "render_resolution": [
+    1400,
+    1400
+  ],
+  "status": "blend_saved_render_complete",
+  "scope": "Original visual construction study, not a factory tech pack. Does not claim to match generated mockups.",
+  "render_bytes": 2093770
+}

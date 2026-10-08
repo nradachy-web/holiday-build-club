@@ -1,0 +1,53 @@
+[
+  {
+    "id": "santa-rate-limited",
+    "name": "Santa hit his weekly limit",
+    "category": "Holiday knits",
+    "phrase": "SANTA HIT HIS / WEEKLY LIMIT",
+    "direction": "Burgundy and bone jacquard Christmas sweater, acid green small accents. Across chest the exact two-line phrase SANTA HIT HIS / WEEKLY LIMIT in very large legible chunky knit letters. Below, a charming original pixel Santa asleep face-down on a closed laptop with a nearly-empty rectangular meter. Fair Isle yoke made from tiny hourglasses, snowflakes and empty meters. Wide rib cuff, dense premium yarn, bold streetwear fit."
+  },
+  {
+    "id": "context-christmas",
+    "name": "All I want is my context back",
+    "category": "Holiday knits",
+    "phrase": "ALL I WANT IS / MY CONTEXT BACK",
+    "direction": "Dark evergreen and ivory jacquard holiday knit with soft coral accent. Across center exact two-line phrase ALL I WANT IS / MY CONTEXT BACK. Oversized original pixel art empty gift box with little squares escaping from it upward like lost memories. Delicate Fair Isle border of terminal cursors and snowflakes. Festive, funny and refined, large readable letterforms."
+  },
+  {
+    "id": "naughty-compaction",
+    "name": "Naughty list lost in compaction",
+    "category": "Holiday knits",
+    "phrase": "NAUGHTY LIST / LOST IN COMPACTION",
+    "direction": "Bone cream and near-black jacquard holiday sweater with red accents. Center graphic of a comically tiny shredded paper list surrounded by festive stars. Exact bold two-line wording NAUGHTY LIST / LOST IN COMPACTION. Traditional black and red reindeer bands at shoulders and cuffs, relaxed chunky silhouette. Strong readable text and tactile individual knit stitches."
+  },
+  {
+    "id": "clawd-timeout",
+    "name": "Clawd is in timeout",
+    "category": "Fan concepts",
+    "phrase": "HE'S IN TIMEOUT.",
+    "reference": true,
+    "direction": "Washed black oversized heavyweight T-shirt on flat lay. Exact provided salmon pixel Clawd mascot very large centered, its original squared silhouette and two black vertical eye slits preserved, positioned alone with generous space. Beneath it large bone condensed words HE'S IN TIMEOUT. Small coral caption at bottom of chest design ASK AGAIN AFTER RESET. Tiny TOKEN ROT at hem. This is a private independent fan concept, not official collaboration. Playful severe streetwear, screenprint texture, not babywear."
+  },
+  {
+    "id": "clawd-christmas",
+    "name": "Clawd used his last token",
+    "category": "Fan concepts",
+    "phrase": "MY LAST TOKEN / WENT TO SANTA",
+    "reference": true,
+    "direction": "Burnt orange, bone and evergreen thick jacquard Christmas sweater. Large provided recognizable squared terracotta Clawd pixel mascot with two vertical eye slits at center surrounded by snowflakes, do not turn into squid illustration. Bold knitted wording MY LAST TOKEN / WENT TO SANTA beneath. Smaller CLAUDE CODE near collar. Crisp three-color pixel-knit geometry, roomy premium knit, festive yet restrained. Independent fan concept."
+  },
+  {
+    "id": "gpt-please",
+    "name": "I even said please",
+    "category": "Fan concepts",
+    "phrase": "I EVEN / SAID PLEASE.",
+    "direction": "Bone heavyweight oversized T-shirt with near-black exact familiar OpenAI interlocking six-loop Blossom knot emblem small and centered with generous clear space on upper chest. Below it giant condensed black type I EVEN / SAID PLEASE. Tiny CODEX at bottom. Typography-led deadpan AI coder humor, no other illustration. Exact black OpenAI logo, not flower cartoon. Independent fan concept, not official collaboration."
+  },
+  {
+    "id": "codex-reset",
+    "name": "The Codex reset club",
+    "category": "Fan concepts",
+    "phrase": "WAKE ME / AFTER RESET",
+    "direction": "Deep midnight navy, ivory and icy-blue premium jacquard Christmas sweater. Small exact familiar OpenAI interlocking six-loop Blossom knot emblem centered high on chest with ample space, below it tiny CODEX then large two-line knitted wording WAKE ME / AFTER RESET. Lower torso has original chunky pixel moon in nightcap, and large snowflakes border sleeves. Oversized relaxed fit, tasteful funny holiday programmer fan concept. Not official collaboration."
+  }
+]

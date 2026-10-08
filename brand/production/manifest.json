@@ -1,0 +1,58 @@
+{
+  "brand": "PROMPT DEPT",
+  "status": "Original construction studies, not factory tech packs",
+  "artboard": {
+    "width": "12 in",
+    "height": "14 in",
+    "viewBox": "0 0 1200 1400",
+    "background": "transparent"
+  },
+  "palette": {
+    "ink": "#151613",
+    "bone": "#EEEAE0",
+    "acid": "#D5FF45"
+  },
+  "font_source": "site/assets/font-2.ttf",
+  "font_output": "fonts/Barlow-Production.ttf",
+  "font_license_files": [
+    "fonts/OFL-Barlow-Condensed.txt"
+  ],
+  "artwork": [
+    {
+      "file": "01-change-a-button.svg",
+      "phrase": "I ONLY CAME HERE / TO CHANGE A BUTTON",
+      "sha256": "d80bb1ba1ffc77644524eb057f192eb0e879527e7a2832ac50a2764593901b39"
+    },
+    {
+      "file": "02-not-this.svg",
+      "phrase": "I APPROVED THE PLAN. / NOT THIS.",
+      "sha256": "555a55d52192d168e2f760d83d23196b489a945df8b0005319d2b999943065d1"
+    },
+    {
+      "file": "03-in-the-summary.svg",
+      "phrase": "IT WORKS / IN THE SUMMARY.",
+      "sha256": "1b2f599470015edd81f7bdb3e846eaf94c80af87df61d57f658f121bbe483a16"
+    },
+    {
+      "file": "04-last-token.svg",
+      "phrase": "I USED MY LAST TOKEN / TO SAY THANK YOU",
+      "sha256": "3b2748a7a1227886603701fc516994721402a4b3b9ea8b613106a8743d7ec07a"
+    },
+    {
+      "file": "05-after-reset.svg",
+      "phrase": "ASK ME / AFTER RESET",
+      "sha256": "d038501626e3667eaf8d3694025154cd1fe17248f8d482ec0c752ead79d97160"
+    },
+    {
+      "file": "06-all-my-money.svg",
+      "phrase": "ALL MY MONEY / IS IN TOKENS",
+      "sha256": "5309969b097128c3d61de4f6eb3732d6d68308e99809d3bfd990dd640fe850e3"
+    }
+  ],
+  "notes": [
+    "All visible text is converted to editable SVG paths.",
+    "No vendor logos or generated mockup tracing.",
+    "Ink is the intended garment or proof background. Bone and acid are the two artwork colors.",
+    "Print method, registration, trapping, sizes and substrate require supplier sampling."
+  ]
+}
