@@ -1,0 +1,15 @@
+Holiday Build Club: design plan, October 8, 2026
+
+Audience: people who build with Claude Code and Codex, and people buying their holiday gifts.
+Purpose: show ten distinct knitwear concepts, collect a real emailed preference, and identify a first drop before manufacturing.
+
+Palette: Snow #f4f5f1, Ink #18251f, Cranberry #ba2436, Fir #244939, Chalk #ffffff, Quiet gray #66706a.
+Type: Barlow Condensed bold for fashion-scale headlines; DM Sans for functional text. Self-host licensed files where available, system fallbacks throughout.
+Layout: wide hero, left aligned large headline, oversized product image at right; a full width image-led collection with category filtering; a native Blender textile study; a concise email-interest panel.
+Principles: product images carry the color; one memorable oversized headline; no fake scarcity, reviews, sales numbers, countdown, material guarantees, shipping promises, or checkout.
+
+Hero: [headline and one CTA 40%] [large featured product 60%]
+Collection: [filters] [two large products per row on desktop, one per row on mobile]
+Detail: [full image] [name, story, palette, save and share]
+
+Review: familiar developer terminal chrome would make this look like a SaaS landing page. Revised to a winter fashion lookbook with plain shopping interactions. Code references live on the garments. The original name is a working collection identity, not a trademark-clearance claim.

@@ -1,0 +1,40 @@
+Holiday Build Club: first-drop recommendation
+Research and concepts prepared October 8, 2026. These are recommendations, not approved spending or confirmed demand.
+
+FIRST THREE TO SAMPLE
+1. Claus mode: the clearest Claude-specific gift and strongest hero design.
+2. Ship the gifts: a clean Codex counterpart with very readable artwork.
+3. Silent night. Deploy night.: the strongest original concept, with wider coder appeal.
+
+The remaining seven test distinct hooks: token limits, naughty-list humor, a gingerbread snowboarder, restrained alpine styling, lilac argyle, Santa and browser history, and the Claude/Codex split sweater. Favorites are an early preference signal, not purchase intent. Paid orders after a real sample and confirmed fulfillment are the actual test.
+
+PRODUCT AND PRODUCTION
+Start with real jacquard knit samples. Knitwise publicly lists custom Christmas sweaters from one piece, $38 per piece, and 7 to 14 days of production. Shipping, final style, yarn colors, artwork conversion, and delivery dates need a current quote. Their managed bulk service starts at 100 pieces; that is a separate option from the one-piece self-service route. Do not turn a generic holiday cutoff on their site into a confirmed 2026 customer promise.
+Source: https://www.knitwise.com/collections/custom-ugly-christmas-sweater
+Source: https://www.knitwise.com/pages/bulk-custom-christmas-sweaters
+
+The AI mockups are design directions. Production needs a factory-approved stitch chart and physical sample. The existing Blender file contains editable construction studies and a modeled yarn scene, not factory-ready patterns. Reduce any generated extra colors to the supplier's available palette after choosing a design.
+
+PRICING HYPOTHESIS
+Test a $79 knit only if the physical sample supports that positioning. This is a proposed retail test, not a published price. At the advertised $38 production cost, $41 remains before shipping, payment/platform fees, packaging, creator commissions, advertising, returns, and taxes. That is not $41 profit. Confirm landed cost and calculate contribution before ordering inventory or buying ads. No budget or purchases were authorized or made.
+
+CHANNEL SEQUENCE
+Instagram Reels and TikTok organic: first test the three strongest designs with short reveal clips, close-up knit footage after sampling, and gift-buyer copy. Start with one hook per clip: "For the person who said just one more prompt", "What do you buy someone who already pays for every AI subscription?", and "The office holiday party, but engineering dressed itself."
+
+Use the landing page as a concept collection and shortlist contact route. Its email button opens a draft; it is not a mailing-list subscription or an order form. No posts or messages have been sent and no ad spend was started.
+
+Instagram commerce: use a supported storefront and an approved product catalog when ready for actual sales. Shopify documents Instagram Shopping product tags and checkout on the seller's website. Account eligibility and current checkout options need checking during setup.
+Source: https://help.shopify.com/en/manual/online-sales-channels/social-commerce/facebook-instagram-by-meta/instagram
+
+TikTok Shop: standard US orders have a two-business-day dispatch requirement. Made-to-order and extended handling features have eligibility requirements; do not assume a new shop gets them. A 7 to 14 day knit production time does not fit standard dispatch. Use stocked winning designs or verify the specific approved fulfillment route before opening Shop listings.
+Source: https://seller-us.tiktok.com/university/essay?knowledge_id=6719693841286958
+Source: https://seller-us.tiktok.com/university/essay?knowledge_id=309595529053994
+
+Creators and small engineering teams are later tests: sample-based creator clips and team gift orders could be efficient acquisition routes. No creator commitments, outreach, inventory purchases, or bulk orders are authorized by this plan.
+
+BRANDED DESIGNS
+OpenAI's brand guidance prohibits its logo on tangible merchandise. The concepts do not use that logo. Their product names still require rights review before sale; removing the logo is not clearance for a Codex-branded commercial product. Anthropic merchandise rights were not established in this research. Independent concepts and a disclaimer are not substitutes for rights clearance.
+Source: https://openai.com/brand/
+
+NEXT CONCRETE STEP
+Choose the three sample candidates, get written supplier specifications and landed quotes, resolve the branded-design rights, then approve the sample spend. Photograph the real samples and open sales only with a working checkout and verified delivery promise.

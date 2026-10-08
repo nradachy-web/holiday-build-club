@@ -1,0 +1,8 @@
+{
+  "name": "holiday-build-club",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Independent coder Christmas knitwear concept collection",
+  "scripts": {"dev": "python3 -m http.server 4173 --directory site", "test": "node scripts/verify.mjs"},
+  "devDependencies": {"@playwright/test": "1.64.0"}
+}

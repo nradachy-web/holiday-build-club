@@ -1,0 +1,8 @@
+qa/
+*.blend1
+*.blend2
+node_modules/
+.DS_Store
+.venv/
+blender/frames/
+
