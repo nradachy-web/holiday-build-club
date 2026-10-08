@@ -10,3 +10,6 @@ blender/frames/
 /business/
 /research/
 /private-research/
+
+__pycache__/
+*.pyc

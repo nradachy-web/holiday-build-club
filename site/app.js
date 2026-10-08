@@ -21,3 +21,5 @@ $('#close-dialog').addEventListener('click',closeDesign);dialog.addEventListener
 $('#dialog-save').addEventListener('click',()=>{if(current)toggleSaved(current.id);});$('#dialog-interest').addEventListener('click',()=>{if(current&&!favorites.has(current.id))toggleSaved(current.id);closeDesign();});
 $('#share-design').addEventListener('click',async()=>{if(!current)return;const url=new URL(location.href);url.searchParams.set('design',current.id);url.hash='';try{await navigator.clipboard.writeText(url.href);$('#share-design').textContent='Link copied';setTimeout(()=>$('#share-design').innerHTML='Copy design link <span aria-hidden="true">↗</span>',1800);}catch{window.prompt('Copy this design link:',url.href);}});
 render();const initial=new URL(location.href).searchParams.get('design');if(initial)openDesign(initial,false);
+
+window.addEventListener('storage', event => { if(event.key===storageKey || event.key===null) { try { const values=JSON.parse(localStorage.getItem(storageKey)||'[]'); if(Array.isArray(values)) favorites=new Set(values.filter(id=>COLLECTION.some(d=>d.id===id))); } catch {} render(); } });

@@ -1,15 +1,12 @@
 'use strict';
 const $ = s => document.querySelector(s);
-const storageKey = 'prompt-dept-favorites-v1';
+const ALL_DESIGNS = [...CATALOG, ...COLLECTION.map(d => ({...d, type:'Holiday knit', category:'Original ten', capsule:'Original holiday collection', image:`assets/${d.id}.webp`, fan:d.team !== 'Originals', archive:true, tags:d.phrase+' '+d.description}))];
 let favorites = new Set();
+try { favorites = PromptReview.read(localStorage, favorites); } catch {}
 let filter = 'All';
 let current = null;
 let lastFocus = null;
 let toastTimer;
-try {
-  const saved = JSON.parse(localStorage.getItem(storageKey) || '[]');
-  if (Array.isArray(saved)) favorites = new Set(saved.filter(id => CATALOG.some(d => d.id === id)));
-} catch {}
 const dialog = $('#product-dialog');
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function notify(message) {
@@ -20,39 +17,41 @@ function notify(message) {
 }
 function visible() {
   const term = $('#search').value.trim().toLowerCase();
-  return CATALOG.filter(d => (filter === 'All' || (filter === 'Saved' ? favorites.has(d.id) : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
+  return ALL_DESIGNS.filter(d => (filter === 'All' || (filter === 'Saved' ? favorites.has(d.id) : filter === 'Replace' ? !favorites.has(d.id) : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
 }
 function render() {
   const list = visible();
-  $('#products').innerHTML = list.map(d => `<article class="card"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async">${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(CATALOG.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
+  $('#products').innerHTML = list.map(d => `<article class="card ${favorites.has(d.id)?'is-keeper':'needs-idea'}"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async"><span class="decision-tag">${favorites.has(d.id)?'♥ Keep this':'↻ Replace this'}</span>${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(ALL_DESIGNS.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
   $('#empty-state').hidden = list.length > 0;
-  $('#result-count').textContent = `${list.length} ${list.length === 1 ? 'design' : 'designs'}${filter==='Saved'?' in your shortlist':''}`;
+  $('#result-count').textContent = `${list.length} ${list.length === 1 ? 'design' : 'designs'}${filter==='Saved'?' to keep':filter==='Replace'?' to replace':''}`;
   updateSaved();
 }
 function updateSaved() {
-  const selected = CATALOG.filter(d => favorites.has(d.id));
+  const selected = ALL_DESIGNS.filter(d => favorites.has(d.id));
   $('#save-count').textContent = selected.length;
-  $('#shortlist-items').innerHTML = selected.length ? selected.map(d => `<div class="shortlist-item"><img src="${d.image}" alt="" width="42" height="52"><span>${esc(d.name)}</span><button data-save="${d.id}" aria-label="Remove ${esc(d.name)} from shortlist">×</button></div>`).join('') : '<p>Tap the heart on a design to start your shortlist.</p>';
-  if (current) $('#dialog-save').textContent = favorites.has(current.id) ? 'Saved to your shortlist ♥' : 'Save this design ♡';
+  $('#shortlist-items').innerHTML = selected.length ? selected.map(d => `<div class="shortlist-item"><img src="${d.image}" alt="" width="42" height="52"><span>${esc(d.name)}</span><button data-save="${d.id}" aria-label="Remove ${esc(d.name)} from shortlist">×</button></div>`).join('') : '<p>Heart the designs you want to keep.</p>';
+  if (current) $('#dialog-save').textContent = favorites.has(current.id) ? 'Keeping this design ♥' : 'Keep this design ♡';
+  updateReview();
   updateMail();
 }
 function updateMail() {
-  const selected = CATALOG.filter(d => favorites.has(d.id));
+  const selected = ALL_DESIGNS.filter(d => favorites.has(d.id));
   const size = $('#preferred-size').value;
   const note = $('#shortlist-note').value.trim();
   const body = ['Hi Nick,','','My Prompt Dept. shortlist:',...selected.map(d => '- '+d.name+' ('+d.type+')'),...(!selected.length?['I am interested in the collection.']:[]),'',...(size?['Preferred clothing size: '+size,'']:[]),...(note?['My feedback: '+note,'']:[]),'This is feedback, not an order.','','May you email me once if these designs become available? [Please edit to yes or no.]','','Thanks!'].join('\n');
   $('#email-shortlist').href = 'mailto:nick@modernapexstrategies.com?subject='+encodeURIComponent('Prompt Dept.: my shortlist')+'&body='+encodeURIComponent(body);
 }
 function toggleSaved(id) {
-  if (!CATALOG.some(d => d.id === id)) return;
+  if (!ALL_DESIGNS.some(d => d.id === id)) return;
   const focusId = document.activeElement?.dataset?.save;
+  try { favorites = PromptReview.read(localStorage, favorites); } catch {}
   const had = favorites.has(id);
   had ? favorites.delete(id) : favorites.add(id);
   let persisted = true;
-  try { localStorage.setItem(storageKey,JSON.stringify([...favorites])); } catch { persisted = false; }
+  try { PromptReview.write(localStorage, favorites, HOLIDAY_IDS); } catch { persisted = false; }
   render();
-  if (focusId) document.querySelector(`[data-save="${focusId}"]`)?.focus({preventScroll:true});
-  notify(had ? 'Removed from your shortlist' : persisted ? 'Saved on this device' : 'Saved for this visit. Browser storage is unavailable.');
+  if (focusId) (document.querySelector(`[data-save="${focusId}"]`) || document.querySelector('.decision-filters button[aria-pressed="true"]') || $('#search')).focus({preventScroll:true});
+  notify(!persisted ? 'Choice kept for this visit only. Copy your design brief before leaving.' : had ? 'Moved to Replace these' : 'Keeper saved on this device');
 }
 function setFilter(value) {
   filter = value;
@@ -60,7 +59,7 @@ function setFilter(value) {
   render();
 }
 function openDesign(id, updateUrl = true) {
-  const d = CATALOG.find(x => x.id === id);
+  const d = ALL_DESIGNS.find(x => x.id === id);
   if (!d) return;
   current = d;
   lastFocus = document.activeElement;
@@ -111,5 +110,35 @@ $('#dialog-interest').addEventListener('click',() => { if(current&&!favorites.ha
 $('#share-design').addEventListener('click',async() => { if(!current)return; const url=new URL(location.href); url.searchParams.set('design',current.id); url.hash=''; try { await navigator.clipboard.writeText(url.href); notify('Design link copied'); } catch { window.prompt('Copy this design link:',url.href); } });
 render();
 const initial = new URL(location.href).searchParams.get('design');
-if (initial && CATALOG.some(d=>d.id===initial)) openDesign(initial,false);
-else if(initial && typeof HOLIDAY_IDS !== 'undefined' && HOLIDAY_IDS.includes(initial)) location.replace('holiday.html?design='+encodeURIComponent(initial));
+if (initial && ALL_DESIGNS.some(d=>d.id===initial)) openDesign(initial,false);
+
+
+function updateReview() {
+  const choices = PromptReview.decisions(ALL_DESIGNS, favorites);
+  $('#keep-total').textContent = choices.keep.length;
+  $('#replace-total').textContent = choices.replace.length;
+  $('#review-summary').textContent = `${choices.keep.length} ${choices.keep.length === 1 ? 'keeper' : 'keepers'}. ${choices.replace.length} need a better idea.`;
+  $('#decision-brief').value = PromptReview.brief(ALL_DESIGNS, favorites, $('#revision-note').value);
+  $('#decision-help').textContent = choices.keep.length ? 'Copy this brief into our chat when your picks are ready. Your keepers stay; the rest become the next design round.' : 'No keepers selected. Copying this brief asks for new ideas for all 38 designs. Nothing is replaced until you share it.';
+}
+$('#revision-note').addEventListener('input', () => {
+  try { localStorage.setItem('prompt-dept-revision-note-v1', $('#revision-note').value); } catch {}
+  updateReview();
+});
+try { $('#revision-note').value = localStorage.getItem('prompt-dept-revision-note-v1') || ''; } catch {}
+updateReview();
+$('#copy-decisions').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText($('#decision-brief').value); notify('Design brief copied. Paste it into our chat.'); }
+  catch { $('#brief-details').open = true; $('#decision-brief').focus(); $('#decision-brief').select(); notify('Select and copy the brief below.'); }
+});
+$('#download-decisions').addEventListener('click', () => {
+  const choices = PromptReview.decisions(ALL_DESIGNS, favorites);
+  const data = {brand:'Prompt Dept.',schemaVersion:1,createdAt:new Date().toISOString(),catalogIds:ALL_DESIGNS.map(d=>d.id),keep:choices.keep.map(d=>({id:d.id,name:d.name})),replace:choices.replace.map(d=>({id:d.id,name:d.name})),direction:$('#revision-note').value,adultOnesiesOnly:true};
+  const url = URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
+  const link = document.createElement('a'); link.href=url; link.download='prompt-dept-design-decisions.json'; link.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+window.addEventListener('storage', event => {
+  if (PromptReview.keys.includes(event.key) || event.key === null) { try { favorites = PromptReview.read(localStorage, favorites); } catch {} render(); }
+});
+window.addEventListener('pageshow', () => { try { favorites = PromptReview.read(localStorage, favorites); } catch {} render(); });

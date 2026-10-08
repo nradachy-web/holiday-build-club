@@ -1,0 +1,16 @@
+{
+  "rows": [
+    "1111100001111100",
+    "1100110001100110",
+    "1100110001100011",
+    "1111100001100011",
+    "1100000001100011",
+    "1100000001100110",
+    "1100000001111100",
+    "0000000000000000",
+    "0000000000001111"
+  ],
+  "depth": 1.5,
+  "glyphs": ".:+*#@",
+  "description": "Original stepped PD monogram with terminal underscore. Same geometry for ASCII and print."
+}

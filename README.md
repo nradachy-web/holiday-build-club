@@ -6,7 +6,7 @@ Independent clothing concepts for the one-more-prompt crowd.
 
 ## Collection
 
-28 new product concepts: four sweats, four tees, three hats, seven accessories, three adult onesies, three original holiday knits and four fan concepts. The original ten holiday sweaters remain in the archive.
+28 new product concepts: four sweats, four tees, three hats, seven accessories, three adult onesies, three original holiday knits and four fan concepts. The original ten holiday sweaters also appear in the main 38-design review and remain available in the archive.
 
 This repository contains 27 new AI product mockups, one AI editorial hero, a native Blender keychain render, six original outlined SVG artwork studies, the original holiday assets and the responsive static prototype.
 
@@ -34,7 +34,7 @@ SITE_URL=https://nradachy-web.github.io/holiday-build-club/ npm run test:live
 
 Optionally set `PLAYWRIGHT_CHROMIUM_EXECUTABLE`. The current Mac has a detected fallback; otherwise Playwright uses its installed browser. Screenshots are written to ignored `qa/`.
 
-Checks cover all 28 designs and category counts, search and empty state, favorite persistence, modal focus after saving, Escape, exact and legacy links, email draft contents, all product image decoding, 320/390/768 px layouts, and resource/browser errors. No email is sent.
+Checks cover all 38 designs and category counts, search and empty state, favorite persistence, modal focus after saving, Escape, exact and legacy links, email draft contents, all product image decoding, 320/390/768 px layouts, and resource/browser errors. No email is sent.
 
 ## Design sources
 
@@ -68,3 +68,11 @@ Favorites use localStorage. Feedback remains in the page until the visitor choos
 GitHub Actions publishes only `site/`. This is a design-research prototype; the commercial launch and checkout belong on appropriate commercial hosting.
 
 Twenty specialist lanes contributed to the project. Internal supplier research, financial assumptions, business reviews and the complete launch notebook are kept in ignored local `business/` and `research/` directories, outside public publication. The local standalone plan is `business/launch.html`; it includes its own calculator data. Those private files are not present in a public clone.
+
+## Keeper review and ASCII identity
+
+Hearts are keepers. Unsaved designs are the replacement queue. Existing favorites from both prior collections are read without changing their IDs. The review has Keep these / Replace these filters, a copyable exact-ID brief and a JSON download. Preferences stay in local browser storage, sync between open tabs on the same origin, and are not automatically sent or shared across devices. Replacements are developed after the user shares their completed choices; the static site does not run background image generation or overwrite any design.
+
+`npm run test:review` checks migration, malformed data, blocked-storage fallback, complete keep/replace partitioning and brief contents. Browser regression coverage lives in `scripts/verify-brand.mjs`.
+
+The new identity is at `site/identity.html`: an original stepped PD cursor monogram, compact outlined wordmarks and a dimensional ASCII edition. Transparent SVG masters are in `site/assets/identity/`, with ink and bone variants. Rebuild with `python3 brand/identity/build_identity.py`. The canvas renderer animates only while visible, with a reduced-motion still frame and static SVG fallback. Use the solid mark for small labels and embroidery; proof physical production separately.

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "python3 -m http.server 4173 --directory site",
     "test": "node scripts/run-verification.mjs",
-    "test:live": "node scripts/verify-brand.mjs"
+    "test:live": "node scripts/verify-brand.mjs",
+    "test:review": "node --test tests/review-state.test.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.64.0"
