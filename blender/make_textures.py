@@ -61,4 +61,3 @@ for i,item in enumerate(json.loads((ROOT/'designs/collection.json').read_text())
     # Pixel-sized geometry makes the texture useful as a knit study.
     im.save(OUT/(item['id']+'.png'))
 print('CREATED_10_ORIGINAL_KNIT_TEXTURES')
-
