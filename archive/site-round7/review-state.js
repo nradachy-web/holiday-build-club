@@ -31,24 +31,5 @@
       ...(note.trim() ? ['DIRECTION', note.trim()] : []),
       'This is a design brief, not a product order.'].join('\n\n');
   }
-  function transferHash(designs, ids) {
-    return 'picks=' + designs.filter(d => ids.has(d.id)).map(d => encodeURIComponent(d.id)).join(',');
-  }
-  function readTransfer(hash, designs) {
-    const value = hash.replace(/^#/, '');
-    if (!value.startsWith('picks=')) return null;
-    if (value.length > 40000) return {ids: [], invalid: true, unavailable: 0};
-    let ids;
-    try { ids = [...new Set(value.slice(6).split(',').filter(Boolean).map(decodeURIComponent))]; }
-    catch { return {ids: [], invalid: true, unavailable: 0}; }
-    if (ids.length > 1000 || ids.some(id => !/^[a-z0-9][a-z0-9-]{0,99}$/.test(id))) {
-      return {ids: [], invalid: true, unavailable: 0};
-    }
-    const known = new Set(designs.map(d => d.id));
-    return {ids: ids.filter(id => known.has(id)), invalid: false, unavailable: ids.filter(id => !known.has(id)).length};
-  }
-  function mergeTransfer(storage, current, incoming) {
-    return new Set([...current, ...read(storage, current), ...incoming]);
-  }
-  root.PromptReview = {keys, read, write, decisions, brief, transferHash, readTransfer, mergeTransfer};
+  root.PromptReview = {keys, read, write, decisions, brief};
 })(globalThis);

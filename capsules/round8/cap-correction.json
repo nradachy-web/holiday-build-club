@@ -1,0 +1,8 @@
+{
+  "id": "purpose-flexible-cap",
+  "tool": "built-in imagegen",
+  "prompt": "Edit this exact product mockup. Change only the cap's dark brown brim and small brown top button to the same natural Stone beige fabric color as its crown, matching a solid Stone six-panel cotton dad cap. Preserve the exact camera angle, lighting, background, cap shape, material weave, dark forest-green embroidery, mountain illustration and perfectly spelled wording NAME FINAL. / PURPOSE FLEXIBLE. No other changes. Keep the image opaque.",
+  "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-0c654fc2-ee16-40bc-9aba-9e85cba32114.png",
+  "original": "capsules/round8/purpose-flexible-cap-initial.png",
+  "output": "capsules/round8/purpose-flexible-cap.png"
+}

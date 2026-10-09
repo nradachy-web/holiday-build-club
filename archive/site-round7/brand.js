@@ -17,11 +17,11 @@ function notify(message) {
 function visible() {
   const term = $('#search').value.trim().toLowerCase();
   const pool = filter === 'Saved' ? ALL_DESIGNS.filter(d => favorites.has(d.id)) : ACTIVE_DESIGNS;
-  return pool.filter(d => (['All','Saved'].includes(filter) || (filter === 'New' ? d.round === 8 : filter === 'Carryover' ? CARRYOVER_IDS.includes(d.id) : filter === 'Replace' ? !favorites.has(d.id) : filter === 'Fan lab' ? d.fan : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
+  return pool.filter(d => (['All','Saved'].includes(filter) || (filter === 'New' ? d.round === 7 : filter === 'Carryover' ? CARRYOVER_IDS.includes(d.id) : filter === 'Replace' ? !favorites.has(d.id) : filter === 'Fan lab' ? d.fan : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
 }
 function render() {
   const list = visible();
-  $('#products').innerHTML = list.map(d => `<article class="card ${favorites.has(d.id)?'is-keeper':'needs-idea'}"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async"><span class="decision-tag">${favorites.has(d.id)?'♥ Keeper':d.round===8?'New idea':'Carried forward'}</span>${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':d.method||'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(ALL_DESIGNS.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
+  $('#products').innerHTML = list.map(d => `<article class="card ${favorites.has(d.id)?'is-keeper':'needs-idea'}"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async"><span class="decision-tag">${favorites.has(d.id)?'♥ Keeper':d.round===7?'New idea':'Carried forward'}</span>${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':d.method||'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(ALL_DESIGNS.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
   $('#empty-state').hidden = list.length > 0;
   $('#result-count').textContent = `${list.length} ${list.length === 1 ? 'design' : 'designs'}${filter==='Saved'?' to keep':filter==='Replace'?' to replace':''}`;
   updateSaved();
@@ -29,7 +29,6 @@ function render() {
 function updateSaved() {
   const selected = ALL_DESIGNS.filter(d => favorites.has(d.id));
   $('#save-count').textContent = selected.length;
-  $('#copy-picks-link').disabled = selected.length === 0;
   $('#shortlist-items').innerHTML = selected.length ? selected.map(d => `<div class="shortlist-item"><img src="${d.image}" alt="" width="42" height="52"><span>${esc(d.name)}</span><button data-save="${d.id}" aria-label="Remove ${esc(d.name)} from shortlist">×</button></div>`).join('') : '<p>Heart the designs you want to keep.</p>';
   if (current) $('#dialog-save').textContent = favorites.has(current.id) ? 'Keeping this design ♥' : 'Keep this design ♡';
   updateReview();
@@ -125,7 +124,7 @@ function updateReview() {
   $('#replace-total').textContent = choices.replace.length;
   $('#review-summary').textContent = `${choices.keep.length} ${choices.keep.length === 1 ? 'keeper' : 'keepers'}. ${choices.replace.length} still need your heart.`;
   $('#decision-brief').value = PromptReview.brief(reviewDesigns(), favorites, $('#revision-note').value);
-  $('#decision-help').textContent = choices.keep.length ? 'Copy this brief into our chat when your picks are ready. Your keepers stay; the rest become the next design round.' : 'No keepers selected. Copying this brief asks for new ideas for all 101 current designs. Nothing is replaced until you share it.';
+  $('#decision-help').textContent = choices.keep.length ? 'Copy this brief into our chat when your picks are ready. Your keepers stay; the rest become the next design round.' : 'No keepers selected. Copying this brief asks for new ideas for all 86 current designs. Nothing is replaced until you share it.';
 }
 $('#revision-note').addEventListener('input', () => {
   try { localStorage.setItem('prompt-dept-revision-note-v1', $('#revision-note').value); } catch {}
@@ -148,61 +147,3 @@ window.addEventListener('storage', event => {
   if (PromptReview.keys.includes(event.key) || event.key === null) { try { favorites = PromptReview.read(localStorage, favorites); } catch {} render(); }
 });
 window.addEventListener('pageshow', () => { try { favorites = PromptReview.read(localStorage, favorites); } catch {} render(); });
-
-let pendingTransfer = null;
-function showTransfer() {
-  pendingTransfer = PromptReview.readTransfer(location.hash, ALL_DESIGNS);
-  $('#picks-import').hidden = !pendingTransfer;
-  if (!pendingTransfer) return;
-  $('#import-names').replaceChildren();
-  $('#import-picks').disabled = pendingTransfer.invalid || pendingTransfer.ids.length === 0;
-  $('#import-summary').textContent = pendingTransfer.invalid
-    ? 'This transfer link is incomplete or invalid. Ask for a fresh link. Your saved picks are unchanged.'
-    : pendingTransfer.ids.length
-      ? `Add ${pendingTransfer.ids.length} saved ${pendingTransfer.ids.length === 1 ? 'design' : 'designs'} to this device. Your existing hearts stay.${pendingTransfer.unavailable ? ` ${pendingTransfer.unavailable} older designs are no longer in this collection.` : ''}`
-      : 'This link has no designs in the current collection. Your saved picks are unchanged.';
-  for (const id of pendingTransfer.ids) {
-    const row = document.createElement('li');
-    row.textContent = ALL_DESIGNS.find(d => d.id === id).name;
-    $('#import-names').append(row);
-  }
-  $('#picks-import').scrollIntoView({behavior:'instant',block:'start'});
-}
-function dismissTransfer() {
-  pendingTransfer = null;
-  $('#picks-import').hidden = true;
-  const url = new URL(location.href); url.hash = 'collection';
-  history.replaceState(null, '', url);
-}
-$('#import-picks').addEventListener('click', () => {
-  if (!pendingTransfer || pendingTransfer.invalid || !pendingTransfer.ids.length) return;
-  try {
-    const merged = PromptReview.mergeTransfer(localStorage, favorites, pendingTransfer.ids);
-    PromptReview.write(localStorage, merged, HOLIDAY_IDS);
-    favorites = merged;
-  } catch {
-    $('#import-summary').textContent = 'This browser could not save your picks. Keep this link and retry when browser storage is available. Your existing hearts have not been removed.';
-    return;
-  }
-  dismissTransfer();
-  render();
-  $('#show-saved').focus({preventScroll:true});
-  notify('Keepers added to this device. Existing hearts preserved.');
-});
-$('#dismiss-import').addEventListener('click', () => { dismissTransfer(); $('#show-saved').focus({preventScroll:true}); });
-$('#copy-picks-link').addEventListener('click', async () => {
-  const url = new URL('./', location.href);
-  url.hash = PromptReview.transferHash(ALL_DESIGNS, favorites);
-  try {
-    await navigator.clipboard.writeText(url.href);
-    notify('Transfer link copied. Open it on your other device.');
-  } catch {
-    $('#transfer-link-label').hidden = false;
-    $('#transfer-link-output').value = url.href;
-    $('#transfer-link-output').focus();
-    $('#transfer-link-output').select();
-    notify('Select and copy the transfer link below.');
-  }
-});
-window.addEventListener('hashchange', showTransfer);
-showTransfer();
