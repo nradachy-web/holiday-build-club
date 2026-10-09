@@ -1,0 +1,157 @@
+{
+  "tool": "built-in imagegen",
+  "created": "2026-10-09",
+  "reference": "brand/identity/round3/prompt-dept-logo.png",
+  "assets": [
+    {
+      "id": "mental-reply-tee",
+      "file": "capsules/round7/mental-reply-tee.png",
+      "original": "exec-18d3322c-a640-4997-b740-b2552e100e16.png"
+    },
+    {
+      "id": "password-rebuild-tee",
+      "file": "capsules/round7/password-rebuild-tee.png",
+      "original": "exec-41f85747-146d-4092-96c9-21b3930b9eda.png"
+    },
+    {
+      "id": "anytime-tee",
+      "file": "capsules/round7/anytime-tee.png",
+      "original": "exec-2c56dc01-be14-4210-a9a2-c335a813683a.png"
+    },
+    {
+      "id": "unwritten-rules-tee",
+      "file": "capsules/round7/unwritten-rules-tee.png",
+      "original": "exec-d0ee9564-8a27-48cd-8e18-2b997eb11d50.png"
+    },
+    {
+      "id": "call-later-tee",
+      "file": "capsules/round7/call-later-tee.png",
+      "original": "exec-88ac7617-a454-4577-a5a7-23aed1ce55b6.png"
+    },
+    {
+      "id": "stay-there-tee",
+      "file": "capsules/round7/stay-there-tee.png",
+      "original": "exec-49795950-91d2-4fcd-968d-b14e0abfa66d.png"
+    },
+    {
+      "id": "praise-defects-tee",
+      "file": "capsules/round7/praise-defects-tee.png",
+      "original": "exec-2964b1e5-9117-4387-bab1-c8c64d96bf5b.png"
+    },
+    {
+      "id": "tone-audit-tee",
+      "file": "capsules/round7/tone-audit-tee.png",
+      "original": "exec-9e0f518d-192e-4ad9-b297-b3b0923e9fc5.png"
+    },
+    {
+      "id": "small-suggestion-tee",
+      "file": "capsules/round7/small-suggestion-tee.png",
+      "original": "exec-304f3e81-cc21-4e47-99dd-b2c071354a1d.png"
+    },
+    {
+      "id": "witnesses-tee",
+      "file": "capsules/round7/witnesses-tee.png",
+      "original": "exec-82d0e861-9b27-4731-bc2e-a2b5f293b89f.png"
+    },
+    {
+      "id": "where-file-tee",
+      "file": "capsules/round7/where-file-tee.png",
+      "original": "exec-a6a38396-fd0c-4e57-b259-4c127d731449.png"
+    },
+    {
+      "id": "live-here-tee",
+      "file": "capsules/round7/live-here-tee.png",
+      "original": "exec-fc8b94d9-dffb-4a92-b456-568535d9d889.png"
+    },
+    {
+      "id": "scope-house-hoodie",
+      "file": "capsules/round7/scope-house-hoodie.png",
+      "original": "exec-4714f78f-2e31-4c81-9f96-e329742f0c4b.png"
+    },
+    {
+      "id": "documentation-shield-hoodie",
+      "file": "capsules/round7/documentation-shield-hoodie.png",
+      "original": "exec-ed51b0ce-163d-4ae3-9135-5d90d03723b0.png"
+    },
+    {
+      "id": "relaxation-bugs-hoodie",
+      "file": "capsules/round7/relaxation-bugs-hoodie.png",
+      "original": "exec-c6118b87-c55a-4899-beb9-b11e488a3f68.png"
+    },
+    {
+      "id": "personal-use-hoodie",
+      "file": "capsules/round7/personal-use-hoodie.png",
+      "original": "exec-305d58a1-349a-4868-9eb1-72a4c5dc86c2.png"
+    },
+    {
+      "id": "piles-hoodie",
+      "file": "capsules/round7/piles-hoodie.png",
+      "original": "exec-f71f777e-f53b-4ce8-802d-8d61f6bf1694.png"
+    },
+    {
+      "id": "rehearsed-crew",
+      "file": "capsules/round7/rehearsed-crew.png",
+      "original": "exec-95c04236-2fd9-4177-aa0b-bd36794b02ee.png"
+    },
+    {
+      "id": "factual-errors-crew",
+      "file": "capsules/round7/factual-errors-crew.png",
+      "original": "exec-6af989e7-67e2-4647-890a-bc5612bb1abc.png"
+    },
+    {
+      "id": "notes-threat-crew",
+      "file": "capsules/round7/notes-threat-crew.png",
+      "original": "exec-6dea87e9-c908-4a66-a908-a257e5af694a.png"
+    },
+    {
+      "id": "small-talk-cap",
+      "file": "capsules/round7/small-talk-cap.png",
+      "original": "exec-1c9d13f8-a389-4707-aa33-cc25cf47fde9.png"
+    },
+    {
+      "id": "seniority-cap",
+      "file": "capsules/round7/seniority-cap.png",
+      "original": "exec-88bdbd11-62ea-4412-8cdc-682b144c8e5c.png"
+    },
+    {
+      "id": "intense-cap",
+      "file": "capsules/round7/intense-cap.png",
+      "original": "exec-53eda857-70ce-4262-870b-e2ff1c1655f7.png"
+    },
+    {
+      "id": "theory-cap",
+      "file": "capsules/round7/theory-cap.png",
+      "original": "exec-58054ae5-6bc8-4489-954c-5c9dd24aa364.png"
+    },
+    {
+      "id": "gift-face-knit",
+      "file": "capsules/round7/gift-face-knit.png",
+      "original": "exec-5bc838d0-3048-4a76-8b0d-c77f29c841be.png"
+    },
+    {
+      "id": "separate-rooms-knit",
+      "file": "capsules/round7/separate-rooms-knit.png",
+      "original": "exec-888e893e-69c2-4900-8304-ac1d5f67ac9a.png"
+    },
+    {
+      "id": "christmas-guest-knit",
+      "file": "capsules/round7/christmas-guest-knit.png",
+      "original": "exec-b343eade-b29d-40c0-a45a-fe40063bd16d.png"
+    },
+    {
+      "id": "face-separate-mug",
+      "file": "capsules/round7/face-separate-mug.png",
+      "original": "exec-70697219-a698-4da4-b205-a4f3a3b5d233.png"
+    },
+    {
+      "id": "disaster-recovery-mug",
+      "file": "capsules/round7/disaster-recovery-mug.png",
+      "original": "exec-9d885c59-c6da-4bb1-b8c4-54f0428adfb2.png"
+    },
+    {
+      "id": "emotionally-ready-onesie",
+      "file": "capsules/round7/emotionally-ready-onesie.png",
+      "original": "exec-88cdbd6d-69d7-4e60-a089-f32ec51a6398.png"
+    }
+  ]
+}

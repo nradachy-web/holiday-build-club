@@ -114,7 +114,7 @@ test('round 5 review preserves old storage IDs without republishing 24 rejected 
   for(const d of removed)assert.equal(existsSync('site/'+d.image),false,d.id+' removed from public site');
 });
 const round6=vm.createContext({});
-vm.runInContext(readFileSync('site/keepers.js','utf8')+'\n'+readFileSync('site/round6.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.holidays=HOLIDAY_IDS;',round6);
+vm.runInContext(readFileSync('archive/site-round6/keepers.js','utf8')+'\n'+readFileSync('archive/site-round6/round6.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.holidays=HOLIDAY_IDS;',round6);
 test('round 6 preserves all 40 selected records and adds 30 unique new designs',()=>{
   assert.equal(round6.current.length,70);
   assert.equal(new Set(round6.current.map(d=>d.id)).size,70);
@@ -139,10 +139,36 @@ test('round 6 review preserves old storage IDs without republishing 26 rejected 
   assert.equal(removed.length,26);
   for(const d of removed)assert.equal(existsSync('site/'+d.image),false,d.id+' removed from public site');
 });
+const round7=vm.createContext({});
+vm.runInContext(readFileSync('site/keepers.js','utf8')+'\n'+readFileSync('site/round7.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.holidays=HOLIDAY_IDS;',round7);
+test('round 7 preserves all 56 selected records and adds 30 unique new designs',()=>{
+  assert.equal(round7.current.length,86);
+  assert.equal(new Set(round7.current.map(d=>d.id)).size,86);
+  assert.equal(round7.keepers.length,56);
+  assert.equal(round7.current.filter(d=>d.round===7).length,30);
+  for(const keeper of round7.keepers){
+    const previous=round6.current.find(d=>d.id===keeper.id);
+    assert.ok(previous,keeper.id);
+    assert.equal(JSON.stringify(keeper),JSON.stringify(previous),keeper.id+' unchanged');
+  }
+});
+test('round 7 review preserves old storage IDs without republishing 14 rejected designs',()=>{
+  const store=storage();
+  const picks=new Set([...round7.keepers.map(d=>d.id),'deadline-tee','future-design']);
+  api.write(store,picks,round7.holidays);
+  const loaded=api.read(store),decisions=api.decisions(round7.current,loaded);
+  assert.equal(loaded.size,58);assert.equal(decisions.keep.length,56);assert.equal(decisions.replace.length,30);
+  const brief=api.brief(round7.current,loaded,'Specific situations and original visual jokes.');
+  assert.ok(brief.includes('KEEP (56)')&&brief.includes('REPLACE (30)'));
+  assert.ok(!brief.includes('[deadline-tee]'));
+  const removed=round6.current.filter(d=>!round7.current.some(n=>n.id===d.id));
+  assert.equal(removed.length,14);
+  for(const d of removed)assert.equal(existsSync('site/'+d.image),false,d.id+' removed from public site');
+});
 test('every current image exists and historical catalogs are not published',()=>{
-  for(const d of round6.current)assert.ok(existsSync('site/'+d.image),d.image);
-  for(const f of ['catalog.js','collection.js','round3.js','round4.js','round5.js','app.js'])assert.equal(existsSync('site/'+f),false,f);
+  for(const d of round7.current)assert.ok(existsSync('site/'+d.image),d.image);
+  for(const f of ['catalog.js','collection.js','round3.js','round4.js','round5.js','round6.js','app.js'])assert.equal(existsSync('site/'+f),false,f);
   const page=readFileSync('site/index.html','utf8');
-  assert.ok(page.includes('keepers.js?v=6')&&page.includes('round6.js?v=6'));
+  assert.ok(page.includes('keepers.js?v=7')&&page.includes('round7.js?v=7'));
   assert.ok(!page.includes('data-filter="Archive"'));
 });
