@@ -17,11 +17,11 @@ function notify(message) {
 function visible() {
   const term = $('#search').value.trim().toLowerCase();
   const pool = filter === 'Saved' ? ALL_DESIGNS.filter(d => favorites.has(d.id)) : ACTIVE_DESIGNS;
-  return pool.filter(d => (['All','Saved'].includes(filter) || (filter === 'New' ? d.round === 5 : filter === 'Carryover' ? CARRYOVER_IDS.includes(d.id) : filter === 'Replace' ? !favorites.has(d.id) : filter === 'Fan lab' ? d.fan : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
+  return pool.filter(d => (['All','Saved'].includes(filter) || (filter === 'New' ? d.round === 6 : filter === 'Carryover' ? CARRYOVER_IDS.includes(d.id) : filter === 'Replace' ? !favorites.has(d.id) : filter === 'Fan lab' ? d.fan : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
 }
 function render() {
   const list = visible();
-  $('#products').innerHTML = list.map(d => `<article class="card ${favorites.has(d.id)?'is-keeper':'needs-idea'}"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async"><span class="decision-tag">${favorites.has(d.id)?'♥ Keeper':d.round===5?'New idea':'Carried forward'}</span>${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':d.method||'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(ALL_DESIGNS.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
+  $('#products').innerHTML = list.map(d => `<article class="card ${favorites.has(d.id)?'is-keeper':'needs-idea'}"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async"><span class="decision-tag">${favorites.has(d.id)?'♥ Keeper':d.round===6?'New idea':'Carried forward'}</span>${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':d.method||'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(ALL_DESIGNS.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
   $('#empty-state').hidden = list.length > 0;
   $('#result-count').textContent = `${list.length} ${list.length === 1 ? 'design' : 'designs'}${filter==='Saved'?' to keep':filter==='Replace'?' to replace':''}`;
   updateSaved();
@@ -124,7 +124,7 @@ function updateReview() {
   $('#replace-total').textContent = choices.replace.length;
   $('#review-summary').textContent = `${choices.keep.length} ${choices.keep.length === 1 ? 'keeper' : 'keepers'}. ${choices.replace.length} still need your heart.`;
   $('#decision-brief').value = PromptReview.brief(reviewDesigns(), favorites, $('#revision-note').value);
-  $('#decision-help').textContent = choices.keep.length ? 'Copy this brief into our chat when your picks are ready. Your keepers stay; the rest become the next design round.' : 'No keepers selected. Copying this brief asks for new ideas for all 66 current designs. Nothing is replaced until you share it.';
+  $('#decision-help').textContent = choices.keep.length ? 'Copy this brief into our chat when your picks are ready. Your keepers stay; the rest become the next design round.' : 'No keepers selected. Copying this brief asks for new ideas for all 70 current designs. Nothing is replaced until you share it.';
 }
 $('#revision-note').addEventListener('input', () => {
   try { localStorage.setItem('prompt-dept-revision-note-v1', $('#revision-note').value); } catch {}

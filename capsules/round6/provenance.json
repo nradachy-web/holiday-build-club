@@ -1,0 +1,159 @@
+{
+  "tool": "built-in imagegen",
+  "created": "2026-10-09",
+  "reference": "brand/identity/round3/prompt-dept-logo.png",
+  "assets": [
+    {
+      "id": "laundry-app-tee",
+      "file": "capsules/round6/laundry-app-tee.png",
+      "original": "exec-86d84356-cf2c-4668-a72e-fdda06d25129.png"
+    },
+    {
+      "id": "deadline-tee",
+      "file": "capsules/round6/deadline-tee.png",
+      "original": "exec-152331ba-fc9b-42d6-b2fb-4285482343db.png"
+    },
+    {
+      "id": "hyperfixation-bill-tee",
+      "file": "capsules/round6/hyperfixation-bill-tee.png",
+      "original": "exec-6e85e719-13da-4860-ad8b-6a8bac6bde02.png"
+    },
+    {
+      "id": "own-rules-tee",
+      "file": "capsules/round6/own-rules-tee.png",
+      "original": "exec-ad4efcd5-5ef1-42a6-a511-2f19f7244d62.png"
+    },
+    {
+      "id": "perceive-repo-tee",
+      "file": "capsules/round6/perceive-repo-tee.png",
+      "original": "exec-a93936db-879d-4e98-8b3d-d1f6fc74798c.png"
+    },
+    {
+      "id": "timer-login-tee",
+      "file": "capsules/round6/timer-login-tee.png",
+      "original": "exec-c50e8302-c68a-488f-b93c-2a8d70a0daea.png"
+    },
+    {
+      "id": "startup-avoidance-tee",
+      "file": "capsules/round6/startup-avoidance-tee.png",
+      "original": "exec-824f406c-0c31-419d-b18e-395ea1ed26a2.png"
+    },
+    {
+      "id": "domain-instead-tee",
+      "file": "capsules/round6/domain-instead-tee.png",
+      "original": "exec-559bdba9-7e8c-4a38-a3c2-37a7803e88aa.png"
+    },
+    {
+      "id": "not-started-tee",
+      "file": "capsules/round6/not-started-tee.png",
+      "original": "exec-48a39303-a137-45e0-81fa-755954d5d182.png"
+    },
+    {
+      "id": "dashboard-tee",
+      "file": "capsules/round6/dashboard-tee.png",
+      "original": "exec-36a1da20-f2b8-4365-9ae4-df3121fa68c4.png"
+    },
+    {
+      "id": "change-bored-hoodie",
+      "file": "capsules/round6/change-bored-hoodie.png",
+      "original": "exec-47da8e2e-b3ac-49a1-b57d-2da3cb9619df.png"
+    },
+    {
+      "id": "please-no-call-hoodie",
+      "file": "capsules/round6/please-no-call-hoodie.png",
+      "original": "exec-d185e6c6-b760-41c0-a156-5ddc82f2281f.png"
+    },
+    {
+      "id": "cold-case-hoodie",
+      "file": "capsules/round6/cold-case-hoodie.png",
+      "original": "exec-f6ec1e4f-dd0b-46df-9288-d4027174419b.png"
+    },
+    {
+      "id": "sacred-routine-hoodie",
+      "file": "capsules/round6/sacred-routine-hoodie.png",
+      "original": "exec-ac519858-8fe8-45eb-96fd-50855be9a5ab.png"
+    },
+    {
+      "id": "body-double-hoodie",
+      "file": "capsules/round6/body-double-hoodie.png",
+      "original": "exec-bf96ee22-f79e-478a-a78b-80d13d91d3a6.png"
+    },
+    {
+      "id": "reminder-tone-crew",
+      "file": "capsules/round6/reminder-tone-crew.png",
+      "original": "exec-2ed30e7c-4b62-462a-8e71-f1a3841ed298.png"
+    },
+    {
+      "id": "soundtrack-crew",
+      "file": "capsules/round6/soundtrack-crew.png",
+      "original": "exec-2b63c139-d81f-402c-8905-0f5a017e9a1a.png"
+    },
+    {
+      "id": "insubordinate-cap",
+      "file": "capsules/round6/insubordinate-cap.png",
+      "original": "exec-3bd4f599-a885-4af3-853b-c4fe72dbaa25.png"
+    },
+    {
+      "id": "group-chats-cap",
+      "file": "capsules/round6/group-chats-cap.png",
+      "original": "exec-9ec6289b-064d-47e1-a6b4-60c1848e7eeb.png"
+    },
+    {
+      "id": "wrong-task-cap",
+      "file": "capsules/round6/wrong-task-cap.png",
+      "original": "exec-0ee10f52-e829-4d52-bb48-13ebfbf77f00.png"
+    },
+    {
+      "id": "specific-cap",
+      "file": "capsules/round6/specific-cap.png",
+      "original": "exec-18d65636-225d-4094-8462-772c7b38dbf7.png"
+    },
+    {
+      "id": "silent-finally-knit",
+      "file": "capsules/round6/silent-finally-knit.png",
+      "original": "exec-b0b6cccb-d14d-4586-a7c1-3e1409b43719.png"
+    },
+    {
+      "id": "gift-cart-knit",
+      "file": "capsules/round6/gift-cart-knit.png",
+      "original": "exec-26b043fb-87df-4e55-87ef-a1e93cc32fdd.png"
+    },
+    {
+      "id": "short-version-knit",
+      "file": "capsules/round6/short-version-knit.png",
+      "original": "exec-a00c5711-066f-4e36-9547-ce3bb024514e.png"
+    },
+    {
+      "id": "cancel-holidays-knit",
+      "file": "capsules/round6/cancel-holidays-knit.png",
+      "original": "exec-bd8d6705-88af-475d-9828-aa6c74504d75.png"
+    },
+    {
+      "id": "detour-deskmat",
+      "file": "capsules/round6/detour-deskmat.png",
+      "original": "exec-635804e3-87bc-4bc1-8a00-2192bf0d7250.png"
+    },
+    {
+      "id": "opened-tab-deskmat",
+      "file": "capsules/round6/opened-tab-deskmat.png",
+      "original": "exec-4ff88376-9cc1-4e09-a34a-70fcd2a7e9fa.png"
+    },
+    {
+      "id": "tech-stack-tote",
+      "file": "capsules/round6/tech-stack-tote.png",
+      "original": "exec-0bb0de94-cfd7-4479-9ca9-47e9268eb5be.png"
+    },
+    {
+      "id": "inconvenience-mug",
+      "file": "capsules/round6/inconvenience-mug.png",
+      "original": "exec-e6a7ae51-e05d-4da7-ae88-944477419482.png"
+    },
+    {
+      "id": "cancelled-onesie",
+      "file": "capsules/round6/cancelled-onesie.png",
+      "original": "exec-9d59564b-7cfb-4987-9cd8-1f9e51560f62.png",
+      "initial_generation": "exec-167c329c-64ea-438f-81b3-c8123ed68e57.png",
+      "corrected": true
+    }
+  ]
+}
