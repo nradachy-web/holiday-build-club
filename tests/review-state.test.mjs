@@ -63,7 +63,7 @@ test('round 3 preserves old favorite IDs while retiring unselected concepts',()=
 });
 
 const round4=vm.createContext({});
-vm.runInContext(readFileSync('site/keepers.js','utf8')+'\n'+readFileSync('site/round4.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.holidays=HOLIDAY_IDS;',round4);
+vm.runInContext(readFileSync('archive/site-round4/keepers.js','utf8')+'\n'+readFileSync('archive/site-round4/round4.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.holidays=HOLIDAY_IDS;',round4);
 test('round 4 preserves exactly 30 keeper objects and introduces 30 unique designs',()=>{
   assert.equal(round4.current.length,60);
   assert.equal(new Set(round4.current.map(d=>d.id)).size,60);
@@ -87,10 +87,36 @@ test('retired designs cannot reappear in gallery or brief while their storage ID
   assert.equal(removed.length,38);
   for(const d of removed)assert.equal(existsSync('site/'+d.image),false,d.id+' is not published');
 });
-test('every current design image is present and old catalog scripts are not published',()=>{
-  for(const d of round4.current)assert.ok(existsSync('site/'+d.image),d.image);
-  for(const f of ['catalog.js','collection.js','round3.js','app.js'])assert.equal(existsSync('site/'+f),false,f);
+const round5=vm.createContext({});
+vm.runInContext(readFileSync('site/keepers.js','utf8')+'\n'+readFileSync('site/round5.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.holidays=HOLIDAY_IDS;',round5);
+test('round 5 preserves all 36 selected records and adds 30 unique new designs',()=>{
+  assert.equal(round5.current.length,66);
+  assert.equal(new Set(round5.current.map(d=>d.id)).size,66);
+  assert.equal(round5.keepers.length,36);
+  assert.equal(round5.current.filter(d=>d.round===5).length,30);
+  for(const keeper of round5.keepers){
+    const previous=round4.current.find(d=>d.id===keeper.id);
+    assert.ok(previous,keeper.id);
+    assert.equal(JSON.stringify(keeper),JSON.stringify(previous),keeper.id+' unchanged');
+  }
+});
+test('round 5 review preserves old storage IDs without republishing 24 rejected designs',()=>{
+  const store=storage();
+  const picks=new Set([...round5.keepers.map(d=>d.id),'explaining-fire-tee','future-design']);
+  api.write(store,picks,round5.holidays);
+  const loaded=api.read(store),decisions=api.decisions(round5.current,loaded);
+  assert.equal(loaded.size,38);assert.equal(decisions.keep.length,36);assert.equal(decisions.replace.length,30);
+  const brief=api.brief(round5.current,loaded,'They need to be funny.');
+  assert.ok(brief.includes('KEEP (36)')&&brief.includes('REPLACE (30)'));
+  assert.ok(!brief.includes('[explaining-fire-tee]'));
+  const removed=round4.current.filter(d=>!round5.current.some(n=>n.id===d.id));
+  assert.equal(removed.length,24);
+  for(const d of removed)assert.equal(existsSync('site/'+d.image),false,d.id+' removed from public site');
+});
+test('every current image exists and historical catalogs are not published',()=>{
+  for(const d of round5.current)assert.ok(existsSync('site/'+d.image),d.image);
+  for(const f of ['catalog.js','collection.js','round3.js','round4.js','app.js'])assert.equal(existsSync('site/'+f),false,f);
   const page=readFileSync('site/index.html','utf8');
-  assert.ok(page.includes('keepers.js?v=4')&&page.includes('round4.js?v=4'));
+  assert.ok(page.includes('keepers.js?v=5')&&page.includes('round5.js?v=5'));
   assert.ok(!page.includes('data-filter="Archive"'));
 });

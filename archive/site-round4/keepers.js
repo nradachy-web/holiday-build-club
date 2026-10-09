@@ -1,95 +1,5 @@
-/* Exact keeper records carried into Round 05. */
+/* Exact designs selected before Round 04. Preserve their IDs and artwork. */
 const KEEPERS = [
-  {
-    "id": "plan-b-tee",
-    "name": "Plan B Is Also Thinking Tee",
-    "type": "Oversized tee",
-    "category": "Tees",
-    "phrase": "PLAN B / IS ALSO THINKING.",
-    "description": "You opened a second agent. Now two agents are thinking. Twin robot oracles consider doing something.",
-    "alt": "Plan B Is Also Thinking Tee concept featuring PLAN B and IS ALSO THINKING.",
-    "capsule": "Human supervision / Round 04",
-    "image": "assets/round4/plan-b-tee.webp",
-    "fan": false,
-    "round": 4,
-    "method": "Front print",
-    "tags": "PLAN B / IS ALSO THINKING. You opened a second agent. Now two agents are thinking. Twin robot oracles consider doing something."
-  },
-  {
-    "id": "senior-repeater-tee",
-    "name": "Senior Prompt Repeater Tee",
-    "type": "Oversized tee",
-    "category": "Tees",
-    "phrase": "SENIOR PROMPT REPEATER",
-    "description": "Years of experience saying the same thing slightly differently. The tired cursor earns its department badge.",
-    "alt": "Senior Prompt Repeater Tee concept featuring SENIOR PROMPT REPEATER",
-    "capsule": "Human supervision / Round 04",
-    "image": "assets/round4/senior-repeater-tee.webp",
-    "fan": false,
-    "round": 4,
-    "method": "Front print",
-    "tags": "SENIOR PROMPT REPEATER Years of experience saying the same thing slightly differently. The tired cursor earns its department badge."
-  },
-  {
-    "id": "new-confidence-hoodie",
-    "name": "Same Bug New Confidence Hoodie",
-    "type": "Hoodie",
-    "category": "Sweats",
-    "phrase": "SAME BUG. / NEW CONFIDENCE.",
-    "description": "The bug is unchanged. Its self-esteem has improved. A fresh checkmark medal meets an unconvinced cursor.",
-    "alt": "Same Bug New Confidence Hoodie concept featuring SAME BUG. and NEW CONFIDENCE.",
-    "capsule": "Human supervision / Round 04",
-    "image": "assets/round4/new-confidence-hoodie.webp",
-    "fan": false,
-    "round": 4,
-    "method": "Back print",
-    "tags": "SAME BUG. / NEW CONFIDENCE. The bug is unchanged. Its self-esteem has improved. A fresh checkmark medal meets an unconvinced cursor."
-  },
-  {
-    "id": "looks-right-cap",
-    "name": "Looks Right to Me Cap",
-    "type": "Cap",
-    "category": "Hats",
-    "phrase": "LOOKS RIGHT TO ME",
-    "description": "The eyes are half closed. The checkmark is crooked. Somehow the review is complete.",
-    "alt": "Looks Right to Me Cap concept featuring LOOKS RIGHT TO ME",
-    "capsule": "Human supervision / Round 04",
-    "image": "assets/round4/looks-right-cap.webp",
-    "fan": false,
-    "round": 4,
-    "method": "Embroidery",
-    "tags": "LOOKS RIGHT TO ME The eyes are half closed. The checkmark is crooked. Somehow the review is complete."
-  },
-  {
-    "id": "twelve-retries-knit",
-    "name": "Twelve Days of Retrying Knit",
-    "type": "Holiday knit",
-    "category": "Holiday",
-    "phrase": "12 DAYS / OF RETRYING",
-    "description": "The same gift keeps coming around. A four-color holiday knit direction with a circular Santa delivery system.",
-    "alt": "Twelve Days of Retrying Knit concept featuring 12 DAYS and OF RETRYING",
-    "capsule": "Human supervision / Round 04",
-    "image": "assets/round4/twelve-retries-knit.webp",
-    "fan": false,
-    "round": 4,
-    "method": "Four-color jacquard",
-    "tags": "12 DAYS / OF RETRYING The same gift keeps coming around. A four-color holiday knit direction with a circular Santa delivery system."
-  },
-  {
-    "id": "green-build-knit",
-    "name": "All I Want Is a Green Build Knit",
-    "type": "Holiday knit",
-    "category": "Holiday",
-    "phrase": "ALL I WANT IS / A GREEN BUILD",
-    "description": "A tree full of red progress bars and one hopeful green star. An entirely reasonable Christmas wish.",
-    "alt": "All I Want Is a Green Build Knit concept featuring ALL I WANT IS and A GREEN BUILD",
-    "capsule": "Human supervision / Round 04",
-    "image": "assets/round4/green-build-knit.webp",
-    "fan": false,
-    "round": 4,
-    "method": "Four-color jacquard",
-    "tags": "ALL I WANT IS / A GREEN BUILD A tree full of red progress bars and one hopeful green star. An entirely reasonable Christmas wish."
-  },
   {
     "id": "yes-and-cap",
     "name": "You're Right Cap",
@@ -600,5 +510,5 @@ const KEEPERS = [
     "retired": false
   }
 ];
-const CARRYOVER_IDS = KEEPERS.map(d=>d.id);
+const CARRYOVER_IDS = KEEPERS.map(d => d.id);
 const HOLIDAY_IDS = ["claude-claus","codex-midnight","silent-deploy","claude-tokens","codex-naughty","vibe-snow","claude-alpine","codex-argyle","santa-debug","pair-programming"];

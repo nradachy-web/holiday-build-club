@@ -1,0 +1,157 @@
+{
+  "tool": "built-in imagegen",
+  "created": "2026-10-09",
+  "reference": "brand/identity/round3/prompt-dept-logo.png",
+  "assets": [
+    {
+      "id": "screenshot-tee",
+      "original": "exec-2d82219d-117a-43ed-9aef-b1df7246a815.png",
+      "file": "capsules/round5/screenshot-tee.png"
+    },
+    {
+      "id": "undo-undo-tee",
+      "original": "exec-a7c02f8d-8f10-4958-9cab-dd2f8ff3c60a.png",
+      "file": "capsules/round5/undo-undo-tee.png"
+    },
+    {
+      "id": "ceo-yes-crew",
+      "original": "exec-3c128e41-b202-49ac-bb91-47f96e35aff4.png",
+      "file": "capsules/round5/ceo-yes-crew.png"
+    },
+    {
+      "id": "cause-code-tee",
+      "original": "exec-7b399d3b-2860-43b3-a906-57b853ab39d0.png",
+      "file": "capsules/round5/cause-code-tee.png"
+    },
+    {
+      "id": "monthly-skill-tee",
+      "original": "exec-2b76c128-8a07-4115-b081-31378db98c0e.png",
+      "file": "capsules/round5/monthly-skill-tee.png"
+    },
+    {
+      "id": "self-taught-tee",
+      "original": "exec-7e20e3a1-2a88-47a1-92cf-79a80c07fd14.png",
+      "file": "capsules/round5/self-taught-tee.png"
+    },
+    {
+      "id": "original-bug-tee",
+      "original": "exec-53c824fd-cff2-40f3-baf0-4556856cd1fa.png",
+      "file": "capsules/round5/original-bug-tee.png"
+    },
+    {
+      "id": "deteriorating-tee",
+      "original": "exec-8af67faf-54ab-411c-b3e9-ef81f3ffb850.png",
+      "file": "capsules/round5/deteriorating-tee.png"
+    },
+    {
+      "id": "other-liar-tee",
+      "original": "exec-950f8205-15bd-4ff7-ba9f-132dc6a2339b.png",
+      "file": "capsules/round5/other-liar-tee.png"
+    },
+    {
+      "id": "side-projects-hoodie",
+      "original": "exec-4b5bd0e2-aca7-4c93-9c51-c49703109675.png",
+      "file": "capsules/round5/side-projects-hoodie.png"
+    },
+    {
+      "id": "spinner-cofounder-hoodie",
+      "original": "exec-453c9132-d5a6-44f4-9acb-220c29d92eca.png",
+      "file": "capsules/round5/spinner-cofounder-hoodie.png"
+    },
+    {
+      "id": "bug-renewal-hoodie",
+      "original": "exec-299c4041-744d-4910-8cdb-a668e66c511d.png",
+      "file": "capsules/round5/bug-renewal-hoodie.png"
+    },
+    {
+      "id": "wait-faster-hoodie",
+      "original": "exec-9088253f-3f0f-4fe4-b513-87e9134d62ba.png",
+      "file": "capsules/round5/wait-faster-hoodie.png"
+    },
+    {
+      "id": "bar-lowered-crew",
+      "original": "exec-cfcadcf2-2dc8-4307-b890-f01729b4b8f4.png",
+      "file": "capsules/round5/bar-lowered-crew.png"
+    },
+    {
+      "id": "read-none-cap",
+      "original": "exec-d424a989-ab1c-4f14-9b9b-d22eb959c12a.png",
+      "file": "capsules/round5/read-none-cap.png"
+    },
+    {
+      "id": "green-part-cap",
+      "original": "exec-774b4fa3-671d-4005-b9d2-16801a91b04b.png",
+      "file": "capsules/round5/green-part-cap.png"
+    },
+    {
+      "id": "trust-me-cap",
+      "original": "exec-857bb326-6222-4d11-bbd1-567a550a2802.png",
+      "file": "capsules/round5/trust-me-cap.png"
+    },
+    {
+      "id": "yes-all-cap",
+      "original": "exec-4226105e-326d-492c-b121-c4ab512556a9.png",
+      "file": "capsules/round5/yes-all-cap.png"
+    },
+    {
+      "id": "nice-summary-knit",
+      "original": "exec-0d4ada20-8ce6-4310-a7bd-1150aa3b9de3.png",
+      "file": "capsules/round5/nice-summary-knit.png"
+    },
+    {
+      "id": "wrong-chat-knit",
+      "original": "exec-1d7b3ff9-ec12-484c-8147-3adb910f4266.png",
+      "file": "capsules/round5/wrong-chat-knit.png"
+    },
+    {
+      "id": "wish-limit-knit",
+      "original": "exec-cd085673-fc0d-43ad-b38f-a5030cebf74f.png",
+      "file": "capsules/round5/wish-limit-knit.png"
+    },
+    {
+      "id": "ctrl-z-knit",
+      "original": "exec-785fbffe-6962-479b-a161-2f1df441e3b1.png",
+      "file": "capsules/round5/ctrl-z-knit.png"
+    },
+    {
+      "id": "skipped-tests-knit",
+      "original": "exec-ea1e4625-0f7e-471f-b105-06b96b3100e9.png",
+      "file": "capsules/round5/skipped-tests-knit.png"
+    },
+    {
+      "id": "eggnog-knit",
+      "original": "exec-97cc21af-1103-4b36-ba0f-606ab79d37af.png",
+      "file": "capsules/round5/eggnog-knit.png"
+    },
+    {
+      "id": "how-works-deskmat",
+      "original": "exec-e55d5ed6-6542-48c2-9985-0e03e85f5fe0.png",
+      "file": "capsules/round5/how-works-deskmat.png"
+    },
+    {
+      "id": "all-caps-deskmat",
+      "original": "exec-8bdf68be-5422-42c9-80fd-e99ad9a7c906.png",
+      "file": "capsules/round5/all-caps-deskmat.png"
+    },
+    {
+      "id": "human-error-socks",
+      "original": "exec-a181926b-20fa-4572-a1d0-3456cdeeefd0.png",
+      "file": "capsules/round5/human-error-socks.png"
+    },
+    {
+      "id": "genius-mug",
+      "original": "exec-5adee711-bd86-4ff5-877c-6731b246562a.png",
+      "file": "capsules/round5/genius-mug.png"
+    },
+    {
+      "id": "dependencies-tote",
+      "original": "exec-24a7b105-e023-47b0-a132-e1b1e05ead86.png",
+      "file": "capsules/round5/dependencies-tote.png"
+    },
+    {
+      "id": "normal-onesie",
+      "original": "exec-f7723d91-6c6f-42e5-9f28-52b0f306ed2e.png",
+      "file": "capsules/round5/normal-onesie.png"
+    }
+  ]
+}

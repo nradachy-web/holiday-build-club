@@ -29,3 +29,4 @@
 .logo-feature img{height:auto}
 
 .retired-notice{border:1px solid var(--rust);padding:14px 18px;font-size:13px;background:#f8eddf}.retired-notice[hidden]{display:none}
+@media(max-width:640px){#collection-heading{font-size:clamp(36px,11.3vw,64px)}}
