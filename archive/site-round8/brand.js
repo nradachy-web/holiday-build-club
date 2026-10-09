@@ -17,11 +17,11 @@ function notify(message) {
 function visible() {
   const term = $('#search').value.trim().toLowerCase();
   const pool = filter === 'Saved' ? ALL_DESIGNS.filter(d => favorites.has(d.id)) : ACTIVE_DESIGNS;
-  return pool.filter(d => (['All','Saved'].includes(filter) || (filter === 'New' ? d.round === 9 : filter === 'Carryover' ? CARRYOVER_IDS.includes(d.id) : filter === 'Replace' ? !CARRYOVER_IDS.includes(d.id) && !favorites.has(d.id) : filter === 'Fan lab' ? d.fan : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
+  return pool.filter(d => (['All','Saved'].includes(filter) || (filter === 'New' ? d.round === 8 : filter === 'Carryover' ? CARRYOVER_IDS.includes(d.id) : filter === 'Replace' ? !favorites.has(d.id) : filter === 'Fan lab' ? d.fan : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
 }
 function render() {
   const list = visible();
-  $('#products').innerHTML = list.map(d => `<article class="card ${favorites.has(d.id)?'is-keeper':CARRYOVER_IDS.includes(d.id)?'is-approved':'needs-idea'}"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async"><span class="decision-tag">${CARRYOVER_IDS.includes(d.id)?'Previously approved':favorites.has(d.id)?'♥ Picked this round':'New idea'}</span>${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':d.method||'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(ALL_DESIGNS.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
+  $('#products').innerHTML = list.map(d => `<article class="card ${favorites.has(d.id)?'is-keeper':'needs-idea'}"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async"><span class="decision-tag">${favorites.has(d.id)?'♥ Keeper':d.round===8?'New idea':'Carried forward'}</span>${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':d.method||'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(ALL_DESIGNS.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
   $('#empty-state').hidden = list.length > 0;
   $('#result-count').textContent = `${list.length} ${list.length === 1 ? 'design' : 'designs'}${filter==='Saved'?' to keep':filter==='Replace'?' to replace':''}`;
   updateSaved();
@@ -31,7 +31,7 @@ function updateSaved() {
   $('#save-count').textContent = selected.length;
   $('#copy-picks-link').disabled = selected.length === 0;
   $('#shortlist-items').innerHTML = selected.length ? selected.map(d => `<div class="shortlist-item"><img src="${d.image}" alt="" width="42" height="52"><span>${esc(d.name)}</span><button data-save="${d.id}" aria-label="Remove ${esc(d.name)} from shortlist">×</button></div>`).join('') : '<p>Heart the designs you want to keep.</p>';
-  if (current) $('#dialog-save').textContent = favorites.has(current.id) ? 'Saved on this device ♥' : 'Save on this device ♡';
+  if (current) $('#dialog-save').textContent = favorites.has(current.id) ? 'Keeping this design ♥' : 'Keep this design ♡';
   updateReview();
   updateMail();
 }
@@ -52,7 +52,7 @@ function toggleSaved(id) {
   try { PromptReview.write(localStorage, favorites, HOLIDAY_IDS); } catch { persisted = false; }
   render();
   if (focusId) (document.querySelector(`[data-save="${focusId}"]`) || document.querySelector('.decision-filters button[aria-pressed="true"]') || $('#search')).focus({preventScroll:true});
-  notify(!persisted ? 'Choice kept for this visit only. Copy your design brief before leaving.' : had ? 'Removed from saved picks on this device' : 'Saved on this device');
+  notify(!persisted ? 'Choice kept for this visit only. Copy your design brief before leaving.' : had ? 'Not kept for the next round' : 'Keeper saved on this device');
 }
 function setFilter(value) {
   filter = value;
@@ -120,12 +120,12 @@ if (requestedCategory && ['All','New','Carryover','Saved','Sweats','Tees','Hats'
 
 function reviewDesigns() { return ALL_DESIGNS; }
 function updateReview() {
-  const choices = PromptReview.decisions(reviewDesigns(), favorites, CARRYOVER_IDS);
-  $('#keep-total').textContent = ALL_DESIGNS.filter(d => favorites.has(d.id)).length;
+  const choices = PromptReview.decisions(reviewDesigns(), favorites);
+  $('#keep-total').textContent = choices.keep.length;
   $('#replace-total').textContent = choices.replace.length;
-  $('#review-summary').textContent = `${choices.approved.length} approved earlier. ${choices.keep.length} new ${choices.keep.length === 1 ? 'pick' : 'picks'} on this device. ${choices.replace.length} new ${choices.replace.length === 1 ? 'idea' : 'ideas'} still to review.`;
-  $('#decision-brief').value = PromptReview.brief(reviewDesigns(), favorites, $('#revision-note').value, CARRYOVER_IDS);
-  $('#decision-help').textContent = choices.keep.length ? "Copy this brief when this round's picks are ready. Earlier approvals stay. Only unselected new designs are listed for replacement." : "No new picks saved on this device. The brief preserves earlier approvals and lists only this round's new designs for replacement. If you reviewed on another device, import those picks first.";
+  $('#review-summary').textContent = `${choices.keep.length} ${choices.keep.length === 1 ? 'keeper' : 'keepers'}. ${choices.replace.length} still need your heart.`;
+  $('#decision-brief').value = PromptReview.brief(reviewDesigns(), favorites, $('#revision-note').value);
+  $('#decision-help').textContent = choices.keep.length ? 'Copy this brief into our chat when your picks are ready. Your keepers stay; the rest become the next design round.' : 'No keepers selected. Copying this brief asks for new ideas for all 101 current designs. Nothing is replaced until you share it.';
 }
 $('#revision-note').addEventListener('input', () => {
   try { localStorage.setItem('prompt-dept-revision-note-v1', $('#revision-note').value); } catch {}
@@ -138,8 +138,8 @@ $('#copy-decisions').addEventListener('click', async () => {
   catch { $('#brief-details').open = true; $('#decision-brief').focus(); $('#decision-brief').select(); notify('Select and copy the brief below.'); }
 });
 $('#download-decisions').addEventListener('click', () => {
-  const choices = PromptReview.decisions(reviewDesigns(), favorites, CARRYOVER_IDS);
-  const data = {brand:'Prompt Dept.',schemaVersion:2,createdAt:new Date().toISOString(),catalogIds:reviewDesigns().map(d=>d.id),previouslyApproved:choices.approved.map(d=>({id:d.id,name:d.name})),keep:choices.keep.map(d=>({id:d.id,name:d.name})),replace:choices.replace.map(d=>({id:d.id,name:d.name})),direction:$('#revision-note').value,adultOnesiesOnly:true};
+  const choices = PromptReview.decisions(reviewDesigns(), favorites);
+  const data = {brand:'Prompt Dept.',schemaVersion:1,createdAt:new Date().toISOString(),catalogIds:reviewDesigns().map(d=>d.id),keep:choices.keep.map(d=>({id:d.id,name:d.name})),replace:choices.replace.map(d=>({id:d.id,name:d.name})),direction:$('#revision-note').value,adultOnesiesOnly:true};
   const url = URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
   const link = document.createElement('a'); link.href=url; link.download='prompt-dept-design-decisions.json'; link.click();
   setTimeout(()=>URL.revokeObjectURL(url),1000);

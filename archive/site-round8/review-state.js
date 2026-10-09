@@ -18,20 +18,14 @@
     storage.setItem(keys[0], JSON.stringify(values.filter(id => !archive.has(id))));
     storage.setItem(keys[1], JSON.stringify(values.filter(id => archive.has(id))));
   }
-  function decisions(designs, ids, carryoverIds = []) {
-    const approvedIds = new Set(carryoverIds);
-    const approved = designs.filter(d => approvedIds.has(d.id));
-    const reviewing = designs.filter(d => !approvedIds.has(d.id));
-    return { approved, keep: reviewing.filter(d => ids.has(d.id)), replace: reviewing.filter(d => !ids.has(d.id)) };
+  function decisions(designs, ids) {
+    return { keep: designs.filter(d => ids.has(d.id)), replace: designs.filter(d => !ids.has(d.id)) };
   }
-  function brief(designs, ids, note = '', carryoverIds) {
-    const {approved, keep, replace} = decisions(designs, ids, carryoverIds);
+  function brief(designs, ids, note = '') {
+    const {keep, replace} = decisions(designs, ids);
     const rows = list => list.map(d => `- [${d.id}] ${d.name} | ${d.phrase || ''}`).join('\n');
     return ['PROMPT DEPT. / DESIGN DECISIONS',
-      ...(carryoverIds === undefined
-        ? ['Keep the saved designs exactly as they are. Develop stronger replacements for the unsaved designs. Preserve adult-only onesies.']
-        : [`Preserve all ${approved.length} previously approved designs listed below. KEEP and REPLACE apply only to this round's new designs. Missing hearts on this device do not revoke earlier approvals. Preserve adult-only onesies.`,
-          `PREVIOUSLY APPROVED (${approved.length})`, rows(approved) || '(No earlier approvals)']),
+      'Keep the saved designs exactly as they are. Develop stronger replacements for the unsaved designs. Preserve adult-only onesies.',
       `KEEP (${keep.length})`, rows(keep) || '(None selected)',
       `REPLACE (${replace.length})`, rows(replace) || '(No replacements requested)',
       ...(note.trim() ? ['DIRECTION', note.trim()] : []),

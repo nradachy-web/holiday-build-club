@@ -7,7 +7,18 @@ const context = vm.createContext({});
 vm.runInContext(readFileSync(new URL('../site/review-state.js', import.meta.url), 'utf8'), context);
 const api = context.PromptReview;
 
-// Public Round07 IDs reproduce the incident without private backup files or a moving catalog.
+function loadCatalog(directory, filename) {
+  const catalogContext = vm.createContext({});
+  const keepers = readFileSync(new URL(`../${directory}/keepers.js`, import.meta.url), 'utf8');
+  const round = readFileSync(new URL(`../${directory}/${filename}`, import.meta.url), 'utf8');
+  vm.runInContext(keepers + '\n' + round + '\n' +
+    'globalThis.snapshot={designs:ALL_DESIGNS,approved:KEEPERS,holidayIds:HOLIDAY_IDS,carryoverIds:CARRYOVER_IDS};', catalogContext);
+  return catalogContext.snapshot;
+}
+const historical = loadCatalog('archive/site-round8', 'round8.js');
+const currentCatalog = loadCatalog('site', 'round9.js');
+
+// Exact public selections reproduce the earlier 56+15 incident against archived Round08.
 const mac56 = [
   'laundry-app-tee', 'own-rules-tee', 'insubordinate-cap', 'timer-login-tee',
   'perceive-repo-tee', 'reminder-tone-crew', 'startup-avoidance-tee', 'domain-instead-tee',
@@ -30,12 +41,9 @@ const phone15 = [
   'live-here-tee', 'documentation-shield-hoodie', 'relaxation-bugs-hoodie',
   'personal-use-hoodie', 'piles-hoodie', 'intense-cap', 'theory-cap'
 ];
-const otherHeart = 'rehearsed-crew';
-const holidayIds = new Set([
-  'codex-midnight', 'claude-tokens', 'vibe-snow', 'claude-alpine',
-  'codex-argyle', 'santa-debug', 'pair-programming'
-]);
-const catalog = [...mac56, ...phone15, otherHeart].map(id => ({id}));
+const otherHeart = 'aesthetic-tee';
+const holidayIds = new Set(historical.holidayIds);
+const catalog = historical.designs;
 const sorted = values => [...values].sort();
 
 function storage(ids = []) {
@@ -59,6 +67,7 @@ test('71 real keeper IDs round-trip without exporting retired selections', () =>
   assert.equal(phone15.length, 15);
   const all = new Set([...mac56, ...phone15]);
   assert.equal(all.size, 71);
+  assert.deepEqual(sorted(historical.approved.map(d => d.id)), sorted(all));
   const hash = api.transferHash(catalog, new Set([...all, 'deadline-tee']));
   const decoded = api.readTransfer('#' + hash, catalog);
   assert.equal(decoded.invalid, false);
@@ -154,4 +163,45 @@ test('blocked storage reads preserve visible picks and incoming picks without at
   assert.equal(result.size, 72);
   assert.deepEqual(sorted(result), sorted([...mac56, ...phone15, otherHeart]));
   assert.equal(writes, 0);
+});
+
+test('the current 28-pick phone snapshot merges with the old 56 to preserve all 84 approvals', () => {
+  const phone28 = [...phone15, ...currentCatalog.approved.filter(d => d.round === 8).map(d => d.id)];
+  assert.equal(phone28.length, 28);
+  const decoded = api.readTransfer('#' + api.transferHash(catalog, new Set(phone28)), currentCatalog.designs);
+  assert.equal(decoded.invalid, false);
+  assert.equal(decoded.unavailable, 0);
+  const store = storage(mac56);
+  const merged = api.mergeTransfer(store, new Set(mac56), decoded.ids);
+  assert.equal(merged.size, 84);
+  assert.deepEqual(sorted(merged), sorted(currentCatalog.approved.map(d => d.id)));
+  assert.equal(store.writes, 0);
+  const freshDevice = api.mergeTransfer(storage(), new Set(), decoded.ids);
+  assert.equal(freshDevice.size, 28, 'a transfer imports personal picks, not missing collection approvals');
+  const review = api.decisions(currentCatalog.designs, freshDevice, currentCatalog.carryoverIds);
+  assert.equal(review.approved.length, 84);
+  assert.equal(review.keep.length, 0);
+  assert.equal(review.replace.length, 30);
+});
+
+test('an older phone snapshot preserves a newer Round09 heart and ignores 17 retired Round08 IDs', () => {
+  const currentIds = new Set(currentCatalog.designs.map(d => d.id));
+  const retired = catalog.filter(d => !currentIds.has(d.id));
+  assert.equal(retired.length, 17);
+  const phone28 = [...phone15, ...currentCatalog.approved.filter(d => d.round === 8).map(d => d.id)];
+  const oldLink = api.transferHash(catalog, new Set([...phone28, ...retired.map(d => d.id)]));
+  const decoded = api.readTransfer('#' + oldLink, currentCatalog.designs);
+  assert.equal(decoded.unavailable, 17);
+  assert.deepEqual(sorted(decoded.ids), sorted(phone28));
+  const newest = currentCatalog.designs.find(d => d.round === 9).id;
+  const alreadySaved = new Set([...currentCatalog.approved.map(d => d.id), newest]);
+  const store = storage([...alreadySaved]);
+  const merged = api.mergeTransfer(store, alreadySaved, decoded.ids);
+  assert.deepEqual(sorted(merged), sorted(alreadySaved));
+  assert.equal(merged.size, 85);
+  const review = api.decisions(currentCatalog.designs, merged, currentCatalog.carryoverIds);
+  assert.equal(review.approved.length, 84);
+  assert.deepEqual([...review.keep.map(d => d.id)], [newest]);
+  assert.equal(review.replace.length, 29);
+  assert.equal(store.writes, 0);
 });
