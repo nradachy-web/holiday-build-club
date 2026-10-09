@@ -1,0 +1,157 @@
+{
+  "tool": "built-in imagegen",
+  "created": "2026-10-09",
+  "reference": "brand/identity/round3/prompt-dept-logo.png",
+  "assets": [
+    {
+      "id": "fixed-click-tee",
+      "original": "exec-f023b394-05dd-4ace-8bbf-209c0d8dca8c.png",
+      "file": "capsules/round4/fixed-click-tee.png"
+    },
+    {
+      "id": "explaining-fire-tee",
+      "original": "exec-734e3410-05b0-42a5-9b63-96ccd2661de4.png",
+      "file": "capsules/round4/explaining-fire-tee.png"
+    },
+    {
+      "id": "looks-like-code-tee",
+      "original": "exec-03e145c0-0eae-4bb5-8c06-4ed516a895ae.png",
+      "file": "capsules/round4/looks-like-code-tee.png"
+    },
+    {
+      "id": "great-catch-tee",
+      "original": "exec-326af991-62f4-4fbf-a13f-61f3ed7d6dae.png",
+      "file": "capsules/round4/great-catch-tee.png"
+    },
+    {
+      "id": "compacted-tee",
+      "original": "exec-b48b7145-1d0e-4010-b6f5-d7b675704adc.png",
+      "file": "capsules/round4/compacted-tee.png"
+    },
+    {
+      "id": "plan-b-tee",
+      "original": "exec-b3975b06-0dba-493b-b4f9-ce446841083c.png",
+      "file": "capsules/round4/plan-b-tee.png"
+    },
+    {
+      "id": "senior-repeater-tee",
+      "original": "exec-398608a7-1ceb-4186-9174-fe5dd97c226e.png",
+      "file": "capsules/round4/senior-repeater-tee.png"
+    },
+    {
+      "id": "single-brain-hoodie",
+      "original": "exec-0033c8df-5db4-49cb-a9dd-b0a6b09b0159.png",
+      "file": "capsules/round4/single-brain-hoodie.png"
+    },
+    {
+      "id": "new-confidence-hoodie",
+      "original": "exec-5006a593-61ab-403f-845a-62ea622448b8.png",
+      "file": "capsules/round4/new-confidence-hoodie.png"
+    },
+    {
+      "id": "help-helping-hoodie",
+      "original": "exec-8031ec63-7db9-4a98-b999-01a5a2a75320.png",
+      "file": "capsules/round4/help-helping-hoodie.png"
+    },
+    {
+      "id": "since-tuesday-hoodie",
+      "original": "exec-c310e778-423d-4244-a1ae-c39d1869dd34.png",
+      "file": "capsules/round4/since-tuesday-hoodie.png"
+    },
+    {
+      "id": "follow-ups-crew",
+      "original": "exec-fab5c548-ff5e-47dc-873d-a02e1d3290fc.png",
+      "file": "capsules/round4/follow-ups-crew.png"
+    },
+    {
+      "id": "negotiating-crew",
+      "original": "exec-6b978f24-7e9c-4cf4-b6e7-e8a705253e12.png",
+      "file": "capsules/round4/negotiating-crew.png"
+    },
+    {
+      "id": "stop-refactor-cap",
+      "original": "exec-b930bdf7-9b25-4312-b525-6263287da0ab.png",
+      "file": "capsules/round4/stop-refactor-cap.png"
+    },
+    {
+      "id": "ask-last-you-cap",
+      "original": "exec-1f427b00-0e86-4a9c-a7d8-3533487fe618.png",
+      "file": "capsules/round4/ask-last-you-cap.png"
+    },
+    {
+      "id": "looks-right-cap",
+      "original": "exec-cfc3beb2-3e4b-4785-86d5-c69bd647d494.png",
+      "file": "capsules/round4/looks-right-cap.png"
+    },
+    {
+      "id": "human-override-cap",
+      "original": "exec-3d814b8d-e007-4be1-8047-b9d48b7e29d6.png",
+      "file": "capsules/round4/human-override-cap.png"
+    },
+    {
+      "id": "twelve-retries-knit",
+      "original": "exec-4ed7e8c7-56db-41fd-9329-4b65b9e14312.png",
+      "file": "capsules/round4/twelve-retries-knit.png"
+    },
+    {
+      "id": "checked-twice-knit",
+      "original": "exec-c93d546f-aa7e-42fd-b36d-6490c24866c4.png",
+      "file": "capsules/round4/checked-twice-knit.png"
+    },
+    {
+      "id": "green-build-knit",
+      "original": "exec-73dfef48-934c-496f-8ab1-e28e444d713d.png",
+      "file": "capsules/round4/green-build-knit.png"
+    },
+    {
+      "id": "roadmap-knit",
+      "original": "exec-bf42eb2a-a530-4bf6-9e1e-62c261bd9739.png",
+      "file": "capsules/round4/roadmap-knit.png"
+    },
+    {
+      "id": "less-plan-knit",
+      "original": "exec-5cf7a78c-5a62-4016-a109-c6ff23bae3c2.png",
+      "file": "capsules/round4/less-plan-knit.png"
+    },
+    {
+      "id": "permission-night-knit",
+      "original": "exec-4b4d55f2-efc4-4373-b97c-e1bdec804793.png",
+      "file": "capsules/round4/permission-night-knit.png"
+    },
+    {
+      "id": "retry-repeat-socks",
+      "original": "exec-db27795e-7621-45f3-a1b7-d33c32f1050e.png",
+      "file": "capsules/round4/retry-repeat-socks.png"
+    },
+    {
+      "id": "thinking-thinking-socks",
+      "original": "exec-e33f168f-40c4-4ae2-962d-6e6ab36832ef.png",
+      "file": "capsules/round4/thinking-thinking-socks.png"
+    },
+    {
+      "id": "finally-works-deskmat",
+      "original": "exec-ffd301e0-e23a-41cd-9fef-09d6422b1251.png",
+      "file": "capsules/round4/finally-works-deskmat.png"
+    },
+    {
+      "id": "unread-instructions-deskmat",
+      "original": "exec-bff45d0f-10ea-4ea5-9271-bc0b08daed03.png",
+      "file": "capsules/round4/unread-instructions-deskmat.png"
+    },
+    {
+      "id": "pay-repeat-mug",
+      "original": "exec-5456d5a3-38f1-48b8-824c-b6afa0a6411a.png",
+      "file": "capsules/round4/pay-repeat-mug.png"
+    },
+    {
+      "id": "agent-adult-onesie",
+      "original": "exec-1f418afd-a86e-4782-bb1e-7b6ca8ff900b.png",
+      "file": "capsules/round4/agent-adult-onesie.png"
+    },
+    {
+      "id": "apology-tote",
+      "original": "exec-c3823cf2-97fa-4c8a-9ecd-226e6534c10a.png",
+      "file": "capsules/round4/apology-tote.png"
+    }
+  ]
+}

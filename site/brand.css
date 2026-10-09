@@ -27,3 +27,5 @@
 .hero-copy>p.micro{font-size:10px}
 @media(min-width:641px) and (max-width:900px){.hero h1{font-size:clamp(45px,7.2vw,64px)}.hero-copy{padding:30px 4vw}.hero{min-height:540px}.hero-image{min-height:540px;height:600px}}
 .logo-feature img{height:auto}
+
+.retired-notice{border:1px solid var(--rust);padding:14px 18px;font-size:13px;background:#f8eddf}.retired-notice[hidden]{display:none}

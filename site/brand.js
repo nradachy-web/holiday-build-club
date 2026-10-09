@@ -16,12 +16,12 @@ function notify(message) {
 }
 function visible() {
   const term = $('#search').value.trim().toLowerCase();
-  const pool = filter === 'Archive' ? ALL_DESIGNS.filter(d => d.retired) : filter === 'Saved' ? ALL_DESIGNS.filter(d => favorites.has(d.id)) : ACTIVE_DESIGNS;
-  return pool.filter(d => (['All','Saved','Archive'].includes(filter) || (filter === 'New' ? d.round === 3 : filter === 'Carryover' ? CARRYOVER_IDS.includes(d.id) : filter === 'Replace' ? !favorites.has(d.id) : filter === 'Fan lab' ? d.fan : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
+  const pool = filter === 'Saved' ? ALL_DESIGNS.filter(d => favorites.has(d.id)) : ACTIVE_DESIGNS;
+  return pool.filter(d => (['All','Saved'].includes(filter) || (filter === 'New' ? d.round === 4 : filter === 'Carryover' ? CARRYOVER_IDS.includes(d.id) : filter === 'Replace' ? !favorites.has(d.id) : filter === 'Fan lab' ? d.fan : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
 }
 function render() {
   const list = visible();
-  $('#products').innerHTML = list.map(d => `<article class="card ${favorites.has(d.id)?'is-keeper':'needs-idea'}"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async"><span class="decision-tag">${favorites.has(d.id)?'♥ Keeper':d.retired?'Earlier round':d.round===3?'New idea':'Carried forward'}</span>${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':d.method||'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(ALL_DESIGNS.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
+  $('#products').innerHTML = list.map(d => `<article class="card ${favorites.has(d.id)?'is-keeper':'needs-idea'}"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async"><span class="decision-tag">${favorites.has(d.id)?'♥ Keeper':d.round===4?'New idea':'Carried forward'}</span>${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':d.method||'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(ALL_DESIGNS.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
   $('#empty-state').hidden = list.length > 0;
   $('#result-count').textContent = `${list.length} ${list.length === 1 ? 'design' : 'designs'}${filter==='Saved'?' to keep':filter==='Replace'?' to replace':''}`;
   updateSaved();
@@ -112,16 +112,19 @@ $('#share-design').addEventListener('click',async() => { if(!current)return; con
 render();
 const initial = new URL(location.href).searchParams.get('design');
 if (initial && ALL_DESIGNS.some(d=>d.id===initial)) openDesign(initial,false);
+else if (initial) $('#retired-note').hidden = false;
+const requestedCategory = new URL(location.href).searchParams.get('category');
+if (requestedCategory && ['All','New','Carryover','Saved','Sweats','Tees','Hats','Accessories','Onesies','Holiday','Fan lab'].includes(requestedCategory)) setFilter(requestedCategory);
 
 
-function reviewDesigns() { return ALL_DESIGNS.filter(d => !d.retired || favorites.has(d.id)); }
+function reviewDesigns() { return ALL_DESIGNS; }
 function updateReview() {
   const choices = PromptReview.decisions(reviewDesigns(), favorites);
   $('#keep-total').textContent = choices.keep.length;
   $('#replace-total').textContent = choices.replace.length;
   $('#review-summary').textContent = `${choices.keep.length} ${choices.keep.length === 1 ? 'keeper' : 'keepers'}. ${choices.replace.length} still need your heart.`;
   $('#decision-brief').value = PromptReview.brief(reviewDesigns(), favorites, $('#revision-note').value);
-  $('#decision-help').textContent = choices.keep.length ? 'Copy this brief into our chat when your picks are ready. Your keepers stay; the rest become the next design round.' : 'No keepers selected. Copying this brief asks for new ideas for all 48 current designs. Nothing is replaced until you share it.';
+  $('#decision-help').textContent = choices.keep.length ? 'Copy this brief into our chat when your picks are ready. Your keepers stay; the rest become the next design round.' : 'No keepers selected. Copying this brief asks for new ideas for all 60 current designs. Nothing is replaced until you share it.';
 }
 $('#revision-note').addEventListener('input', () => {
   try { localStorage.setItem('prompt-dept-revision-note-v1', $('#revision-note').value); } catch {}

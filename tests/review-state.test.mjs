@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,existsSync} from 'node:fs';
 import vm from 'node:vm';
 const context=vm.createContext({});
 vm.runInContext(readFileSync('site/review-state.js','utf8'),context);
-vm.runInContext(readFileSync('site/catalog.js','utf8')+'\n'+readFileSync('site/collection.js','utf8')+'\nglobalThis.designs=[...CATALOG,...COLLECTION];',context);
+vm.runInContext(readFileSync('archive/site-round3/catalog.js','utf8')+'\n'+readFileSync('archive/site-round3/collection.js','utf8')+'\nglobalThis.designs=[...CATALOG,...COLLECTION];',context);
 const api=context.PromptReview, designs=context.designs;
 function storage(entries={}) { const data=new Map(Object.entries(entries));return {data,getItem:key=>data.get(key)??null,setItem:(key,value)=>data.set(key,value)}; }
 test('existing holiday and Prompt Dept hearts survive consolidation and writes',()=>{
@@ -40,7 +40,7 @@ test('blocked storage reads degrade safely and failed writes report failure',()=
 });
 
 test('round 3 preserves old favorite IDs while retiring unselected concepts',()=>{
-  vm.runInContext(readFileSync('site/round3.js','utf8')+'\nglobalThis.current=ACTIVE_DESIGNS; globalThis.all=ALL_DESIGNS; globalThis.carryover=CARRYOVER_IDS;',context);
+  vm.runInContext(readFileSync('archive/site-round3/round3.js','utf8')+'\nglobalThis.current=ACTIVE_DESIGNS; globalThis.all=ALL_DESIGNS; globalThis.carryover=CARRYOVER_IDS;',context);
   assert.equal(context.current.length,48);
   assert.equal(context.all.length,68);
   assert.equal(new Set(context.all.map(d=>d.id)).size,68);
@@ -60,4 +60,37 @@ test('round 3 preserves old favorite IDs while retiring unselected concepts',()=
     assert.equal(d.name,original.name);assert.equal(d.phrase,original.phrase);
     assert.equal(d.description,original.description);
   }
+});
+
+const round4=vm.createContext({});
+vm.runInContext(readFileSync('site/keepers.js','utf8')+'\n'+readFileSync('site/round4.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.holidays=HOLIDAY_IDS;',round4);
+test('round 4 preserves exactly 30 keeper objects and introduces 30 unique designs',()=>{
+  assert.equal(round4.current.length,60);
+  assert.equal(new Set(round4.current.map(d=>d.id)).size,60);
+  assert.equal(round4.keepers.length,30);
+  assert.equal(round4.current.filter(d=>d.round===4).length,30);
+  for(const keeper of round4.keepers){
+    const previous=context.all.find(d=>d.id===keeper.id);
+    for(const key of ['id','name','phrase','description','image'])assert.equal(keeper[key],previous[key],keeper.id+' '+key);
+  }
+});
+test('retired designs cannot reappear in gallery or brief while their storage IDs survive',()=>{
+  const picks=new Set([...round4.keepers.map(d=>d.id),'who-dis-tee','future-design']);
+  const store=storage();api.write(store,picks,round4.holidays);
+  const loaded=api.read(store), decisions=api.decisions(round4.current,loaded);
+  assert.equal(loaded.size,32);
+  assert.equal(decisions.keep.length,30);assert.equal(decisions.replace.length,30);
+  const brief=api.brief(round4.current,loaded,'More relatable satire.');
+  assert.ok(brief.includes('KEEP (30)')&&brief.includes('REPLACE (30)'));
+  assert.ok(!brief.includes('[who-dis-tee]'));
+  const removed=context.all.filter(d=>!round4.current.some(n=>n.id===d.id));
+  assert.equal(removed.length,38);
+  for(const d of removed)assert.equal(existsSync('site/'+d.image),false,d.id+' is not published');
+});
+test('every current design image is present and old catalog scripts are not published',()=>{
+  for(const d of round4.current)assert.ok(existsSync('site/'+d.image),d.image);
+  for(const f of ['catalog.js','collection.js','round3.js','app.js'])assert.equal(existsSync('site/'+f),false,f);
+  const page=readFileSync('site/index.html','utf8');
+  assert.ok(page.includes('keepers.js?v=4')&&page.includes('round4.js?v=4'));
+  assert.ok(!page.includes('data-filter="Archive"'));
 });
