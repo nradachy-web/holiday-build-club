@@ -38,3 +38,26 @@ test('blocked storage reads degrade safely and failed writes report failure',()=
   const store={getItem(){throw Error('Blocked');},setItem(){throw Error('Blocked');}};
   assert.equal(api.read(store).size,0);assert.deepEqual([...api.read(store,new Set(['approved-plan']))],['approved-plan']);assert.throws(()=>api.write(store,new Set(['approved-plan']),[]));
 });
+
+test('round 3 preserves old favorite IDs while retiring unselected concepts',()=>{
+  vm.runInContext(readFileSync('site/round3.js','utf8')+'\nglobalThis.current=ACTIVE_DESIGNS; globalThis.all=ALL_DESIGNS; globalThis.carryover=CARRYOVER_IDS;',context);
+  assert.equal(context.current.length,48);
+  assert.equal(context.all.length,68);
+  assert.equal(new Set(context.all.map(d=>d.id)).size,68);
+  assert.equal(context.current.filter(d=>d.round===3).length,30);
+  const store=storage({'prompt-dept-favorites-v1':JSON.stringify(context.carryover),'holiday-build-club-favorites-v1':'["approved-plan","claude-claus"]'});
+  const picks=api.read(store);
+  assert.equal(api.decisions(context.current,picks).keep.length,18);
+  assert.equal(api.decisions(context.current,picks).replace.length,30);
+  const review=context.all.filter(d=>!d.retired||picks.has(d.id));
+  assert.equal(api.decisions(review,picks).keep.length,20);
+  assert.ok(!api.decisions(review,picks).replace.some(d=>d.id==='change-button'));
+  picks.add('debug-duck-tee');api.write(store,picks,['claude-claus']);
+  assert.equal(api.read(store).size,21);
+  assert.ok(api.read(store).has('approved-plan'));
+  for(const d of context.current.filter(d=>d.round!==3)) {
+    const original=designs.find(x=>x.id===d.id);
+    assert.equal(d.name,original.name);assert.equal(d.phrase,original.phrase);
+    assert.equal(d.description,original.description);
+  }
+});

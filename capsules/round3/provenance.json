@@ -1,0 +1,167 @@
+{
+  "tool": "built-in imagegen",
+  "assets": [
+    {
+      "id": "sold-out-tee",
+      "original": "exec-727843d1-a3a5-43ee-a782-879929c3cd8a.png",
+      "file": "capsules/round3/sold-out-tee.png"
+    },
+    {
+      "id": "who-dis-tee",
+      "original": "exec-f5912aee-dcf2-49cd-913f-d53e4473d80b.png",
+      "file": "capsules/round3/who-dis-tee.png"
+    },
+    {
+      "id": "one-more-tee",
+      "original": "exec-58dc0567-8805-4647-a66f-3711984b1111.png",
+      "file": "capsules/round3/one-more-tee.png"
+    },
+    {
+      "id": "debug-duck-tee",
+      "original": "exec-9e82eb36-9e8d-436e-a9e7-1f7c31d2f9b7.png",
+      "file": "capsules/round3/debug-duck-tee.png"
+    },
+    {
+      "id": "ship-now-tee",
+      "original": "exec-81c45621-a1ac-421c-93aa-3e01f5f57097.png",
+      "file": "capsules/round3/ship-now-tee.png",
+      "revision": {
+        "original": "exec-cfa716fd-7a36-4e3b-a201-bcaba624ac38.png",
+        "file": "capsules/round3/ship-now-tee-v2.png"
+      }
+    },
+    {
+      "id": "undo-tee",
+      "original": "exec-2d7c4a84-0520-436f-bb25-f8fd33032ba9.png",
+      "file": "capsules/round3/undo-tee.png"
+    },
+    {
+      "id": "after-reset-hoodie",
+      "original": "exec-94baa163-e0b3-4aec-af39-77cc1d5eb89b.png",
+      "file": "capsules/round3/after-reset-hoodie.png"
+    },
+    {
+      "id": "parallel-play-hoodie",
+      "original": "exec-556ede14-a34a-4dec-bff1-b5abaa7d860c.png",
+      "file": "capsules/round3/parallel-play-hoodie.png"
+    },
+    {
+      "id": "human-loop-hoodie",
+      "original": "exec-be2e9daf-f562-4dea-b119-fe3a5b3bec23.png",
+      "file": "capsules/round3/human-loop-hoodie.png"
+    },
+    {
+      "id": "professional-waiter",
+      "original": "exec-141718f0-7256-4aea-8252-b00a97286157.png",
+      "file": "capsules/round3/professional-waiter.png"
+    },
+    {
+      "id": "built-on-vibes",
+      "original": "exec-e84b1965-4157-4516-b5eb-0df8c57a88d2.png",
+      "file": "capsules/round3/built-on-vibes.png"
+    },
+    {
+      "id": "yes-and-cap",
+      "original": "exec-06f7d175-8b59-4b2f-b6ce-f4d1b2a80b1b.png",
+      "file": "capsules/round3/yes-and-cap.png",
+      "revision": {
+        "original": "exec-ebc693f9-cafe-4138-b651-3f446051d433.png",
+        "file": "capsules/round3/yes-and-cap-v2.png"
+      }
+    },
+    {
+      "id": "context-cap",
+      "original": "exec-6e13a92a-69e6-4032-be80-0bf858979be9.png",
+      "file": "capsules/round3/context-cap.png"
+    },
+    {
+      "id": "rate-limited-cap",
+      "original": "exec-a72d67a5-aa52-4c00-b953-49d6da52ad09.png",
+      "file": "capsules/round3/rate-limited-cap.png"
+    },
+    {
+      "id": "ho-hold-knit",
+      "original": "exec-f131975b-2f60-4406-bd48-33b0752d6bed.png",
+      "file": "capsules/round3/ho-hold-knit.png"
+    },
+    {
+      "id": "tokens-reindeer-knit",
+      "original": "exec-2775d87c-f0b4-4ce8-ba17-f68fe48c19ca.png",
+      "file": "capsules/round3/tokens-reindeer-knit.png"
+    },
+    {
+      "id": "elf-hosted-knit",
+      "original": "exec-737b7628-398b-41bb-9c84-55a389dcb054.png",
+      "file": "capsules/round3/elf-hosted-knit.png"
+    },
+    {
+      "id": "snowman-new-chat",
+      "original": "exec-a1f26780-789e-4287-94e8-7d06b6cf5008.png",
+      "file": "capsules/round3/snowman-new-chat.png"
+    },
+    {
+      "id": "build-red-knit",
+      "original": "exec-f26dbad6-4a02-4624-8a14-d7fdbdb7a985.png",
+      "file": "capsules/round3/build-red-knit.png"
+    },
+    {
+      "id": "waiting-socks",
+      "original": "exec-b786f632-dcea-4132-bb70-5b89933d0fed.png",
+      "file": "capsules/round3/waiting-socks.png"
+    },
+    {
+      "id": "debug-duck-socks",
+      "original": "exec-ca7308d1-f7ba-43cb-87e4-6516e0a2564d.png",
+      "file": "capsules/round3/debug-duck-socks.png"
+    },
+    {
+      "id": "night-shift-deskmat",
+      "original": "exec-51c5c5b2-ed62-40b1-871a-f0a4b5d1d138.png",
+      "file": "capsules/round3/night-shift-deskmat.png"
+    },
+    {
+      "id": "stay-context-deskmat",
+      "original": "exec-2c5b784f-ec0a-467b-9d9f-86a92884b401.png",
+      "file": "capsules/round3/stay-context-deskmat.png"
+    },
+    {
+      "id": "reset-woven-blanket",
+      "original": "exec-e2a68938-1d67-44af-a012-1d4ea2609637.png",
+      "file": "capsules/round3/reset-woven-blanket.png"
+    },
+    {
+      "id": "carry-context-sleeve",
+      "original": "exec-bccac9bb-0904-4df9-889d-deb83fd10990.png",
+      "file": "capsules/round3/carry-context-sleeve.png"
+    },
+    {
+      "id": "support-tokens-tote",
+      "original": "exec-b1fd516b-e04a-412b-97f6-dcde2f7d915d.png",
+      "file": "capsules/round3/support-tokens-tote.png"
+    },
+    {
+      "id": "still-compiling-mug",
+      "original": "exec-d1deda3d-c72c-4753-9156-ef5b4e558679.png",
+      "file": "capsules/round3/still-compiling-mug.png"
+    },
+    {
+      "id": "small-change-case",
+      "original": "exec-53f66f7f-505f-4649-b72f-261b5eabd65f.png",
+      "file": "capsules/round3/small-change-case.png"
+    },
+    {
+      "id": "liquid-assets-wallet",
+      "original": "exec-9df28b55-4163-46c4-ab81-ccce9df35214.png",
+      "file": "capsules/round3/liquid-assets-wallet.png"
+    },
+    {
+      "id": "off-duty-onesie",
+      "original": "exec-8ecf5ddc-e1ff-45bd-8124-faed95337c23.png",
+      "file": "capsules/round3/off-duty-onesie.png",
+      "revision": {
+        "original": "exec-de8fdc0e-867d-492b-a8f6-68568dd9aa75.png",
+        "file": "capsules/round3/off-duty-onesie-v2.png"
+      }
+    }
+  ]
+}

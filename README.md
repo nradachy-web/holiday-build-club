@@ -6,9 +6,11 @@ Independent clothing concepts for the one-more-prompt crowd.
 
 ## Collection
 
-28 new product concepts: four sweats, four tees, three hats, seven accessories, three adult onesies, three original holiday knits and four fan concepts. The original ten holiday sweaters also appear in the main 38-design review and remain available in the archive.
+Round 03 has **48 active concepts: 30 new designs and 18 carried forward unchanged**. The new range includes six tees, three hoodies, two crewnecks, three caps, five holiday knits, two socks, two desk mats, a woven blanket, a laptop sleeve, a tote, a mug, a phone case, a zip wallet and one adult onesie. Twenty earlier unselected ideas remain recoverable through the Earlier round filter and their exact links.
 
-This repository contains 27 new AI product mockups, one AI editorial hero, a native Blender keychain render, six original outlined SVG artwork studies, the original holiday assets and the responsive static prototype.
+A new original cursor mascot and illustrated clothing direction replace the rejected PD monogram. The main gallery opens on the new 30, with separate views for all current pieces, the 18 carried forward, favorites and the archive. Existing saved IDs survive across both storage keys; archived saved pieces remain available and included in the review brief.
+
+The repository retains full-resolution generated PNGs, exact prompts, three revised concepts, optimized site assets, the transparent logo concept master and earlier Blender/vector studies.
 
 Prompt Dept. is the selected working name, not a claim of trademark clearance. These are design concepts, not physically sampled or available products. No checkout, charge, reservation or automatic subscription exists. Fan concepts are independent and not affiliated with Anthropic or OpenAI; third-party marks are not commercially cleared. Adult lounge suits only.
 
@@ -34,7 +36,7 @@ SITE_URL=https://nradachy-web.github.io/holiday-build-club/ npm run test:live
 
 Optionally set `PLAYWRIGHT_CHROMIUM_EXECUTABLE`. The current Mac has a detected fallback; otherwise Playwright uses its installed browser. Screenshots are written to ignored `qa/`.
 
-Checks cover all 38 designs and category counts, search and empty state, favorite persistence, modal focus after saving, Escape, exact and legacy links, email draft contents, all product image decoding, 320/390/768 px layouts, and resource/browser errors. No email is sent.
+Checks cover the 48 active designs, 20 archived ideas and category counts, search and empty state, favorite persistence, modal focus after saving, Escape, exact and legacy links, email draft contents, all product image decoding, 320/390/768 px layouts, and resource/browser errors. No email is sent.
 
 ## Design sources
 
@@ -76,3 +78,16 @@ Hearts are keepers. Unsaved designs are the replacement queue. Existing favorite
 `npm run test:review` checks migration, malformed data, blocked-storage fallback, complete keep/replace partitioning and brief contents. Browser regression coverage lives in `scripts/verify-brand.mjs`.
 
 The new identity is at `site/identity.html`: an original stepped PD cursor monogram, compact outlined wordmarks and a dimensional ASCII edition. Transparent SVG masters are in `site/assets/identity/`, with ink and bone variants. Rebuild with `python3 brand/identity/build_identity.py`. The canvas renderer animates only while visible, with a reduced-motion still frame and static SVG fallback. Use the solid mark for small labels and embroidery; proof physical production separately.
+
+## Round 03 assets and verification
+
+- `capsules/round3/manifest.json`: the 30 exact built-in imagegen prompts.
+- `capsules/round3/revisions.json`: refined courier, agreeable-robot cap and adult onesie directions.
+- `capsules/round3/provenance.json`: original and revised generated-file references.
+- `brand/identity/round3/prompt-dept-logo.png`: transparent raster concept master. Vector cleanup and production simplification remain.
+- `site/round3.js`: current collection, stable carryover IDs and retained archive.
+- `business/round3-sourcebook.html`: private local visual supplier map for all 48 current designs, linked to official product pages and the detailed evidence reports. This file is intentionally excluded from public publication.
+
+This pass used six passing state/migration tests, desktop and mobile browser checks through CUA, visual inspection of all 30 new renders, and hash verification that all 18 keeper images were unchanged. No samples, supplier orders or commercial checkout were created.
+
+To regenerate optimized Round 03 assets, install Sharp or set `SHARP_MODULE`, then run `node scripts/prepare-round3.cjs`.

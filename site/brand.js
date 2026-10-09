@@ -1,9 +1,8 @@
 'use strict';
 const $ = s => document.querySelector(s);
-const ALL_DESIGNS = [...CATALOG, ...COLLECTION.map(d => ({...d, type:'Holiday knit', category:'Original ten', capsule:'Original holiday collection', image:`assets/${d.id}.webp`, fan:d.team !== 'Originals', archive:true, tags:d.phrase+' '+d.description}))];
 let favorites = new Set();
 try { favorites = PromptReview.read(localStorage, favorites); } catch {}
-let filter = 'All';
+let filter = 'New';
 let current = null;
 let lastFocus = null;
 let toastTimer;
@@ -17,11 +16,12 @@ function notify(message) {
 }
 function visible() {
   const term = $('#search').value.trim().toLowerCase();
-  return ALL_DESIGNS.filter(d => (filter === 'All' || (filter === 'Saved' ? favorites.has(d.id) : filter === 'Replace' ? !favorites.has(d.id) : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
+  const pool = filter === 'Archive' ? ALL_DESIGNS.filter(d => d.retired) : filter === 'Saved' ? ALL_DESIGNS.filter(d => favorites.has(d.id)) : ACTIVE_DESIGNS;
+  return pool.filter(d => (['All','Saved','Archive'].includes(filter) || (filter === 'New' ? d.round === 3 : filter === 'Carryover' ? CARRYOVER_IDS.includes(d.id) : filter === 'Replace' ? !favorites.has(d.id) : filter === 'Fan lab' ? d.fan : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
 }
 function render() {
   const list = visible();
-  $('#products').innerHTML = list.map(d => `<article class="card ${favorites.has(d.id)?'is-keeper':'needs-idea'}"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async"><span class="decision-tag">${favorites.has(d.id)?'♥ Keep this':'↻ Replace this'}</span>${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(ALL_DESIGNS.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
+  $('#products').innerHTML = list.map(d => `<article class="card ${favorites.has(d.id)?'is-keeper':'needs-idea'}"><button class="card-save" data-save="${d.id}" aria-label="${favorites.has(d.id)?'Unsave':'Save'} ${esc(d.name)}" aria-pressed="${favorites.has(d.id)}">${favorites.has(d.id)?'♥':'♡'}</button><button class="card-image" data-open="${d.id}" aria-label="Explore ${esc(d.name)}"><img src="${d.image}" alt="${esc(d.alt)}" width="1122" height="1402" loading="lazy" decoding="async"><span class="decision-tag">${favorites.has(d.id)?'♥ Keeper':d.retired?'Earlier round':d.round===3?'New idea':'Carried forward'}</span>${d.fan?'<span class="fan-tag">Fan concept / Rights pending</span>':''}</button><div class="card-meta"><div><p class="category">${esc(d.type)} / ${d.fan?'Fan lab':d.method||'Concept'}</p><button class="card-title" data-open="${d.id}">${esc(d.name)}</button></div><span class="serial">${String(ALL_DESIGNS.indexOf(d)+1).padStart(2,'0')}</span></div></article>`).join('');
   $('#empty-state').hidden = list.length > 0;
   $('#result-count').textContent = `${list.length} ${list.length === 1 ? 'design' : 'designs'}${filter==='Saved'?' to keep':filter==='Replace'?' to replace':''}`;
   updateSaved();
@@ -51,7 +51,7 @@ function toggleSaved(id) {
   try { PromptReview.write(localStorage, favorites, HOLIDAY_IDS); } catch { persisted = false; }
   render();
   if (focusId) (document.querySelector(`[data-save="${focusId}"]`) || document.querySelector('.decision-filters button[aria-pressed="true"]') || $('#search')).focus({preventScroll:true});
-  notify(!persisted ? 'Choice kept for this visit only. Copy your design brief before leaving.' : had ? 'Moved to Replace these' : 'Keeper saved on this device');
+  notify(!persisted ? 'Choice kept for this visit only. Copy your design brief before leaving.' : had ? 'Not kept for the next round' : 'Keeper saved on this device');
 }
 function setFilter(value) {
   filter = value;
@@ -68,6 +68,7 @@ function openDesign(id, updateUrl = true) {
   $('#dialog-description').textContent = d.description;
   $('#dialog-image').src = d.image;
   $('#dialog-image').alt = d.alt;
+  $('#dialog-method').textContent = d.method ? `Design method: ${d.method}. Sample not yet approved.` : '';
   $('#dialog-note').textContent = d.native ? 'Native Blender construction study. Materials, dimensions, suppliers and production cost remain unconfirmed. Not available to order.' : d.fan ? 'Independent fan concept using third-party marks. Not affiliated with Anthropic or OpenAI. Permission is required before commercial release. Not available to order.' : 'AI-generated product concept. Materials, decoration, sizing and pricing are subject to physical sampling. Not available to order.';
   updateSaved();
   if (!dialog.open) dialog.showModal();
@@ -113,13 +114,14 @@ const initial = new URL(location.href).searchParams.get('design');
 if (initial && ALL_DESIGNS.some(d=>d.id===initial)) openDesign(initial,false);
 
 
+function reviewDesigns() { return ALL_DESIGNS.filter(d => !d.retired || favorites.has(d.id)); }
 function updateReview() {
-  const choices = PromptReview.decisions(ALL_DESIGNS, favorites);
+  const choices = PromptReview.decisions(reviewDesigns(), favorites);
   $('#keep-total').textContent = choices.keep.length;
   $('#replace-total').textContent = choices.replace.length;
-  $('#review-summary').textContent = `${choices.keep.length} ${choices.keep.length === 1 ? 'keeper' : 'keepers'}. ${choices.replace.length} need a better idea.`;
-  $('#decision-brief').value = PromptReview.brief(ALL_DESIGNS, favorites, $('#revision-note').value);
-  $('#decision-help').textContent = choices.keep.length ? 'Copy this brief into our chat when your picks are ready. Your keepers stay; the rest become the next design round.' : 'No keepers selected. Copying this brief asks for new ideas for all 38 designs. Nothing is replaced until you share it.';
+  $('#review-summary').textContent = `${choices.keep.length} ${choices.keep.length === 1 ? 'keeper' : 'keepers'}. ${choices.replace.length} still need your heart.`;
+  $('#decision-brief').value = PromptReview.brief(reviewDesigns(), favorites, $('#revision-note').value);
+  $('#decision-help').textContent = choices.keep.length ? 'Copy this brief into our chat when your picks are ready. Your keepers stay; the rest become the next design round.' : 'No keepers selected. Copying this brief asks for new ideas for all 48 current designs. Nothing is replaced until you share it.';
 }
 $('#revision-note').addEventListener('input', () => {
   try { localStorage.setItem('prompt-dept-revision-note-v1', $('#revision-note').value); } catch {}
@@ -132,8 +134,8 @@ $('#copy-decisions').addEventListener('click', async () => {
   catch { $('#brief-details').open = true; $('#decision-brief').focus(); $('#decision-brief').select(); notify('Select and copy the brief below.'); }
 });
 $('#download-decisions').addEventListener('click', () => {
-  const choices = PromptReview.decisions(ALL_DESIGNS, favorites);
-  const data = {brand:'Prompt Dept.',schemaVersion:1,createdAt:new Date().toISOString(),catalogIds:ALL_DESIGNS.map(d=>d.id),keep:choices.keep.map(d=>({id:d.id,name:d.name})),replace:choices.replace.map(d=>({id:d.id,name:d.name})),direction:$('#revision-note').value,adultOnesiesOnly:true};
+  const choices = PromptReview.decisions(reviewDesigns(), favorites);
+  const data = {brand:'Prompt Dept.',schemaVersion:1,createdAt:new Date().toISOString(),catalogIds:reviewDesigns().map(d=>d.id),keep:choices.keep.map(d=>({id:d.id,name:d.name})),replace:choices.replace.map(d=>({id:d.id,name:d.name})),direction:$('#revision-note').value,adultOnesiesOnly:true};
   const url = URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
   const link = document.createElement('a'); link.href=url; link.download='prompt-dept-design-decisions.json'; link.click();
   setTimeout(()=>URL.revokeObjectURL(url),1000);
