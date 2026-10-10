@@ -17,7 +17,7 @@ function notify(message) {
 function visible() {
   const term = $('#search').value.trim().toLowerCase();
   const pool = filter === 'Saved' ? ALL_DESIGNS.filter(d => favorites.has(d.id)) : ACTIVE_DESIGNS;
-  return pool.filter(d => (['All','Saved'].includes(filter) || (filter === 'New' ? d.round === 10 : filter === 'Carryover' ? CARRYOVER_IDS.includes(d.id) : filter === 'Replace' ? !CARRYOVER_IDS.includes(d.id) && !favorites.has(d.id) : filter === 'Fan lab' ? d.fan : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
+  return pool.filter(d => (['All','Saved'].includes(filter) || (filter === 'New' ? d.round === 9 : filter === 'Carryover' ? CARRYOVER_IDS.includes(d.id) : filter === 'Replace' ? !CARRYOVER_IDS.includes(d.id) && !favorites.has(d.id) : filter === 'Fan lab' ? d.fan : d.category === filter)) && (!term || [d.name,d.phrase,d.description,d.tags].join(' ').toLowerCase().includes(term)));
 }
 function render() {
   const list = visible();

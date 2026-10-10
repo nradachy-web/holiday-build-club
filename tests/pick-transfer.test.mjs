@@ -16,7 +16,8 @@ function loadCatalog(directory, filename) {
   return catalogContext.snapshot;
 }
 const historical = loadCatalog('archive/site-round8', 'round8.js');
-const currentCatalog = loadCatalog('site', 'round9.js');
+const previousCatalog = loadCatalog('archive/site-round9', 'round9.js');
+const currentCatalog = loadCatalog('site', 'round10.js');
 
 // Exact public selections reproduce the earlier 56+15 incident against archived Round08.
 const mac56 = [
@@ -165,43 +166,43 @@ test('blocked storage reads preserve visible picks and incoming picks without at
   assert.equal(writes, 0);
 });
 
-test('the current 28-pick phone snapshot merges with the old 56 to preserve all 84 approvals', () => {
-  const phone28 = [...phone15, ...currentCatalog.approved.filter(d => d.round === 8).map(d => d.id)];
-  assert.equal(phone28.length, 28);
-  const decoded = api.readTransfer('#' + api.transferHash(catalog, new Set(phone28)), currentCatalog.designs);
+test('the 29-pick phone snapshot including trousers merges with the old 56 to preserve all 85 approvals', () => {
+  const phone29 = [...phone15, ...currentCatalog.approved.filter(d => d.round === 8).map(d => d.id), 'avoid-trousers-onesie'];
+  assert.equal(phone29.length, 29);
+  const decoded = api.readTransfer('#' + api.transferHash(previousCatalog.designs, new Set(phone29)), currentCatalog.designs);
   assert.equal(decoded.invalid, false);
   assert.equal(decoded.unavailable, 0);
   const store = storage(mac56);
   const merged = api.mergeTransfer(store, new Set(mac56), decoded.ids);
-  assert.equal(merged.size, 84);
+  assert.equal(merged.size, 85);
   assert.deepEqual(sorted(merged), sorted(currentCatalog.approved.map(d => d.id)));
   assert.equal(store.writes, 0);
   const freshDevice = api.mergeTransfer(storage(), new Set(), decoded.ids);
-  assert.equal(freshDevice.size, 28, 'a transfer imports personal picks, not missing collection approvals');
+  assert.equal(freshDevice.size, 29, 'a transfer imports personal picks, not missing collection approvals');
   const review = api.decisions(currentCatalog.designs, freshDevice, currentCatalog.carryoverIds);
-  assert.equal(review.approved.length, 84);
+  assert.equal(review.approved.length, 85);
   assert.equal(review.keep.length, 0);
-  assert.equal(review.replace.length, 30);
+  assert.equal(review.replace.length, 29);
 });
 
-test('an older phone snapshot preserves a newer Round09 heart and ignores 17 retired Round08 IDs', () => {
+test('an older phone snapshot preserves a newer Round10 heart and ignores 29 retired Round09 IDs', () => {
   const currentIds = new Set(currentCatalog.designs.map(d => d.id));
-  const retired = catalog.filter(d => !currentIds.has(d.id));
-  assert.equal(retired.length, 17);
-  const phone28 = [...phone15, ...currentCatalog.approved.filter(d => d.round === 8).map(d => d.id)];
-  const oldLink = api.transferHash(catalog, new Set([...phone28, ...retired.map(d => d.id)]));
+  const retired = previousCatalog.designs.filter(d => !currentIds.has(d.id));
+  assert.equal(retired.length, 29);
+  const phone29 = [...phone15, ...currentCatalog.approved.filter(d => d.round === 8).map(d => d.id), 'avoid-trousers-onesie'];
+  const oldLink = api.transferHash(previousCatalog.designs, new Set([...phone29, ...retired.map(d => d.id)]));
   const decoded = api.readTransfer('#' + oldLink, currentCatalog.designs);
-  assert.equal(decoded.unavailable, 17);
-  assert.deepEqual(sorted(decoded.ids), sorted(phone28));
-  const newest = currentCatalog.designs.find(d => d.round === 9).id;
+  assert.equal(decoded.unavailable, 29);
+  assert.deepEqual(sorted(decoded.ids), sorted(phone29));
+  const newest = currentCatalog.designs.find(d => d.round === 10).id;
   const alreadySaved = new Set([...currentCatalog.approved.map(d => d.id), newest]);
   const store = storage([...alreadySaved]);
   const merged = api.mergeTransfer(store, alreadySaved, decoded.ids);
   assert.deepEqual(sorted(merged), sorted(alreadySaved));
-  assert.equal(merged.size, 85);
+  assert.equal(merged.size, 86);
   const review = api.decisions(currentCatalog.designs, merged, currentCatalog.carryoverIds);
-  assert.equal(review.approved.length, 84);
+  assert.equal(review.approved.length, 85);
   assert.deepEqual([...review.keep.map(d => d.id)], [newest]);
-  assert.equal(review.replace.length, 29);
+  assert.equal(review.replace.length, 28);
   assert.equal(store.writes, 0);
 });

@@ -194,7 +194,7 @@ test('round 8 brief excludes the 15 unselected Round07 designs while storage rem
   for(const d of removed)assert.equal(existsSync('site/'+d.image),false,d.id+' removed from public site');
 });
 const round9=vm.createContext({});
-vm.runInContext(readFileSync('site/keepers.js','utf8')+'\n'+readFileSync('site/round9.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.holidays=HOLIDAY_IDS;globalThis.carryover=CARRYOVER_IDS;',round9);
+vm.runInContext(readFileSync('archive/site-round9/keepers.js','utf8')+'\n'+readFileSync('archive/site-round9/round9.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.holidays=HOLIDAY_IDS;globalThis.carryover=CARRYOVER_IDS;',round9);
 const round8ApprovedIds=[
   'idea-emails-tee','aesthetic-tee','rhetorical-cap','global-fix-tee','polite-version-tee',
   'personal-project-hoodie','empathy-spreadsheet-hoodie','escalated-cap','footnotes-cap',
@@ -229,7 +229,7 @@ test('all 17 rejected Round08 designs remain archived and absent from the curren
   assert.ok(brief.includes('PREVIOUSLY APPROVED (84)'));
   assert.ok(brief.includes('KEEP (0)')&&brief.includes('REPLACE (30)'));
 });
-test('the actual sparse phone state cannot replace prior approvals or seed missing local hearts',()=>{
+test('the Round09 sparse phone snapshot cannot replace prior approvals or seed missing local hearts',()=>{
   const phoneIds=[...round8.keepers.filter(d=>d.round===7).map(d=>d.id),...round8ApprovedIds];
   assert.equal(phoneIds.length,28);
   const picks=new Set(phoneIds),store=storage();
@@ -245,25 +245,59 @@ test('the actual sparse phone state cannot replace prior approvals or seed missi
   assert.ok(brief.includes('KEEP (0)')&&brief.includes('REPLACE (30)'));
   assert.equal(api.read(store).size,28);
 });
-test('current category counts and all 134 retired design IDs match the full catalog history',()=>{
+const round10=vm.createContext({});
+vm.runInContext(readFileSync('site/keepers.js','utf8')+'\n'+readFileSync('site/round10.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.holidays=HOLIDAY_IDS;globalThis.carryover=CARRYOVER_IDS;',round10);
+test('round 10 preserves all 84 prior approvals and only the selected trousers onesie from Round09',()=>{
+  assert.equal(round10.current.length,114);
+  assert.equal(new Set(round10.current.map(d=>d.id)).size,114);
+  assert.equal(round10.keepers.length,85);
+  const expected=[...round9.keepers.map(d=>d.id),'avoid-trousers-onesie'].sort();
+  assert.deepEqual([...round10.keepers.map(d=>d.id)].sort(),expected);
+  assert.deepEqual([...round10.carryover].sort(),expected);
+  assert.deepEqual([...round10.keepers.filter(d=>d.round===9).map(d=>d.id)],['avoid-trousers-onesie']);
+  for(const keeper of round10.keepers){
+    const previous=round9.current.find(d=>d.id===keeper.id);
+    assert.ok(previous,keeper.id);
+    assert.equal(JSON.stringify(keeper),JSON.stringify(previous),keeper.id+' unchanged');
+  }
+  const additions=round10.current.filter(d=>d.round===10);
+  assert.equal(additions.length,29);
+  assert.ok(additions.every(d=>d.category==='Onesies'&&d.type==='Adult lounge suit'&&!d.fan));
+});
+test('all 29 rejected Round09 onesies are archived and cannot return through an old saved snapshot',()=>{
+  const removed=round9.current.filter(d=>!round10.current.some(n=>n.id===d.id));
+  assert.equal(removed.length,29);
+  assert.ok(removed.every(d=>d.round===9));
+  const oldHearts=new Set([...removed.map(d=>d.id),'avoid-trousers-onesie']);
+  const brief=api.brief(round10.current,oldHearts,'Onesies Round 02.',round10.carryover);
+  for(const d of removed){
+    assert.equal(existsSync('site/'+d.image),false,d.id+' is not public');
+    assert.equal(existsSync('archive/site-round9/'+d.image),true,d.id+' is recoverable');
+    assert.ok(!brief.includes('['+d.id+']'),d.id+' cannot enter the current brief');
+  }
+  assert.ok(brief.includes('PREVIOUSLY APPROVED (85)'));
+  assert.ok(brief.includes('[avoid-trousers-onesie]'));
+  assert.ok(brief.includes('KEEP (0)')&&brief.includes('REPLACE (29)'));
+});
+test('current category counts and all 163 retired design IDs match the full catalog history',()=>{
   const categories={};
-  for(const d of round9.current)categories[d.category]=(categories[d.category]||0)+1;
+  for(const d of round10.current)categories[d.category]=(categories[d.category]||0)+1;
   assert.deepEqual(categories,{Onesies:33,Tees:26,Hats:14,Sweats:13,Accessories:7,Holiday:17,'Fan lab':4});
-  assert.equal(round9.current.filter(d=>d.fan).length,9);
-  const currentIds=new Set(round9.current.map(d=>d.id));
-  const history=[context.all,round4.current,round5.current,round6.current,round7.current,round8.current];
+  assert.equal(round10.current.filter(d=>d.fan).length,9);
+  const currentIds=new Set(round10.current.map(d=>d.id));
+  const history=[context.all,round4.current,round5.current,round6.current,round7.current,round8.current,round9.current];
   const retired=new Map(history.flatMap(rows=>[...rows]).filter(d=>!currentIds.has(d.id)).map(d=>[d.id,d]));
-  assert.equal(retired.size,134);
+  assert.equal(retired.size,163);
   for(const d of retired.values())assert.equal(existsSync('site/'+d.image),false,d.id+' stays retired');
 });
-test('current page loads Round09 and historical catalog scripts are not published',()=>{
-  for(const f of ['catalog.js','collection.js','round3.js','round4.js','round5.js','round6.js','round7.js','round8.js','app.js'])assert.equal(existsSync('site/'+f),false,f);
+test('current page loads Round10 and historical catalog scripts are not published',()=>{
+  for(const f of ['catalog.js','collection.js','round3.js','round4.js','round5.js','round6.js','round7.js','round8.js','round9.js','app.js'])assert.equal(existsSync('site/'+f),false,f);
   const page=readFileSync('site/index.html','utf8');
-  assert.ok(page.includes('keepers.js?v=9')&&page.includes('round9.js?v=9'));
+  assert.ok(page.includes('keepers.js?v=10')&&page.includes('round10.js?v=10'));
   assert.ok(!page.includes('data-filter="Archive"'));
 });
 test('all 114 current design images exist',()=>{
-  assert.equal(round9.current.length,114);
-  const missing=[...round9.current.filter(d=>!existsSync('site/'+d.image)).map(d=>d.image)];
+  assert.equal(round10.current.length,114);
+  const missing=[...round10.current.filter(d=>!existsSync('site/'+d.image)).map(d=>d.image)];
   assert.deepEqual(missing,[],'Missing current design renders');
 });

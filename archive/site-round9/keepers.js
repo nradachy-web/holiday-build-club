@@ -1,21 +1,6 @@
 /* Approved designs carried forward unchanged. */
 const KEEPERS = [
   {
-    "id": "avoid-trousers-onesie",
-    "name": "All This to Avoid Trousers Adult Onesie",
-    "type": "Adult lounge suit",
-    "category": "Onesies",
-    "phrase": "ALL THIS / TO AVOID FUCKING TROUSERS.",
-    "description": "A proportionate response to a waistband.",
-    "alt": "All This to Avoid Trousers Adult Onesie concept featuring ALL THIS and TO AVOID FUCKING TROUSERS.",
-    "capsule": "Whole outfit, whole situation / Onesies Round 01",
-    "image": "assets/round9/avoid-trousers-onesie.webp",
-    "fan": false,
-    "round": 9,
-    "method": "Allover print",
-    "tags": "ALL THIS / TO AVOID FUCKING TROUSERS. A proportionate response to a waistband. adult onesie lounge suit back"
-  },
-  {
     "id": "idea-emails-tee",
     "name": "Now It Emails Me Tee",
     "type": "Oversized tee",

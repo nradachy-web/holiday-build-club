@@ -10,27 +10,27 @@ vm.runInContext(stateSource, context);
 const api = context.PromptReview;
 
 // Synthetic catalog isolates review semantics from future catalog replacements.
-const approvedIds = Array.from({length: 84}, (_, i) => `approved-${i + 1}`);
-const newIds = Array.from({length: 30}, (_, i) => `new-${i + 1}`);
+const approvedIds = Array.from({length: 85}, (_, i) => `approved-${i + 1}`);
+const newIds = Array.from({length: 29}, (_, i) => `new-${i + 1}`);
 const designs = [...approvedIds, ...newIds].map(id => ({
   id, name: id, phrase: `Design ${id}`, description: '', tags: '',
   type: 'Adult lounge suit', category: 'Onesies', image: 'fixture.webp', alt: id,
-  round: approvedIds.includes(id) ? 8 : 9
+  round: approvedIds.includes(id) ? 9 : 10
 }));
-// The phone has 15 later approvals and 13 newest approvals, missing the earlier 56.
+// The phone has 15 Round07, 13 Round08 and the trousers approval, missing the earlier 56.
 const phoneIds = approvedIds.slice(56);
 const sorted = values => [...values].sort();
 
-test('a sparse phone brief preserves all 84 approvals and scopes KEEP/REPLACE to 30 new designs', () => {
-  assert.equal(phoneIds.length, 28);
+test('a sparse phone brief preserves all 85 approvals and scopes KEEP/REPLACE to 29 new designs', () => {
+  assert.equal(phoneIds.length, 29);
   const hearts = new Set(phoneIds);
   const result = api.decisions(designs, hearts, approvedIds);
-  assert.equal(result.approved.length, 84);
+  assert.equal(result.approved.length, 85);
   assert.equal(result.keep.length, 0);
   assert.deepEqual(sorted(result.replace.map(d => d.id)), sorted(newIds));
   const brief = api.brief(designs, hearts, 'Adult onesies only.', approvedIds);
-  const previous = brief.split('PREVIOUSLY APPROVED (84)')[1].split('\n\nKEEP (0)')[0];
-  const replace = brief.split('\n\nREPLACE (30)')[1];
+  const previous = brief.split('PREVIOUSLY APPROVED (85)')[1].split('\n\nKEEP (0)')[0];
+  const replace = brief.split('\n\nREPLACE (29)')[1];
   for (const id of approvedIds) {
     assert.ok(previous.includes(`[${id}]`));
     assert.ok(!replace.includes(`[${id}]`));
@@ -43,9 +43,9 @@ test('a sparse phone brief preserves all 84 approvals and scopes KEEP/REPLACE to
 test('new selections form disjoint review groups while unknown saved IDs stay out of the brief', () => {
   const hearts = new Set([...phoneIds, newIds[0], newIds[1], 'retired-fixture']);
   const result = api.decisions(designs, hearts, [...approvedIds, 'missing-approval']);
-  assert.equal(result.approved.length, 84);
+  assert.equal(result.approved.length, 85);
   assert.deepEqual(result.keep.map(d => d.id), newIds.slice(0, 2));
-  assert.equal(result.replace.length, 28);
+  assert.equal(result.replace.length, 27);
   assert.equal(new Set([...result.approved, ...result.keep, ...result.replace].map(d => d.id)).size, 114);
   const brief = api.brief(designs, hearts, '', approvedIds);
   const currentReview = brief.split('\n\nKEEP (2)')[1];
@@ -115,9 +115,9 @@ test('an empty browser shows prior approval without adding hearts or enabling th
   const page = browser();
   assert.equal(page.node('#save-count').textContent, 0);
   assert.equal(page.node('#keep-total').textContent, 0);
-  assert.equal(page.node('#replace-total').textContent, 30);
+  assert.equal(page.node('#replace-total').textContent, 29);
   assert.equal(page.node('#copy-picks-link').disabled, true);
-  assert.equal(page.node('#review-summary').textContent, '84 approved earlier. 0 new picks on this device. 30 new ideas still to review.');
+  assert.equal(page.node('#review-summary').textContent, '85 approved earlier. 0 new picks on this device. 29 new ideas still to review.');
   assert.equal(vm.runInContext('favorites.size', page.sandbox), 0);
   assert.equal(page.writes(), 0);
 });
@@ -126,15 +126,15 @@ test('saved filters stay personal and removing an old heart cannot revoke its ap
   const page = browser(phoneIds);
   vm.runInContext("setFilter('Saved')", page.sandbox);
   assert.deepEqual(sorted(vm.runInContext('visible().map(d => d.id)', page.sandbox)), sorted(phoneIds));
-  assert.equal(page.node('#save-count').textContent, 28);
-  assert.equal(page.node('#keep-total').textContent, 28);
+  assert.equal(page.node('#save-count').textContent, 29);
+  assert.equal(page.node('#keep-total').textContent, 29);
   vm.runInContext("setFilter('Replace')", page.sandbox);
   assert.deepEqual(sorted(vm.runInContext('visible().map(d => d.id)', page.sandbox)), sorted(newIds));
   page.sandbox.removedId = phoneIds[0];
   vm.runInContext('toggleSaved(removedId)', page.sandbox);
-  assert.equal(page.node('#save-count').textContent, 27);
-  assert.equal(page.node('#replace-total').textContent, 30);
-  assert.ok(page.node('#decision-brief').value.includes('PREVIOUSLY APPROVED (84)'));
+  assert.equal(page.node('#save-count').textContent, 28);
+  assert.equal(page.node('#replace-total').textContent, 29);
+  assert.ok(page.node('#decision-brief').value.includes('PREVIOUSLY APPROVED (85)'));
   assert.equal(page.node('#toast').textContent, 'Removed from saved picks on this device');
 });
 
@@ -143,11 +143,11 @@ test('downloaded JSON separates prior approvals from this rounds KEEP/REPLACE gr
   page.node('#download-decisions').listeners.click();
   const exported = JSON.parse(await page.download().text());
   assert.equal(exported.schemaVersion, 2);
-  assert.equal(exported.previouslyApproved.length, 84);
+  assert.equal(exported.previouslyApproved.length, 85);
   assert.deepEqual(exported.keep.map(d => d.id), newIds.slice(0, 2));
-  assert.equal(exported.replace.length, 28);
+  assert.equal(exported.replace.length, 27);
   assert.ok(exported.replace.every(d => !approvedIds.includes(d.id)));
-  assert.equal(page.node('#keep-total').textContent, 30, 'saved count includes local older hearts');
-  assert.equal(page.node('#replace-total').textContent, 28);
+  assert.equal(page.node('#keep-total').textContent, 31, 'saved count includes local older hearts');
+  assert.equal(page.node('#replace-total').textContent, 27);
   assert.equal(page.writes(), 0, 'exporting does not change storage');
 });
