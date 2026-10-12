@@ -321,7 +321,7 @@ test('current category counts and all 188 retired design IDs match the full cata
 test('current page loads Round11 and historical catalog scripts are not published',()=>{
   for(const f of ['catalog.js','collection.js','round3.js','round4.js','round5.js','round6.js','round7.js','round8.js','round9.js','round10.js','app.js'])assert.equal(existsSync('site/'+f),false,f);
   const page=readFileSync('site/index.html','utf8');
-  assert.ok(page.includes('keepers.js?v=11')&&page.includes('round11.js?v=11'));
+  assert.ok(page.includes('keepers.js?v=12')&&page.includes('round11.js?v=12'));
   assert.ok(!page.includes('data-filter="Archive"'));
 });
 test('all 114 current design images exist',()=>{

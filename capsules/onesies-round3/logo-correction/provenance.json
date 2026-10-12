@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-12",
+  "tool": "image_gen.imagegen",
+  "reference": "brand/references/clawd-reference.jpg",
+  "scope": "Reference-matched Clawd mascot corrections only. Original target images retained. Same product IDs, wording and garment layouts.",
+  "entries": [
+    {
+      "id": "claude-faithful-onesie",
+      "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-3c18b1b2-2676-4fb0-a578-bd1cb230bfbd.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the onesie EDIT TARGET. Image 2 is the exact Clawd mascot REFERENCE. Replace only the existing orange crab/creature graphic in image 1 with the IDENTICAL mascot silhouette from image 2: a wide flat-top terracotta rectangle, straight sides, two narrow vertical black rectangular eyes widely spaced, one short straight horizontal bar protruding from each side at the same lower-body height, and FOUR short straight rectangular feet in two close pairs. Its main body is wider than tall. COPY the reference silhouette without any reinterpretation. No claws, raised arms, horns, mouth, rounded head, outlines or two-legged humanoid. Do not copy the black rectangle background of image 2; the terracotta mascot prints directly on cloth. Keep the replacement at the original graphic position and a similar overall width. Keep all wording, typography, garment color, printed stripes, layout, seams, pockets, fabric, camera framing and background unchanged. One complete adult footless garment only. No added text."
+    },
+    {
+      "id": "claude-forgets-onesie",
+      "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-292f2478-30b5-45ad-bfc4-8bcd3e27cc7b.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the onesie EDIT TARGET. Image 2 is the exact Clawd mascot REFERENCE. Replace only the existing orange crab/creature graphic in image 1 with the IDENTICAL mascot silhouette from image 2: a wide flat-top terracotta rectangle, straight sides, two narrow vertical black rectangular eyes widely spaced, one short straight horizontal bar protruding from each side at the same lower-body height, and FOUR short straight rectangular feet in two close pairs. Its main body is wider than tall. COPY the reference silhouette without any reinterpretation. No claws, raised arms, horns, mouth, rounded head, outlines or two-legged humanoid. Do not copy the black rectangle background of image 2; the terracotta mascot prints directly on cloth. Keep the replacement at the original graphic position and a similar overall width. Keep all wording, typography, garment color, printed stripes, layout, seams, pockets, fabric, camera framing and background unchanged. One complete adult footless garment only. No added text."
+    },
+    {
+      "id": "claude-no-onesie",
+      "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-c200c6c9-64be-4a62-890e-d57091fb3362.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the onesie EDIT TARGET. Image 2 is the exact Clawd mascot REFERENCE. Replace only the existing orange crab/creature graphic in image 1 with the IDENTICAL mascot silhouette from image 2: a wide flat-top terracotta rectangle, straight sides, two narrow vertical black rectangular eyes widely spaced, one short straight horizontal bar protruding from each side at the same lower-body height, and FOUR short straight rectangular feet in two close pairs. Its main body is wider than tall. COPY the reference silhouette without any reinterpretation. No claws, raised arms, horns, mouth, rounded head, outlines or two-legged humanoid. Do not copy the black rectangle background of image 2; the terracotta mascot prints directly on cloth. Keep the replacement at the original graphic position and a similar overall width. Keep all wording, typography, garment color, printed stripes, layout, seams, pockets, fabric, camera framing and background unchanged. One complete adult footless garment only. No added text."
+    },
+    {
+      "id": "claude-comments-onesie",
+      "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-a0a80839-1730-4d0b-b813-ee17b3df494f.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the onesie EDIT TARGET. Image 2 is the exact Clawd mascot REFERENCE. Replace only the existing orange crab/creature graphic in image 1 with the IDENTICAL mascot silhouette from image 2: a wide flat-top terracotta rectangle, straight sides, two narrow vertical black rectangular eyes widely spaced, one short straight horizontal bar protruding from each side at the same lower-body height, and FOUR short straight rectangular feet in two close pairs. Its main body is wider than tall. COPY the reference silhouette without any reinterpretation. No claws, raised arms, horns, mouth, rounded head, outlines or two-legged humanoid. Do not copy the black rectangle background of image 2; the terracotta mascot prints directly on cloth. Keep the replacement at the original graphic position and a similar overall width. Keep all wording, typography, garment color, printed stripes, layout, seams, pockets, fabric, camera framing and background unchanged. One complete adult footless garment only. No added text."
+    },
+    {
+      "id": "claude-fix-him-onesie",
+      "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-e983d2cb-72a1-4e86-9b5b-bced85d5748c.png",
+      "prompt": "undefined On this orange garment render the reference mascot silhouette in solid black with the narrow eye cutouts revealing the orange cloth. No black outline around an orange body. The geometry must exactly match image 2."
+    },
+    {
+      "id": "claude-pacing-onesie",
+      "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-d2b7c801-e725-455c-a13a-03d7ca241d76.png",
+      "prompt": "undefined Replace BOTH the large mascot and the small mascot inside the cream stamp with the identical reference silhouette."
+    },
+    {
+      "id": "claude-custody-onesie",
+      "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-33aaa411-88cb-4e4c-ad27-8c4b2fbd88e8.png",
+      "prompt": "undefined Remove the folder and the humanoid arms and legs attached to the old character. The replacement is the unmodified simple reference mascot alone, at that same large graphic location. Keep the leg text and redaction bars unchanged."
+    },
+    {
+      "id": "model-credit-onesie",
+      "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-3d406184-7e37-43f2-869a-a8906b8064a1.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the onesie EDIT TARGET. Image 2 is the exact Clawd mascot REFERENCE. Replace only the existing orange crab/creature graphic in image 1 with the IDENTICAL mascot silhouette from image 2: a wide flat-top terracotta rectangle, straight sides, two narrow vertical black rectangular eyes widely spaced, one short straight horizontal bar protruding from each side at the same lower-body height, and FOUR short straight rectangular feet in two close pairs. Its main body is wider than tall. COPY the reference silhouette without any reinterpretation. No claws, raised arms, horns, mouth, rounded head, outlines or two-legged humanoid. Do not copy the black rectangle background of image 2; the terracotta mascot prints directly on cloth. Keep the replacement at the original graphic position and a similar overall width. Keep all wording, typography, garment color, printed stripes, layout, seams, pockets, fabric, camera framing and background unchanged. One complete adult footless garment only. No added text. Preserve the existing white OpenAI/ChatGPT knot logo exactly as shown. Only replace the orange Clawd mascot; do not edit the other logo, wording, frames or garment graphics."
+    },
+    {
+      "id": "multi-model-onesie",
+      "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-0a3e445d-a8e7-49be-aa77-ce11edad9a4f.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the onesie EDIT TARGET. Image 2 is the exact Clawd mascot REFERENCE. Replace only the existing orange crab/creature graphic in image 1 with the IDENTICAL mascot silhouette from image 2: a wide flat-top terracotta rectangle, straight sides, two narrow vertical black rectangular eyes widely spaced, one short straight horizontal bar protruding from each side at the same lower-body height, and FOUR short straight rectangular feet in two close pairs. Its main body is wider than tall. COPY the reference silhouette without any reinterpretation. No claws, raised arms, horns, mouth, rounded head, outlines or two-legged humanoid. Do not copy the black rectangle background of image 2; the terracotta mascot prints directly on cloth. Keep the replacement at the original graphic position and a similar overall width. Keep all wording, typography, garment color, printed stripes, layout, seams, pockets, fabric, camera framing and background unchanged. One complete adult footless garment only. No added text. Preserve the existing white OpenAI/ChatGPT knot logo exactly as shown. Only replace the orange Clawd mascot; do not edit the other logo, wording, frames or garment graphics."
+    },
+    {
+      "id": "model-fight-onesie",
+      "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-c1f5e681-a9be-4d6d-8004-28e0996f37c5.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the onesie EDIT TARGET. Image 2 is the exact Clawd mascot REFERENCE. Replace only the existing orange crab/creature graphic in image 1 with the IDENTICAL mascot silhouette from image 2: a wide flat-top terracotta rectangle, straight sides, two narrow vertical black rectangular eyes widely spaced, one short straight horizontal bar protruding from each side at the same lower-body height, and FOUR short straight rectangular feet in two close pairs. Its main body is wider than tall. COPY the reference silhouette without any reinterpretation. No claws, raised arms, horns, mouth, rounded head, outlines or two-legged humanoid. Do not copy the black rectangle background of image 2; the terracotta mascot prints directly on cloth. Keep the replacement at the original graphic position and a similar overall width. Keep all wording, typography, garment color, printed stripes, layout, seams, pockets, fabric, camera framing and background unchanged. One complete adult footless garment only. No added text. Preserve the existing white OpenAI/ChatGPT knot logo exactly as shown. Only replace the orange Clawd mascot; do not edit the other logo, wording, frames or garment graphics."
+    },
+    {
+      "id": "support-crab-onesie",
+      "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-ed695e96-7792-4d12-aad1-4622323de539.png",
+      "prompt": "PRECISION LOGO REPLACEMENT. Image 1 is the garment to edit. ERASE its existing orange chest creature COMPLETELY. Replace it with an exact flat copy of the orange Clawd mascot in image 2. Image 3 demonstrates the correct identical Clawd geometry on a different garment: use that same WIDE flat-top rectangular body, widely spaced eyes, straight horizontal side bars and FOUR separate straight rectangular feet in TWO PAIRS. The entire logo silhouette is 1.6 times wider than tall. No stepped top corners, no round head, no crooked bent arms, no claws, no antennae. Make the new logo wide enough, about the width of the SUPPORT CRAB text below it. Black eye cutouts. No background box. This is a direct reference copy, not a new character design. Keep the black onesie, tiny orange hearts inside hood, zipper, all text EMOTIONAL SUPPORT CRAB and CLAUDE CODE and PROMPT DEPT., print positions, cuffs, shadows, background, framing and every other detail unchanged. Output one full adult garment as image 1. The old mascot is wrong and must be replaced.",
+      "additionalReference": "capsules/onesies-round3/logo-correction/claude-no-onesie.png",
+      "rejectedAttempt": {
+        "source": "/Users/modernapex/.codex/generated_images/01a11a6e-2290-7bc0-bdde-2a2aae4b2c5d/exec-53a2e4a6-116f-4249-adfd-c2a48ccade48.png",
+        "prompt": "Use case: precise-object-edit. Image 1 is the onesie EDIT TARGET. Image 2 is the exact Clawd mascot REFERENCE. Replace only the existing orange crab/creature graphic in image 1 with the IDENTICAL mascot silhouette from image 2: a wide flat-top terracotta rectangle, straight sides, two narrow vertical black rectangular eyes widely spaced, one short straight horizontal bar protruding from each side at the same lower-body height, and FOUR short straight rectangular feet in two close pairs. Its main body is wider than tall. COPY the reference silhouette without any reinterpretation. No claws, raised arms, horns, mouth, rounded head, outlines or two-legged humanoid. Do not copy the black rectangle background of image 2; the terracotta mascot prints directly on cloth. Keep the replacement at the original graphic position and a similar overall width. Keep all wording, typography, garment color, printed stripes, layout, seams, pockets, fabric, camera framing and background unchanged. One complete adult footless garment only. No added text.",
+        "reason": "Chest mascot still had stepped head, close eyes and bent limbs; not reference-matched."
+      }
+    }
+  ]
+}

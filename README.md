@@ -32,7 +32,7 @@ The optional browser regression script is `scripts/verify-brand.mjs`. With Playw
 
 ## Current artwork and identity
 
-- `capsules/onesies-round3/`: 25 full-resolution generated mockups, exact prompts and provenance.
+- `capsules/onesies-round3/`: 25 original full-resolution mockups, exact prompts and provenance. The `logo-correction/` subdirectory holds the current reference-matched Clawd edits and their prompts.
 - `site/keepers.js`: the 89 stable keeper records and legacy holiday IDs.
 - `site/round11.js`: the new collection and current catalog.
 - `brand/identity/round3/prompt-dept-logo.png`: approved transparent raster mascot master.
@@ -51,7 +51,7 @@ The custom domain is `promptdept.store`, with `www.promptdept.store` redirecting
 
 GitHub Actions publishes only `site/`. No checkout, charge, reservation, analytics, advertising pixels or automatic subscription exists. The shortlist button opens an email draft; it does not send anything. Fonts and licenses are served locally. A commercial store needs appropriate commercial hosting and fulfillment setup.
 
-Prompt Dept. is the selected working name, not a claim of trademark clearance. Fan concepts using third-party marks are independent, unaffiliated and not commercially cleared. Of the new 25 designs, 23 are fan concepts requiring rights clearance and two use original copy and graphics.
+Prompt Dept. is the selected working name, not a claim of trademark clearance. Of the new 25 designs, 23 are independent, unaffiliated fan concepts and two use original copy and graphics. Model marks use faithful references, with no invented substitute logos for supposed legal protection. Parody and other defenses depend on the specific use; vendor brand policies are not a legal ruling. No license or legal clearance is claimed.
 
 Twenty specialist lanes contributed to this project. Private supplier research, financial assumptions, business reviews and the launch notebook remain in ignored `business/` and `research/` directories. They are not published or available in a public clone. The current local sourcebook is `business/onesies-round3-sourcebook.html`; the launch notebook is `business/launch.html`. The private manufacturing desk at `business/manufacturing.html` compares inventory and made-per-order suboptions, supplier evidence, sample/QC workflows, unit economics, cash timing, channel gates and unsent RFQs. Contrado remains a premium sample benchmark alongside the $79 to $99 retail target. Cost inputs are illustrative, not quotes or approved orders.
 
