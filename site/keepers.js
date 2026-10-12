@@ -1,5 +1,65 @@
-/* Approved designs carried forward unchanged. */
+/* Approved records preserved exactly across review rounds. */
 const KEEPERS = [
+  {
+    "id": "deleted-chat-onesie",
+    "name": "Disagreeing Chat Adult Onesie",
+    "type": "Adult lounge suit",
+    "category": "Onesies",
+    "phrase": "I DELETED THE CHAT / THAT DISAGREED WITH ME.",
+    "description": "A controlled experiment in being right.",
+    "alt": "Disagreeing Chat Adult Onesie concept featuring I DELETED THE CHAT and THAT DISAGREED WITH ME.",
+    "capsule": "Voluntarily dressed like this / Onesies Round 02",
+    "image": "assets/round10/deleted-chat-onesie.webp",
+    "fan": false,
+    "round": 10,
+    "method": "Allover print",
+    "tags": "I DELETED THE CHAT / THAT DISAGREED WITH ME. A controlled experiment in being right. adult onesie lounge suit back"
+  },
+  {
+    "id": "emergency-contact-onesie",
+    "name": "Do Not Contact Adult Onesie",
+    "type": "Adult lounge suit",
+    "category": "Onesies",
+    "phrase": "EMERGENCY CONTACT. / DO NOT CONTACT.",
+    "description": "The role sounded better on paper.",
+    "alt": "Do Not Contact Adult Onesie concept featuring EMERGENCY CONTACT. and DO NOT CONTACT.",
+    "capsule": "Voluntarily dressed like this / Onesies Round 02",
+    "image": "assets/round10/emergency-contact-onesie.webp",
+    "fan": false,
+    "round": 10,
+    "method": "Allover print",
+    "tags": "EMERGENCY CONTACT. / DO NOT CONTACT. The role sounded better on paper. adult onesie lounge suit front"
+  },
+  {
+    "id": "unzip-escalate-onesie",
+    "name": "Unzip to Escalate Adult Onesie",
+    "type": "Adult lounge suit",
+    "category": "Onesies",
+    "phrase": "UNZIP TO / ESCALATE.",
+    "description": "There is another level of management.",
+    "alt": "Unzip to Escalate Adult Onesie concept featuring UNZIP TO and ESCALATE.",
+    "capsule": "Voluntarily dressed like this / Onesies Round 02",
+    "image": "assets/round10/unzip-escalate-onesie.webp",
+    "fan": false,
+    "round": 10,
+    "method": "Allover print",
+    "tags": "UNZIP TO / ESCALATE. There is another level of management. adult onesie lounge suit front"
+  },
+  {
+    "id": "references-onesie",
+    "name": "References Request Anonymity Adult Onesie",
+    "type": "Adult lounge suit",
+    "category": "Onesies",
+    "phrase": "MY REFERENCES / REQUEST ANONYMITY.",
+    "description": "They are available under witness protection.",
+    "alt": "References Request Anonymity Adult Onesie concept featuring MY REFERENCES and REQUEST ANONYMITY.",
+    "capsule": "Voluntarily dressed like this / Onesies Round 02",
+    "image": "assets/round10/references-onesie.webp",
+    "fan": false,
+    "round": 10,
+    "method": "Allover print",
+    "tags": "MY REFERENCES / REQUEST ANONYMITY. They are available under witness protection. adult onesie lounge suit front"
+  },
   {
     "id": "avoid-trousers-onesie",
     "name": "All This to Avoid Trousers Adult Onesie",

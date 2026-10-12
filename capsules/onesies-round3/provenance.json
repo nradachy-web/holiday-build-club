@@ -1,0 +1,196 @@
+{
+  "created": "2026-10-11",
+  "initialCalls": 25,
+  "correctionCalls": 7,
+  "entries": [
+    {
+      "id": "claude-faithful-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "claude-faithful-onesie.png",
+      "generatorFile": "exec-36767050-eb57-43f5-93f3-af2b03c87ae5.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "claude-forgets-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "claude-forgets-onesie.png",
+      "generatorFile": "exec-dcc6bf70-ef66-4e76-8228-874213d83456.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "claude-no-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "claude-no-onesie.png",
+      "generatorFile": "exec-159a69a2-b05b-4327-b017-38a63215b0c3.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "claude-comments-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "claude-comments-onesie.png",
+      "generatorFile": "exec-8c2824a9-24d6-43f9-8350-9204417c0aad.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "support-crab-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "support-crab-onesie.png",
+      "generatorFile": "exec-c97c85da-d130-4fe9-9bc3-0f32652366ba.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "claude-fix-him-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "claude-fix-him-onesie.png",
+      "generatorFile": "exec-ebd4f2a2-283c-477f-94ff-0f165a17ccbc.png",
+      "promptFile": "manifest.json",
+      "initialFile": "initials/claude-fix-him-onesie.png",
+      "correctionPrompt": "Edit the provided product concept: show ONLY the left, front-view orange adult onesie, centered and large in a portrait 4:5 frame. Remove the entire back-view garment on the right. Preserve the front garment's exact print, colors, readable words CLAUDE / THAT WAS / OUT OF CONTEXT., single chest panel placement, pixel mascot, bracket shin mark, zipper, hood and complete footless silhouette. Pale grey studio backdrop with restrained shadow. Only ONE garment in the entire image, full hood and both ankle hems visible. Do not add new features or lettering."
+    },
+    {
+      "id": "claude-pacing-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "claude-pacing-onesie.png",
+      "generatorFile": "exec-d6ff94b3-e96a-41af-bcb3-4df5c79c2db7.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "claude-custody-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "claude-custody-onesie.png",
+      "generatorFile": "exec-cff9a8e9-20b2-4f9b-8589-9f6bb41555af.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "gpt-bullets-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "gpt-bullets-onesie.png",
+      "generatorFile": "exec-76ed54f5-8f7b-406e-9240-3222cadfca6c.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "gpt-discussed-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "gpt-discussed-onesie.png",
+      "generatorFile": "exec-6936e892-a1e4-42b4-86f5-758abcb7bae0.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "gpt-plus-one-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "gpt-plus-one-onesie.png",
+      "generatorFile": "exec-694dbf0d-9a93-4812-b977-36a258c65b98.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "gpt-support-group-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "gpt-support-group-onesie.png",
+      "generatorFile": "exec-92afc234-37f9-4446-a62f-e92092c44d27.png",
+      "promptFile": "manifest.json",
+      "initialFile": "initials/gpt-support-group-onesie.png",
+      "correctionPrompt": "Edit this product concept to show ONLY the back-view charcoal adult onesie currently on the right. Remove the front-view garment entirely. Center the single back-view garment, large within a portrait 4:5 pale grey studio frame, whole hood and both footless ankle hems visible. Preserve exactly the white OpenAI knot, two chat bubbles and lime words CHATGPT AGREES. / HE ONLY HEARD / MY SIDE. Preserve the cloth, silhouette, colors and print. No front view, no second garment, no extra text, no new features."
+    },
+    {
+      "id": "gpt-trust-bro-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "gpt-trust-bro-onesie.png",
+      "generatorFile": "exec-ab6ab8ea-f114-4b8d-ba7a-bd2f2a98d143.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "gpt-love-him-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "gpt-love-him-onesie.png",
+      "generatorFile": "exec-b3884715-9b1a-45a7-81e3-f7c1f7c751f0.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "gpt-enabling-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "gpt-enabling-onesie.png",
+      "generatorFile": "exec-97657c97-6612-4bff-ab7d-25dccedda793.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "gpt-overthinking-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "gpt-overthinking-onesie.png",
+      "generatorFile": "exec-4df23dee-03d2-40b5-ac7f-7e1c114ba1b7.png",
+      "promptFile": "manifest.json",
+      "initialFile": "initials/gpt-overthinking-onesie.png",
+      "correctionPrompt": "Edit to show ONLY the back-view blue adult onesie currently on the right, centered large in a portrait4:5 pale grey studio frame. Remove the front-view garment entirely. Preserve exactly the white knot in speech bubble, words CHATGPT / I OVERSHARED. / NOW WE'RE EXCLUSIVE., envelope symbol and lower-leg stripes, fabric and colors. ONE garment only, whole hood and footless ankles visible. No other changes."
+    },
+    {
+      "id": "codex-diff-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "codex-diff-onesie.png",
+      "generatorFile": "exec-33eddb1a-8c01-4c63-9dff-279120915dee.png",
+      "promptFile": "manifest.json",
+      "initialFile": "initials/codex-diff-onesie.png",
+      "correctionPrompt": "Edit this single black back-view Codex adult onesie with one precise change: remove the tiny orange pixel character below the red and green diff bars. Replace it with a simple small bright blue terminal chevron >, a flat printed symbol. Preserve CODEX / THE DIFF IS NONE / OF MY BUSINESS. exactly, preserve the red/green bars, PROMPT DEPT. text, entire garment, background and composition. No crab or pixel character anywhere. One garment only."
+    },
+    {
+      "id": "codex-access-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "codex-access-onesie.png",
+      "generatorFile": "exec-e8fa8c2c-1041-449e-990e-42dfa01b3c75.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "codex-whatever-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "codex-whatever-onesie.png",
+      "generatorFile": "exec-7269c4bc-4b1b-484d-bdad-0b89f0c8a99f.png",
+      "promptFile": "manifest.json",
+      "initialFile": "initials/codex-whatever-onesie.png",
+      "correctionPrompt": "Edit this single cream back-view Codex adult onesie with one precise change: remove the tiny orange square robot/crab character beside PROMPT DEPT. on the lower right leg. Replace that character with a simple small orange terminal chevron >, a flat printed symbol. Preserve CODEX / HE DID WHAT I ASKED. / FUCK. exactly, check mark, sleeve stripe, PROMPT DEPT. text, garment, background and composition. No crab or square character anywhere. One garment only."
+    },
+    {
+      "id": "codex-named-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "codex-named-onesie.png",
+      "generatorFile": "exec-c62837a3-caff-4aea-be70-baff64ba2b97.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "model-credit-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "model-credit-onesie.png",
+      "generatorFile": "exec-63218e8c-f4cb-407f-959b-b805ffc4b96e.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "multi-model-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "multi-model-onesie.png",
+      "generatorFile": "exec-6401c07c-3410-4dcd-99f8-8ea38411627a.png",
+      "promptFile": "manifest.json"
+    },
+    {
+      "id": "model-fight-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "model-fight-onesie.png",
+      "generatorFile": "exec-132ee7cd-7e65-41e9-8839-a5a284c58b7e.png",
+      "promptFile": "manifest.json",
+      "initialFile": "initials/model-fight-onesie.png",
+      "correctionPrompt": "Edit this black back-view adult onesie: remove ONLY the floating PROMPT DEPT. wordmark and terminal chevron from the grey background between the two ankles. Keep that gap empty pale grey. Preserve the entire garment and all prints on it exactly, including large cream MY MODEL'S BETTER. / I HAVEN'T TRIED YOURS. and the orange pixel mascot and cream knot on each lower leg. No text outside the garment. One complete garment only."
+    },
+    {
+      "id": "billing-phase-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "billing-phase-onesie.png",
+      "generatorFile": "exec-baa0bc04-6310-4f1b-9daa-b57021b406a2.png",
+      "promptFile": "manifest.json",
+      "initialFile": "initials/billing-phase-onesie.png",
+      "correctionPrompt": "Edit this black front-view adult onesie: remove ONLY the tiny orange pixel crab/robot character on the lower right leg, leave plain black cloth in its place. Preserve the small PROMPT DEPT. lettering below it. Preserve all other details exactly: cream APOLOGY / RETURNED / WITH NOTES. chest text, red correction swirl, zipper, hood, cuffs, silhouette, grey background. This is an original Prompt Dept concept with no Claude, OpenAI or other third-party logo. One garment only."
+    },
+    {
+      "id": "zip-explain-onesie",
+      "tool": "built-in imagegen",
+      "finalFile": "zip-explain-onesie.png",
+      "generatorFile": "exec-9eb99bd2-e9a7-439f-87e5-cbdd05ac3a12.png",
+      "promptFile": "manifest.json"
+    }
+  ]
+}
