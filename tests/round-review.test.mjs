@@ -10,26 +10,26 @@ vm.runInContext(stateSource, context);
 const api = context.PromptReview;
 
 // Synthetic catalog isolates review semantics from future catalog replacements.
-const approvedIds = Array.from({length: 89}, (_, i) => `approved-${i + 1}`);
+const approvedIds = Array.from({length: 114}, (_, i) => `approved-${i + 1}`);
 const newIds = Array.from({length: 25}, (_, i) => `new-${i + 1}`);
 const designs = [...approvedIds, ...newIds].map(id => ({
   id, name: id, phrase: `Design ${id}`, description: '', tags: '',
   type: 'Adult lounge suit', category: 'Onesies', image: 'fixture.webp', alt: id,
-  round: approvedIds.includes(id) ? 10 : 11
+  round: approvedIds.includes(id) ? 11 : 12
 }));
 // The phone has 15 Round07, 13 Round08, the trousers approval and four Round10 approvals, missing the earlier 56.
-const phoneIds = approvedIds.slice(56);
+const phoneIds = approvedIds.slice(56, 89);
 const sorted = values => [...values].sort();
 
-test('a sparse phone brief preserves all 89 approvals and scopes KEEP/REPLACE to 25 new designs', () => {
+test('a sparse phone brief preserves all 114 approvals and scopes KEEP/REPLACE to 25 new designs', () => {
   assert.equal(phoneIds.length, 33);
   const hearts = new Set(phoneIds);
   const result = api.decisions(designs, hearts, approvedIds);
-  assert.equal(result.approved.length, 89);
+  assert.equal(result.approved.length, 114);
   assert.equal(result.keep.length, 0);
   assert.deepEqual(sorted(result.replace.map(d => d.id)), sorted(newIds));
   const brief = api.brief(designs, hearts, 'Adult onesies only.', approvedIds);
-  const previous = brief.split('PREVIOUSLY APPROVED (89)')[1].split('\n\nKEEP (0)')[0];
+  const previous = brief.split('PREVIOUSLY APPROVED (114)')[1].split('\n\nKEEP (0)')[0];
   const replace = brief.split('\n\nREPLACE (25)')[1];
   for (const id of approvedIds) {
     assert.ok(previous.includes(`[${id}]`));
@@ -43,10 +43,10 @@ test('a sparse phone brief preserves all 89 approvals and scopes KEEP/REPLACE to
 test('new selections form disjoint review groups while unknown saved IDs stay out of the brief', () => {
   const hearts = new Set([...phoneIds, newIds[0], newIds[1], 'retired-fixture']);
   const result = api.decisions(designs, hearts, [...approvedIds, 'missing-approval']);
-  assert.equal(result.approved.length, 89);
+  assert.equal(result.approved.length, 114);
   assert.deepEqual(result.keep.map(d => d.id), newIds.slice(0, 2));
   assert.equal(result.replace.length, 23);
-  assert.equal(new Set([...result.approved, ...result.keep, ...result.replace].map(d => d.id)).size, 114);
+  assert.equal(new Set([...result.approved, ...result.keep, ...result.replace].map(d => d.id)).size, 139);
   const brief = api.brief(designs, hearts, '', approvedIds);
   const currentReview = brief.split('\n\nKEEP (2)')[1];
   assert.ok(currentReview.includes(`[${newIds[0]}]`));
@@ -117,7 +117,7 @@ test('an empty browser shows prior approval without adding hearts or enabling th
   assert.equal(page.node('#keep-total').textContent, 0);
   assert.equal(page.node('#replace-total').textContent, 25);
   assert.equal(page.node('#copy-picks-link').disabled, true);
-  assert.equal(page.node('#review-summary').textContent, '89 approved earlier. 0 new picks on this device. 25 new ideas still to review.');
+  assert.equal(page.node('#review-summary').textContent, '114 approved earlier. 0 new picks on this device. 25 new ideas still to review.');
   assert.equal(vm.runInContext('favorites.size', page.sandbox), 0);
   assert.equal(page.writes(), 0);
 });
@@ -134,7 +134,7 @@ test('saved filters stay personal and removing an old heart cannot revoke its ap
   vm.runInContext('toggleSaved(removedId)', page.sandbox);
   assert.equal(page.node('#save-count').textContent, 32);
   assert.equal(page.node('#replace-total').textContent, 25);
-  assert.ok(page.node('#decision-brief').value.includes('PREVIOUSLY APPROVED (89)'));
+  assert.ok(page.node('#decision-brief').value.includes('PREVIOUSLY APPROVED (114)'));
   assert.equal(page.node('#toast').textContent, 'Removed from saved picks on this device');
 });
 
@@ -143,7 +143,7 @@ test('downloaded JSON separates prior approvals from this rounds KEEP/REPLACE gr
   page.node('#download-decisions').listeners.click();
   const exported = JSON.parse(await page.download().text());
   assert.equal(exported.schemaVersion, 2);
-  assert.equal(exported.previouslyApproved.length, 89);
+  assert.equal(exported.previouslyApproved.length, 114);
   assert.deepEqual(exported.keep.map(d => d.id), newIds.slice(0, 2));
   assert.equal(exported.replace.length, 23);
   assert.ok(exported.replace.every(d => !approvedIds.includes(d.id)));

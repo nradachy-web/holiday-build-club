@@ -280,7 +280,7 @@ test('all 29 rejected Round09 onesies are archived and cannot return through an 
   assert.ok(brief.includes('KEEP (0)')&&brief.includes('REPLACE (29)'));
 });
 const round11=vm.createContext({});
-vm.runInContext(readFileSync('site/keepers.js','utf8')+'\n'+readFileSync('site/round11.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.carryover=CARRYOVER_IDS;',round11);
+vm.runInContext(readFileSync('archive/site-round11/keepers.js','utf8')+'\n'+readFileSync('archive/site-round11/round11.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.carryover=CARRYOVER_IDS;',round11);
 test('round 11 preserves the exact 85 approvals plus four selected Round10 onesies',()=>{
   const selected=['deleted-chat-onesie','emergency-contact-onesie','unzip-escalate-onesie','references-onesie'];
   const expected=[...round10.keepers.map(d=>d.id),...selected].sort();
@@ -318,14 +318,43 @@ test('current category counts and all 188 retired design IDs match the full cata
     assert.ok(archiveRoots.some(root=>existsSync(root+d.image)),d.id+' remains recoverable');
   }
 });
-test('current page loads Round11 and historical catalog scripts are not published',()=>{
-  for(const f of ['catalog.js','collection.js','round3.js','round4.js','round5.js','round6.js','round7.js','round8.js','round9.js','round10.js','app.js'])assert.equal(existsSync('site/'+f),false,f);
+test('current page loads Round12 and historical catalog scripts are not published',()=>{
+  for(const f of ['catalog.js','collection.js','round3.js','round4.js','round5.js','round6.js','round7.js','round8.js','round9.js','round10.js','round11.js','app.js'])assert.equal(existsSync('site/'+f),false,f);
   const page=readFileSync('site/index.html','utf8');
-  assert.ok(page.includes('keepers.js?v=12')&&page.includes('round11.js?v=12'));
+  assert.ok(page.includes('keepers.js?v=13')&&page.includes('round12.js?v=13'));
   assert.ok(!page.includes('data-filter="Archive"'));
 });
 test('all 114 current design images exist',()=>{
   assert.equal(round11.current.length,114);
   const missing=[...round11.current.filter(d=>!existsSync('site/'+d.image)).map(d=>d.image)];
   assert.deepEqual(missing,[],'Missing current design renders');
+});
+
+const round12=vm.createContext({});
+vm.runInContext(readFileSync('site/keepers.js','utf8')+'\n'+readFileSync('site/round12.js','utf8')+'\nglobalThis.current=ALL_DESIGNS;globalThis.keepers=KEEPERS;globalThis.carryover=CARRYOVER_IDS;',round12);
+test('Round12 promotes every prior design without editing records and adds 25 adult onesies',()=>{
+  assert.equal(round12.current.length,139);
+  assert.equal(round12.keepers.length,114);
+  assert.equal(JSON.stringify(round12.keepers),JSON.stringify(round11.current));
+  assert.deepEqual([...round12.carryover].sort(),[...round11.current.map(d=>d.id)].sort());
+  const added=round12.current.filter(d=>d.round===12);
+  assert.equal(added.length,25);
+  assert.ok(added.every(d=>d.category==='Onesies'&&d.type==='Adult lounge suit'));
+  assert.equal(added.filter(d=>d.fan).length,23);
+  assert.equal(round12.current.filter(d=>d.category==='Onesies').length,58);
+  assert.equal(round12.current.filter(d=>d.fan).length,55);
+  assert.equal(new Set(round12.current.map(d=>d.id)).size,139);
+  assert.deepEqual([...round12.current.filter(d=>!existsSync('site/'+d.image)).map(d=>d.image)],[]);
+});
+test('a fresh device cannot replace any of the 25 designs approved together from Round03',()=>{
+  const hearts=new Set();
+  const choices=api.decisions(round12.current,hearts,round12.carryover);
+  assert.equal(choices.approved.length,114);
+  assert.equal(choices.keep.length,0);
+  assert.equal(choices.replace.length,25);
+  assert.ok(choices.replace.every(d=>d.round===12));
+  const brief=api.brief(round12.current,hearts,'Adult onesies only.',round12.carryover);
+  assert.ok(brief.includes('PREVIOUSLY APPROVED (114)'));
+  assert.ok(brief.includes('KEEP (0)')&&brief.includes('REPLACE (25)'));
+  assert.equal(hearts.size,0);
 });

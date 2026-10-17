@@ -18,7 +18,8 @@ function loadCatalog(directory, filename) {
 const historical = loadCatalog('archive/site-round8', 'round8.js');
 const previousCatalog = loadCatalog('archive/site-round9', 'round9.js');
 const round10Catalog = loadCatalog('archive/site-round10', 'round10.js');
-const currentCatalog = loadCatalog('site', 'round11.js');
+const currentCatalog = loadCatalog('archive/site-round11', 'round11.js');
+const latestCatalog = loadCatalog('site', 'round12.js');
 
 // Exact public selections reproduce the earlier 56+15 incident against archived Round08.
 const mac56 = [
@@ -255,4 +256,20 @@ test('the current 33-pick phone transfer merges with 56 old hearts without seedi
   assert.equal(choices.approved.length, 89);
   assert.equal(choices.keep.length, 0);
   assert.equal(choices.replace.length, 25);
+});
+
+test('an older transfer preserves a Round12 heart and every prior design remains approved',()=>{
+  const oldIds=currentCatalog.approved.map(d=>d.id);
+  const transfer=api.readTransfer('#'+api.transferHash(currentCatalog.designs,new Set(oldIds)),latestCatalog.designs);
+  assert.equal(transfer.unavailable,0);
+  const newest=latestCatalog.designs.find(d=>d.round===12).id;
+  const store=storage([newest]);
+  const merged=api.mergeTransfer(store,new Set([newest]),transfer.ids);
+  assert.deepEqual(sorted(merged),sorted([...oldIds,newest]));
+  assert.equal(store.writes,0);
+  const choices=api.decisions(latestCatalog.designs,merged,latestCatalog.carryoverIds);
+  assert.equal(choices.approved.length,114);
+  assert.deepEqual([...choices.keep.map(d=>d.id)],[newest]);
+  assert.equal(choices.replace.length,24);
+  assert.ok(choices.replace.every(d=>d.round===12));
 });

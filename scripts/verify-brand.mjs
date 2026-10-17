@@ -4,7 +4,7 @@ import {mkdir} from 'node:fs/promises';
 import {existsSync,readFileSync} from 'node:fs';
 import vm from 'node:vm';
 const catalogContext=vm.createContext({});
-vm.runInContext(readFileSync(new URL('../site/keepers.js',import.meta.url),'utf8')+'\n'+readFileSync(new URL('../site/round11.js',import.meta.url),'utf8')+'\nglobalThis.newDesigns=ALL_DESIGNS.filter(d=>d.round===11);',catalogContext);
+vm.runInContext(readFileSync(new URL('../site/keepers.js',import.meta.url),'utf8')+'\n'+readFileSync(new URL('../site/round12.js',import.meta.url),'utf8')+'\nglobalThis.newDesigns=ALL_DESIGNS.filter(d=>d.round===12);',catalogContext);
 assert.equal(catalogContext.newDesigns.length,25);
 const {id:newDesignId,name:newDesignName}=catalogContext.newDesigns[0];
 const base=process.env.SITE_URL||'http://127.0.0.1:4173/';
@@ -19,23 +19,23 @@ try{
   assert.equal(await page.locator('.card-save').first().getAttribute('data-save'),newDesignId);
   assert.equal(await page.locator('.card-title').first().textContent(),newDesignName);
   assert.equal(await page.locator('#save-count').textContent(),'0');
-  assert.equal(await page.locator('#review-summary').textContent(),'89 approved earlier. 0 new picks on this device. 25 new ideas still to review.');
+  assert.equal(await page.locator('#review-summary').textContent(),'114 approved earlier. 0 new picks on this device. 25 new ideas still to review.');
   assert.equal(await page.locator('#copy-picks-link').isDisabled(),true);
-  for(const [category,count] of [['Sweats',13],['Tees',26],['Hats',14],['Accessories',7],['Onesies',33],['Holiday',17],['Fan lab',32],['Carryover',89],['All',114]]){await page.locator(`[data-filter="${category}"]`).click();assert.equal(await page.locator('.card').count(),count);}
+  for(const [category,count] of [['Sweats',13],['Tees',26],['Hats',14],['Accessories',7],['Onesies',58],['Holiday',17],['Fan lab',55],['Carryover',114],['All',139]]){await page.locator(`[data-filter="${category}"]`).click();assert.equal(await page.locator('.card').count(),count);}
   await page.locator('#search').fill('no-such-design-xyz');assert.equal(await page.locator('.card').count(),0);assert.ok(await page.locator('#empty-state').isVisible());await page.locator('#reset-filter').click();
   await page.locator('#search').fill('context');assert.ok(await page.locator('.card').count()>0);await page.locator('#search').fill('');
   await page.locator('[data-save="password-rebuild-tee"]').first().click();await page.reload({waitUntil:'networkidle'});
   assert.equal(await page.locator('#save-count').textContent(),'1');
   assert.equal(await page.locator('#keep-total').textContent(),'1');
-  assert.equal(await page.locator('#review-summary').textContent(),'89 approved earlier. 0 new picks on this device. 25 new ideas still to review.');
+  assert.equal(await page.locator('#review-summary').textContent(),'114 approved earlier. 0 new picks on this device. 25 new ideas still to review.');
   let brief=await page.locator('#decision-brief').inputValue();
-  assert.ok(brief.includes('PREVIOUSLY APPROVED (89)')&&brief.includes('KEEP (0)')&&brief.includes('REPLACE (25)'));
+  assert.ok(brief.includes('PREVIOUSLY APPROVED (114)')&&brief.includes('KEEP (0)')&&brief.includes('REPLACE (25)'));
   assert.ok(!brief.split('\n\nKEEP (0)')[1].includes('[password-rebuild-tee]'));
   await page.locator(`[data-save="${newDesignId}"]`).first().click();
   assert.equal(await page.locator('#save-count').textContent(),'2');
-  assert.equal(await page.locator('#review-summary').textContent(),'89 approved earlier. 1 new pick on this device. 24 new ideas still to review.');
+  assert.equal(await page.locator('#review-summary').textContent(),'114 approved earlier. 1 new pick on this device. 24 new ideas still to review.');
   brief=await page.locator('#decision-brief').inputValue();
-  assert.ok(brief.includes('PREVIOUSLY APPROVED (89)')&&brief.includes('KEEP (1)')&&brief.includes('REPLACE (24)'));
+  assert.ok(brief.includes('PREVIOUSLY APPROVED (114)')&&brief.includes('KEEP (1)')&&brief.includes('REPLACE (24)'));
   assert.ok(brief.split('\n\nKEEP (1)')[1].split('\n\nREPLACE (24)')[0].includes(`[${newDesignId}]`));
   await page.locator('[data-filter="Replace"]').click();assert.equal(await page.locator('.card').count(),24);assert.equal(await page.locator('.is-keeper').count(),0);assert.equal(await page.locator('.is-approved').count(),0);await page.locator('[data-filter="All"]').click();
   await page.locator('[data-open="off-duty-onesie"]').first().click();assert.ok(page.url().includes('design=off-duty-onesie'));await page.locator('#dialog-save').click();await page.keyboard.press('Escape');assert.equal(await page.locator('#product-dialog').evaluate(d=>d.open),false);assert.equal(await page.evaluate(()=>document.activeElement.dataset.open),'off-duty-onesie');
@@ -44,17 +44,17 @@ try{
   await page.locator('[data-save="password-rebuild-tee"]').first().click();
   assert.equal(await page.locator('.card').count(),2);
   assert.equal(await page.locator('#save-count').textContent(),'2');
-  assert.equal(await page.locator('#review-summary').textContent(),'89 approved earlier. 1 new pick on this device. 24 new ideas still to review.');
+  assert.equal(await page.locator('#review-summary').textContent(),'114 approved earlier. 1 new pick on this device. 24 new ideas still to review.');
   assert.ok((await page.locator('#decision-brief').inputValue()).split('\n\nKEEP (1)')[0].includes('[password-rebuild-tee]'));
   await page.locator('[data-filter="All"]').click();
   for(const img of await page.locator('.card-image img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(i=>i.decode());}
   await page.locator('.editorial-image img').scrollIntoViewIfNeeded();await page.locator('.editorial-image img').evaluate(i=>i.decode());
   await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'qa/prompt-desktop.png'});await page.screenshot({path:'qa/prompt-desktop-full.png',fullPage:true});
-  for(const width of [320,390,768]){await page.setViewportSize({width,height:844});await page.evaluate(()=>scrollTo(0,0));assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Home fits '+width);if(width===390){await page.screenshot({path:'qa/prompt-mobile.png'});await page.locator('[data-open="clawd-timeout"]').first().click();assert.ok((await page.locator('#dialog-note').textContent()).includes('Permission'));assert.equal(await page.locator('#product-dialog').evaluate(d=>d.scrollWidth>d.clientWidth),false);await page.screenshot({path:'qa/prompt-dialog-mobile.png'});await page.keyboard.press('Escape');}}
+  for(const width of [320,390,768]){await page.setViewportSize({width,height:844});await page.evaluate(()=>scrollTo(0,0));assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Home fits '+width);if(width===390){await page.screenshot({path:'qa/prompt-mobile.png'});await page.locator('[data-open="clawd-timeout"]').first().click();assert.ok((await page.locator('#dialog-note').textContent()).includes('Not affiliated'));assert.equal(await page.locator('#product-dialog').evaluate(d=>d.scrollWidth>d.clientWidth),false);await page.screenshot({path:'qa/prompt-dialog-mobile.png'});await page.keyboard.press('Escape');}}
   await page.goto(new URL('?design=who-dis-tee',base).href);assert.ok(await page.locator('#retired-note').isVisible());assert.equal(await page.locator('#product-dialog').evaluate(d=>d.open),false);
   await page.goto(new URL('?design=furniture-onesie',base).href);assert.ok(await page.locator('#retired-note').isVisible());assert.equal(await page.locator('#product-dialog').evaluate(d=>d.open),false);
   await page.goto(new URL('?design=run-company-onesie',base).href);assert.ok(await page.locator('#retired-note').isVisible());assert.equal(await page.locator('#product-dialog').evaluate(d=>d.open),false);
   await page.goto(new URL('?design=pair-programming',base).href,{waitUntil:'networkidle'});assert.equal(await page.locator('.card').count(),25);assert.equal(await page.locator('#dialog-title').textContent(),'North Pole pair programming');
   assert.deepEqual(errors,[],'No browser exceptions');assert.deepEqual(broken,[],'No failed resources');
-  console.log(`PASS: 114 current designs, 89 prior approvals, 25 new adult onesies, 188 retired concepts, round-scoped review/briefs, personal saved counts without seeded hearts, category filters, retired-link notices, search, persistent favorites, modal keyboard/focus, shortlist mailto, exact/legacy links, all image decoding, mobile layouts and no browser errors.`);
+  console.log(`PASS: 139 current designs, 114 prior approvals, 25 new adult onesies, 188 retired concepts, round-scoped review/briefs, personal saved counts without seeded hearts, category filters, retired-link notices, search, persistent favorites, modal keyboard/focus, shortlist mailto, exact/legacy links, all image decoding, mobile layouts and no browser errors.`);
 }finally{await browser.close();}

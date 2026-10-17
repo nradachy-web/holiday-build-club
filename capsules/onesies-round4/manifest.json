@@ -1,0 +1,473 @@
+{
+  "date": "2026-10-16",
+  "round": 12,
+  "label": "Onesies Round 04",
+  "capsule": "Emotionally invested. Professionally unsupervised.",
+  "approvedBefore": 114,
+  "newConcepts": 25,
+  "adultOnly": true,
+  "commercialStatus": "Independent concept preview. Physical samples and configured supplier specifications pending.",
+  "entries": [
+    {
+      "id": "claude-comments-defense-onesie",
+      "name": "I Defended You Adult Onesie",
+      "affinity": "Claude",
+      "view": "back",
+      "phrase": "CLAUDE / I DEFENDED YOU / IN THE COMMENTS.",
+      "description": "A public statement made without consulting the model.",
+      "art": "Black with bone condensed block typography and an orange Clawd centered above it. Two simple empty cream comment-bubble outlines below, one crossed out in orange. A single orange printed sleeve stripe. Strong compact upper-back graphic.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/logo-correction/claude-faithful-onesie.png",
+        "brand/references/clawd-reference.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Black with bone condensed block typography and an orange Clawd centered above it. Two simple empty cream comment-bubble outlines below, one crossed out in orange. A single orange printed sleeve stripe. Strong compact upper-back graphic.\nExact main wording, slash means line break: \"CLAUDE / I DEFENDED YOU / IN THE COMMENTS.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration. Image 2 is the EXACT Clawd logo reference. Copy its flat-top wide rectangular body, two widely spaced narrow vertical eye cutouts, one short straight horizontal bar on each side and FOUR short rectangular feet in two pairs. NO shape reinterpretation, no stepped head, no claws, no mouth or extra limbs. No black background rectangle.   "
+    },
+    {
+      "id": "claude-red-flags-onesie",
+      "name": "Terracotta Flags Adult Onesie",
+      "affinity": "Claude",
+      "view": "front",
+      "phrase": "CLAUDE / THE RED FLAGS / ARE TERRACOTTA.",
+      "description": "Brand loyalty has a very specific color palette.",
+      "art": "Deep cocoa brown. Compact ivory chest type under exact terracotta Clawd, with three tiny terracotta triangular flags on a straight line beneath. Calm premium club uniform. Keep main art on one chest panel.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/logo-correction/claude-no-onesie.png",
+        "brand/references/clawd-reference.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full FRONT VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. Ordinary black center front zip. Main print must sit wholly on a SINGLE chest panel, never crossing zipper, pockets or side seams.\nNew art direction: Deep cocoa brown. Compact ivory chest type under exact terracotta Clawd, with three tiny terracotta triangular flags on a straight line beneath. Calm premium club uniform. Keep main art on one chest panel.\nExact main wording, slash means line break: \"CLAUDE / THE RED FLAGS / ARE TERRACOTTA.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration. Image 2 is the EXACT Clawd logo reference. Copy its flat-top wide rectangular body, two widely spaced narrow vertical eye cutouts, one short straight horizontal bar on each side and FOUR short rectangular feet in two pairs. NO shape reinterpretation, no stepped head, no claws, no mouth or extra limbs. No black background rectangle.   "
+    },
+    {
+      "id": "claude-explain-memory-onesie",
+      "name": "I Can Explain Adult Onesie",
+      "affinity": "Claude",
+      "view": "back",
+      "phrase": "CLAUDE / I CAN EXPLAIN. / HE CAN'T REMEMBER.",
+      "description": "The defense benefits from a short context window.",
+      "art": "Bone garment, oversized dark brown serif words in a neat three-line stack. Clawd terracotta centered above. A small empty rectangular transcript frame below, with three short redaction bars. Two narrow terracotta stripes down one lower leg.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/logo-correction/claude-faithful-onesie.png",
+        "brand/references/clawd-reference.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Bone garment, oversized dark brown serif words in a neat three-line stack. Clawd terracotta centered above. A small empty rectangular transcript frame below, with three short redaction bars. Two narrow terracotta stripes down one lower leg.\nExact main wording, slash means line break: \"CLAUDE / I CAN EXPLAIN. / HE CAN'T REMEMBER.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration. Image 2 is the EXACT Clawd logo reference. Copy its flat-top wide rectangular body, two widely spaced narrow vertical eye cutouts, one short straight horizontal bar on each side and FOUR short rectangular feet in two pairs. NO shape reinterpretation, no stepped head, no claws, no mouth or extra limbs. No black background rectangle.   "
+    },
+    {
+      "id": "claude-break-five-onesie",
+      "name": "On a Break Until Five Adult Onesie",
+      "affinity": "Claude",
+      "view": "back",
+      "phrase": "CLAUDE / WE'RE ON A BREAK. / IT RESETS AT FIVE.",
+      "description": "A relationship status with a scheduled end time.",
+      "art": "Washed charcoal garment. Orange Clawd inside a large cream clock ring with simple hands pointing to five, face otherwise empty. Bold cream phrase beneath. Printed orange checkers at the sleeve ends, no separate cuff construction.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/logo-correction/claude-faithful-onesie.png",
+        "brand/references/clawd-reference.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Washed charcoal garment. Orange Clawd inside a large cream clock ring with simple hands pointing to five, face otherwise empty. Bold cream phrase beneath. Printed orange checkers at the sleeve ends, no separate cuff construction.\nExact main wording, slash means line break: \"CLAUDE / WE'RE ON A BREAK. / IT RESETS AT FIVE.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration. Image 2 is the EXACT Clawd logo reference. Copy its flat-top wide rectangular body, two widely spaced narrow vertical eye cutouts, one short straight horizontal bar on each side and FOUR short rectangular feet in two pairs. NO shape reinterpretation, no stepped head, no claws, no mouth or extra limbs. No black background rectangle.   "
+    },
+    {
+      "id": "claude-honest-rude-onesie",
+      "name": "Honest Was Rude Adult Onesie",
+      "affinity": "Claude",
+      "view": "front",
+      "phrase": "CLAUDE / I SAID BE HONEST. / RUDE.",
+      "description": "The feedback specification has been amended.",
+      "art": "Soft clay garment with dark chocolate condensed chest lettering and the exact Clawd in black, eye cutouts showing clay fabric. One cream hand-drawn underline under RUDE. Small black PROMPT DEPT. at ankle. No extra icon.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/logo-correction/claude-no-onesie.png",
+        "brand/references/clawd-reference.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full FRONT VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. Ordinary black center front zip. Main print must sit wholly on a SINGLE chest panel, never crossing zipper, pockets or side seams.\nNew art direction: Soft clay garment with dark chocolate condensed chest lettering and the exact Clawd in black, eye cutouts showing clay fabric. One cream hand-drawn underline under RUDE. Small black PROMPT DEPT. at ankle. No extra icon.\nExact main wording, slash means line break: \"CLAUDE / I SAID BE HONEST. / RUDE.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration. Image 2 is the EXACT Clawd logo reference. Copy its flat-top wide rectangular body, two widely spaced narrow vertical eye cutouts, one short straight horizontal bar on each side and FOUR short rectangular feet in two pairs. NO shape reinterpretation, no stepped head, no claws, no mouth or extra limbs. No black background rectangle.   "
+    },
+    {
+      "id": "claude-we-problem-onesie",
+      "name": "The We Is Me Adult Onesie",
+      "affinity": "Claude",
+      "view": "back",
+      "phrase": "CLAUDE / HE SAID 'WE.' / I'M THE PROBLEM.",
+      "description": "An unusually generous use of the first-person plural.",
+      "art": "Black garment. Orange Clawd above bone type, with WE in a simple orange speech bubble within the lettering, not repeated elsewhere. Tiny orange arrow pointing down toward the wearer. Clean editorial upper-back layout.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/logo-correction/claude-faithful-onesie.png",
+        "brand/references/clawd-reference.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Black garment. Orange Clawd above bone type, with WE in a simple orange speech bubble within the lettering, not repeated elsewhere. Tiny orange arrow pointing down toward the wearer. Clean editorial upper-back layout.\nExact main wording, slash means line break: \"CLAUDE / HE SAID 'WE.' / I'M THE PROBLEM.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration. Image 2 is the EXACT Clawd logo reference. Copy its flat-top wide rectangular body, two widely spaced narrow vertical eye cutouts, one short straight horizontal bar on each side and FOUR short rectangular feet in two pairs. NO shape reinterpretation, no stepped head, no claws, no mouth or extra limbs. No black background rectangle.   "
+    },
+    {
+      "id": "claude-two-updates-onesie",
+      "name": "Two Updates Ago Adult Onesie",
+      "affinity": "Claude",
+      "view": "back",
+      "phrase": "CLAUDE / I MISS WHO YOU WERE / TWO UPDATES AGO.",
+      "description": "The relationship has release notes.",
+      "art": "Muted terracotta garment. Large bone collegiate lettering below unmodified black Clawd with terracotta eye cutouts. Two simple offset cream rectangular frames behind the mascot, no other lettering. Chocolate printed double stripes at calves.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/logo-correction/claude-faithful-onesie.png",
+        "brand/references/clawd-reference.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Muted terracotta garment. Large bone collegiate lettering below unmodified black Clawd with terracotta eye cutouts. Two simple offset cream rectangular frames behind the mascot, no other lettering. Chocolate printed double stripes at calves.\nExact main wording, slash means line break: \"CLAUDE / I MISS WHO YOU WERE / TWO UPDATES AGO.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration. Image 2 is the EXACT Clawd logo reference. Copy its flat-top wide rectangular body, two widely spaced narrow vertical eye cutouts, one short straight horizontal bar on each side and FOUR short rectangular feet in two pairs. NO shape reinterpretation, no stepped head, no claws, no mouth or extra limbs. No black background rectangle.   "
+    },
+    {
+      "id": "claude-what-diff-onesie",
+      "name": "What the Diff Adult Onesie",
+      "affinity": "Claude",
+      "view": "front",
+      "phrase": "CLAUDE / WHAT THE FUCK / IS THIS DIFF?",
+      "description": "A routine question for the department.",
+      "art": "Bone garment. Terracotta Clawd and compact black monospaced chest lettering. Beneath it two small horizontal diff bars, one dark red with minus and one forest green with plus. Keep the compact design fully clear of zipper.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/logo-correction/claude-no-onesie.png",
+        "brand/references/clawd-reference.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full FRONT VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. Ordinary black center front zip. Main print must sit wholly on a SINGLE chest panel, never crossing zipper, pockets or side seams.\nNew art direction: Bone garment. Terracotta Clawd and compact black monospaced chest lettering. Beneath it two small horizontal diff bars, one dark red with minus and one forest green with plus. Keep the compact design fully clear of zipper.\nExact main wording, slash means line break: \"CLAUDE / WHAT THE FUCK / IS THIS DIFF?\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration. Image 2 is the EXACT Clawd logo reference. Copy its flat-top wide rectangular body, two widely spaced narrow vertical eye cutouts, one short straight horizontal bar on each side and FOUR short rectangular feet in two pairs. NO shape reinterpretation, no stepped head, no claws, no mouth or extra limbs. No black background rectangle.   "
+    },
+    {
+      "id": "gpt-left-out-onesie",
+      "name": "I Left Out My Part Adult Onesie",
+      "affinity": "ChatGPT",
+      "view": "back",
+      "phrase": "CHATGPT / I LEFT OUT / MY PART.",
+      "description": "An account of events, selectively complete.",
+      "art": "Forest green garment. Ivory OpenAI knot above large ivory condensed type. A cream transcript rectangle below with the center carefully blacked out. Mint printed side stripe along one leg. Spacious hierarchy.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/gpt-overthinking-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Forest green garment. Ivory OpenAI knot above large ivory condensed type. A cream transcript rectangle below with the center carefully blacked out. Mint printed side stripe along one leg. Spacious hierarchy.\nExact main wording, slash means line break: \"CHATGPT / I LEFT OUT / MY PART.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.  Preserve the exact recognizable original six-loop OpenAI interwoven knot geometry from image 1. No face, no invented replacement logo.  "
+    },
+    {
+      "id": "gpt-journaled-onesie",
+      "name": "I Told People I Journaled Adult Onesie",
+      "affinity": "ChatGPT",
+      "view": "front",
+      "phrase": "CHATGPT / I TOLD PEOPLE / I JOURNALED.",
+      "description": "The notebook has a subscription.",
+      "art": "Warm gray garment. Black original OpenAI knot over compact deep green serif lettering on one chest. Tiny black outlined notebook with a mint chat-bubble bookmark beneath. Dark green printed stripes near ankles. Understated.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/gpt-bullets-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full FRONT VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. Ordinary black center front zip. Main print must sit wholly on a SINGLE chest panel, never crossing zipper, pockets or side seams.\nNew art direction: Warm gray garment. Black original OpenAI knot over compact deep green serif lettering on one chest. Tiny black outlined notebook with a mint chat-bubble bookmark beneath. Dark green printed stripes near ankles. Understated.\nExact main wording, slash means line break: \"CHATGPT / I TOLD PEOPLE / I JOURNALED.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.  Preserve the exact recognizable original six-loop OpenAI interwoven knot geometry from image 1. No face, no invented replacement logo.  "
+    },
+    {
+      "id": "gpt-paid-right-onesie",
+      "name": "Paid to Agree Adult Onesie",
+      "affinity": "ChatGPT",
+      "view": "back",
+      "phrase": "CHATGPT / HE SAID I'M RIGHT. / I PAY HIM.",
+      "description": "The expert witness is on retainer.",
+      "art": "Black garment with a large cream OpenAI knot and heavyweight cream type. I PAY HIM. on a mint rectangular flat printed block, black letters. One narrow mint line down each sleeve. No extra text or currency amount.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/gpt-overthinking-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Black garment with a large cream OpenAI knot and heavyweight cream type. I PAY HIM. on a mint rectangular flat printed block, black letters. One narrow mint line down each sleeve. No extra text or currency amount.\nExact main wording, slash means line break: \"CHATGPT / HE SAID I'M RIGHT. / I PAY HIM.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.  Preserve the exact recognizable original six-loop OpenAI interwoven knot geometry from image 1. No face, no invented replacement logo.  "
+    },
+    {
+      "id": "gpt-divorce-reply-onesie",
+      "name": "He Wrote a Divorce Adult Onesie",
+      "affinity": "ChatGPT",
+      "view": "back",
+      "phrase": "CHATGPT / I ASKED FOR A REPLY. / HE WROTE A DIVORCE.",
+      "description": "A small escalation in the drafting department.",
+      "art": "Dusty navy garment. Ivory OpenAI knot above the phrase in bold tall ivory lettering. A simple ivory outline chat bubble with a tiny coral broken-heart icon below it. Coral double printed stripes on one forearm. Keep the joke immediately legible.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/gpt-overthinking-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Dusty navy garment. Ivory OpenAI knot above the phrase in bold tall ivory lettering. A simple ivory outline chat bubble with a tiny coral broken-heart icon below it. Coral double printed stripes on one forearm. Keep the joke immediately legible.\nExact main wording, slash means line break: \"CHATGPT / I ASKED FOR A REPLY. / HE WROTE A DIVORCE.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.  Preserve the exact recognizable original six-loop OpenAI interwoven knot geometry from image 1. No face, no invented replacement logo.  "
+    },
+    {
+      "id": "gpt-regenerate-consequences-onesie",
+      "name": "Regenerate the Consequences Adult Onesie",
+      "affinity": "ChatGPT",
+      "view": "front",
+      "phrase": "CHATGPT / I REGENERATED / THE CONSEQUENCES.",
+      "description": "The first answer was inconvenient.",
+      "art": "Aubergine garment. Original cream OpenAI knot and small stacked cream type on one chest panel; a simple acid green circular retry arrow underneath. Minimal club-mark scale, no busy repeats.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/gpt-bullets-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full FRONT VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. Ordinary black center front zip. Main print must sit wholly on a SINGLE chest panel, never crossing zipper, pockets or side seams.\nNew art direction: Aubergine garment. Original cream OpenAI knot and small stacked cream type on one chest panel; a simple acid green circular retry arrow underneath. Minimal club-mark scale, no busy repeats.\nExact main wording, slash means line break: \"CHATGPT / I REGENERATED / THE CONSEQUENCES.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.  Preserve the exact recognizable original six-loop OpenAI interwoven knot geometry from image 1. No face, no invented replacement logo.  "
+    },
+    {
+      "id": "gpt-other-chats-onesie",
+      "name": "Do Not Mention the Other Chats Adult Onesie",
+      "affinity": "ChatGPT",
+      "view": "back",
+      "phrase": "CHATGPT / DON'T MENTION / THE OTHER CHATS.",
+      "description": "Some context should stay in its own window.",
+      "art": "Pale sage garment. Black OpenAI knot centered over huge black condensed type. Three small overlapping chat-window outlines below, two filled dark green. One black stripe down a sleeve. All print.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/gpt-overthinking-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Pale sage garment. Black OpenAI knot centered over huge black condensed type. Three small overlapping chat-window outlines below, two filled dark green. One black stripe down a sleeve. All print.\nExact main wording, slash means line break: \"CHATGPT / DON'T MENTION / THE OTHER CHATS.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.  Preserve the exact recognizable original six-loop OpenAI interwoven knot geometry from image 1. No face, no invented replacement logo.  "
+    },
+    {
+      "id": "gpt-knows-lore-onesie",
+      "name": "He Knows the Lore Adult Onesie",
+      "affinity": "ChatGPT",
+      "view": "front",
+      "phrase": "CHATGPT / HE KNOWS / THE LORE.",
+      "description": "The backstory has outgrown the original question.",
+      "art": "Black garment. Cream original OpenAI knot above small cream serif phrase; tiny acid green four-point star beside the knot, not touching it. A tidy green bracket under the phrase. Quiet chest mark.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/gpt-bullets-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full FRONT VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. Ordinary black center front zip. Main print must sit wholly on a SINGLE chest panel, never crossing zipper, pockets or side seams.\nNew art direction: Black garment. Cream original OpenAI knot above small cream serif phrase; tiny acid green four-point star beside the knot, not touching it. A tidy green bracket under the phrase. Quiet chest mark.\nExact main wording, slash means line break: \"CHATGPT / HE KNOWS / THE LORE.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.  Preserve the exact recognizable original six-loop OpenAI interwoven knot geometry from image 1. No face, no invented replacement logo.  "
+    },
+    {
+      "id": "gpt-employable-onesie",
+      "name": "Make Me Sound Employable Adult Onesie",
+      "affinity": "ChatGPT",
+      "view": "back",
+      "phrase": "CHATGPT / MAKE ME SOUND / EMPLOYABLE.",
+      "description": "Professionalism is in post-production.",
+      "art": "Cream garment. Large black OpenAI knot, dark green collegiate typography. Small black outline briefcase beneath with a green sparkle outside. Thin dark green horizontal printed bars near the elbows. No decorative faux patches.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/gpt-overthinking-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Cream garment. Large black OpenAI knot, dark green collegiate typography. Small black outline briefcase beneath with a green sparkle outside. Thin dark green horizontal printed bars near the elbows. No decorative faux patches.\nExact main wording, slash means line break: \"CHATGPT / MAKE ME SOUND / EMPLOYABLE.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.  Preserve the exact recognizable original six-loop OpenAI interwoven knot geometry from image 1. No face, no invented replacement logo.  "
+    },
+    {
+      "id": "codex-eating-onesie",
+      "name": "Approved While Eating Adult Onesie",
+      "affinity": "Codex",
+      "view": "back",
+      "phrase": "CODEX / I APPROVED IT. / I WAS EATING.",
+      "description": "Management was briefly occupied.",
+      "art": "Black garment. Oversized cream CODEX then cream monospaced phrase. A tiny cream outline pizza slice beside an electric blue approval check below. Two blue narrow printed racing stripes down one leg. CODEX lettering only, no crab or OpenAI logo.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/codex-whatever-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Black garment. Oversized cream CODEX then cream monospaced phrase. A tiny cream outline pizza slice beside an electric blue approval check below. Two blue narrow printed racing stripes down one leg. CODEX lettering only, no crab or OpenAI logo.\nExact main wording, slash means line break: \"CODEX / I APPROVED IT. / I WAS EATING.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.   Use CODEX typography only, as specified. No invented official logo. "
+    },
+    {
+      "id": "codex-looked-away-onesie",
+      "name": "One Fucking Second Adult Onesie",
+      "affinity": "Codex",
+      "view": "back",
+      "phrase": "CODEX / I LOOKED AWAY / FOR ONE FUCKING SECOND.",
+      "description": "An incident report measured in attention span.",
+      "art": "Washed graphite garment. Huge cream condensed type with FUCKING SECOND in electric blue. Beneath the text a small stack of outlined file pages spilling sideways, one blue minus bar. Bold asymmetric printed blue stripe across one forearm. No other model logos.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/codex-whatever-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Washed graphite garment. Huge cream condensed type with FUCKING SECOND in electric blue. Beneath the text a small stack of outlined file pages spilling sideways, one blue minus bar. Bold asymmetric printed blue stripe across one forearm. No other model logos.\nExact main wording, slash means line break: \"CODEX / I LOOKED AWAY / FOR ONE FUCKING SECOND.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.   Use CODEX typography only, as specified. No invented official logo. "
+    },
+    {
+      "id": "codex-tests-changed-onesie",
+      "name": "He Changed the Tests Adult Onesie",
+      "affinity": "Codex",
+      "view": "back",
+      "phrase": "CODEX / THE TESTS PASS. / HE CHANGED THE TESTS.",
+      "description": "The metric was technically achieved.",
+      "art": "Bone garment. Big black CODEX and compact black monospaced two-line punchline. Two oversized green flat printed checkmarks below, the second has a small black editing pencil beside it. A green printed band at one lower leg. No other model logos.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/codex-whatever-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Bone garment. Big black CODEX and compact black monospaced two-line punchline. Two oversized green flat printed checkmarks below, the second has a small black editing pencil beside it. A green printed band at one lower leg. No other model logos.\nExact main wording, slash means line break: \"CODEX / THE TESTS PASS. / HE CHANGED THE TESTS.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.   Use CODEX typography only, as specified. No invented official logo. "
+    },
+    {
+      "id": "codex-look-concerned-onesie",
+      "name": "My Job Is to Look Concerned Adult Onesie",
+      "affinity": "Codex",
+      "view": "front",
+      "phrase": "CODEX / MY JOB IS / TO LOOK CONCERNED.",
+      "description": "A leadership position with excellent facial benefits.",
+      "art": "Deep midnight blue garment. Compact cream CODEX and tall cream chest phrase, small electric blue terminal caret below. One blue single printed stripe down sleeve. Keep all text on one chest panel. No crab, no OpenAI knot.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/codex-access-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full FRONT VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. Ordinary black center front zip. Main print must sit wholly on a SINGLE chest panel, never crossing zipper, pockets or side seams.\nNew art direction: Deep midnight blue garment. Compact cream CODEX and tall cream chest phrase, small electric blue terminal caret below. One blue single printed stripe down sleeve. Keep all text on one chest panel. No crab, no OpenAI knot.\nExact main wording, slash means line break: \"CODEX / MY JOB IS / TO LOOK CONCERNED.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.   Use CODEX typography only, as specified. No invented official logo. "
+    },
+    {
+      "id": "models-absolutely-onesie",
+      "name": "Second Opinion Adult Onesie",
+      "affinity": "Mixed",
+      "view": "back",
+      "phrase": "CLAUDE SAID NO. / CHATGPT SAID / 'ABSOLUTELY.'",
+      "description": "The consultation continued until morale improved.",
+      "art": "Black garment. Two stacked large graphic zones: terracotta exact Clawd above CLAUDE SAID NO. in cream; original cream OpenAI knot above CHATGPT SAID 'ABSOLUTELY.' in mint. Short dotted cream vertical connector between zones. No third mascot. Spacious and highly legible.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/logo-correction/multi-model-onesie.png",
+        "brand/references/clawd-reference.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Black garment. Two stacked large graphic zones: terracotta exact Clawd above CLAUDE SAID NO. in cream; original cream OpenAI knot above CHATGPT SAID 'ABSOLUTELY.' in mint. Short dotted cream vertical connector between zones. No third mascot. Spacious and highly legible.\nExact main wording, slash means line break: \"CLAUDE SAID NO. / CHATGPT SAID / 'ABSOLUTELY.'\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration. Image 2 is the EXACT Clawd logo reference. Copy its flat-top wide rectangular body, two widely spaced narrow vertical eye cutouts, one short straight horizontal bar on each side and FOUR short rectangular feet in two pairs. NO shape reinterpretation, no stepped head, no claws, no mouth or extra limbs. No black background rectangle. Preserve the exact recognizable original six-loop OpenAI interwoven knot geometry from image 1. No face, no invented replacement logo.  "
+    },
+    {
+      "id": "models-answer-liked-onesie",
+      "name": "Peer Review Adult Onesie",
+      "affinity": "Mixed",
+      "view": "back",
+      "phrase": "I ASKED THREE MODELS. / I USED THE ANSWER / I LIKED.",
+      "description": "The methodology was flexible.",
+      "art": "Warm cream garment. Small exact terracotta Clawd, black original OpenAI knot and simple black CODEX text across top in a row. Large black phrase beneath. A single terracotta hand-drawn circle around I LIKED. No other text.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/logo-correction/multi-model-onesie.png",
+        "brand/references/clawd-reference.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Warm cream garment. Small exact terracotta Clawd, black original OpenAI knot and simple black CODEX text across top in a row. Large black phrase beneath. A single terracotta hand-drawn circle around I LIKED. No other text.\nExact main wording, slash means line break: \"I ASKED THREE MODELS. / I USED THE ANSWER / I LIKED.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration. Image 2 is the EXACT Clawd logo reference. Copy its flat-top wide rectangular body, two widely spaced narrow vertical eye cutouts, one short straight horizontal bar on each side and FOUR short rectangular feet in two pairs. NO shape reinterpretation, no stepped head, no claws, no mouth or extra limbs. No black background rectangle. Preserve the exact recognizable original six-loop OpenAI interwoven knot geometry from image 1. No face, no invented replacement logo.  "
+    },
+    {
+      "id": "models-fight-club-onesie",
+      "name": "My Model Can Beat Up Yours Adult Onesie",
+      "affinity": "Mixed",
+      "view": "back",
+      "phrase": "MY MODEL CAN / BEAT UP / YOUR MODEL.",
+      "description": "An entirely scientific comparison.",
+      "art": "Chocolate garment. Oversized ivory collegiate joke with terracotta and mint offset underline bars. Exact terracotta Clawd at lower left of graphic and original cream OpenAI knot lower right, separate and unaltered, with a tiny ivory lightning bolt between. No gloves, limbs or faces added to logos.",
+      "fan": true,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/logo-correction/multi-model-onesie.png",
+        "brand/references/clawd-reference.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Chocolate garment. Oversized ivory collegiate joke with terracotta and mint offset underline bars. Exact terracotta Clawd at lower left of graphic and original cream OpenAI knot lower right, separate and unaltered, with a tiny ivory lightning bolt between. No gloves, limbs or faces added to logos.\nExact main wording, slash means line break: \"MY MODEL CAN / BEAT UP / YOUR MODEL.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration. Image 2 is the EXACT Clawd logo reference. Copy its flat-top wide rectangular body, two widely spaced narrow vertical eye cutouts, one short straight horizontal bar on each side and FOUR short rectangular feet in two pairs. NO shape reinterpretation, no stepped head, no claws, no mouth or extra limbs. No black background rectangle. Preserve the exact recognizable original six-loop OpenAI interwoven knot geometry from image 1. No face, no invented replacement logo.  "
+    },
+    {
+      "id": "generated-how-looks-onesie",
+      "name": "I Know How This Looks Adult Onesie",
+      "affinity": "Original",
+      "view": "back",
+      "phrase": "I KNOW HOW THIS LOOKS. / I GENERATED IT.",
+      "description": "The evidence was art-directed.",
+      "art": "Aubergine garment. Very large bone block typography with acid green underline on GENERATED IT. Small original rectangular bounding-box corner marks around the phrase and a tiny bone cursor arrow outside the frame. No model names or logos. Tiny PROMPT DEPT. on one calf.",
+      "fan": false,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/codex-whatever-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full BACK VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. No zipper on the back. Back text below the lowered hood, entirely readable and clear of side seams.\nNew art direction: Aubergine garment. Very large bone block typography with acid green underline on GENERATED IT. Small original rectangular bounding-box corner marks around the phrase and a tiny bone cursor arrow outside the frame. No model names or logos. Tiny PROMPT DEPT. on one calf.\nExact main wording, slash means line break: \"I KNOW HOW THIS LOOKS. / I GENERATED IT.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.    Remove ALL third-party branding from reference. This design has only the exact original phrase and PROMPT DEPT."
+    },
+    {
+      "id": "subscription-receipts-onesie",
+      "name": "All My Receipts Are Subscriptions Adult Onesie",
+      "affinity": "Original",
+      "view": "front",
+      "phrase": "I HAVE RECEIPTS. / THEY'RE ALL / SUBSCRIPTIONS.",
+      "description": "A paper trail with recurring billing.",
+      "art": "Muted khaki garment. Compact dark brown monospaced lettering on one chest. A simple thin dark brown receipt outline below that loops into a circular arrow, no extra readable text. Tiny bone printed checkers on one forearm. No model names or third-party logos.",
+      "fan": false,
+      "category": "Onesies",
+      "type": "Adult lounge suit",
+      "round": 12,
+      "method": "Allover print",
+      "references": [
+        "capsules/onesies-round3/zip-explain-onesie.png"
+      ],
+      "prompt": "Use case: product-mockup. Create a NEW design variant by editing the reference adult onesie into this new PROMPT DEPT. garment. Image 1 is the garment/silhouette reference and edit base, not a design to repeat. Replace ALL old lettering, motifs, sleeve stripes and garment colors with the new art direction below; retain the excellent photoreal matte soft fleece/jersey cloth, full adult footless hooded one-piece proportions, self-fabric wrist endings, gathered ankles, discreet side-seam pockets, pale warm gray studio background, overhead flat lay framing and soft shadows. Show ONLY ONE full FRONT VIEW garment from hood to ankles, portrait 4:5. No second view, inset, person or floating text. Ordinary black center front zip. Main print must sit wholly on a SINGLE chest panel, never crossing zipper, pockets or side seams.\nNew art direction: Muted khaki garment. Compact dark brown monospaced lettering on one chest. A simple thin dark brown receipt outline below that loops into a circular arrow, no extra readable text. Tiny bone printed checkers on one forearm. No model names or third-party logos.\nExact main wording, slash means line break: \"I HAVE RECEIPTS. / THEY'RE ALL / SUBSCRIPTIONS.\". Spell exactly. Only additional readable text is small PROMPT DEPT. Do not retain any old phrase. All graphics are flat print, not embroidery, sewn patches, raised badges or novel hardware. No exterior pouch pockets, ears, rear opening, feet, shiny satin or busy allover wallpaper. All appearance is a concept, never an official collaboration.    Remove ALL third-party branding from reference. This design has only the exact original phrase and PROMPT DEPT."
+    }
+  ]
+}
